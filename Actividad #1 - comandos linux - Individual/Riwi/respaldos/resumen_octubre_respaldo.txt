@@ -1,0 +1,5 @@
+1. la facutura correspondiente a Ana fue cancelada.
+2. Ana dejo de ser cliente activo.
+3. El proyecto movil fue cancelado.
+4. Se tuvo que archivar el proyecto cancelado.
+5. se paso a Ana a la lista de clientes inactivos.

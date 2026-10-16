@@ -1,0 +1,4 @@
+Nombre: Luis
+Empresa: Panadería Aurora
+Estado: Activo 
+Correo: luis@example.com
