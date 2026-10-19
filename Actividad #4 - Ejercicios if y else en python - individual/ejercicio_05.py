@@ -1,4 +1,5 @@
 # Número mayor
+# Solicita dos números e indica cuál es mayor o si son iguales.
 
 print("Bienvenido")
 

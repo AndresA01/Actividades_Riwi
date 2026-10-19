@@ -1,5 +1,5 @@
 # Positivo o negativo
-
+# Solicita un número e indica si es positivo, negativo o cero.
 print("Bienvenido")
 
 numero = int(input("Ingrese un número: "))

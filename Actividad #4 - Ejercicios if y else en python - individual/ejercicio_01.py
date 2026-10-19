@@ -1,4 +1,5 @@
 # Nombre y edad
+# Solicita el nombre y la edad de una persona. Muestra su nombre e indica si es mayor de edad.
 
 print("Bienvenido")
 

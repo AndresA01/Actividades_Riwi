@@ -1,4 +1,5 @@
 # Par o impar
+# Solicita un número entero e indica si es par o impar.
 
 print("Bienvenido")
 

@@ -1,4 +1,5 @@
 # Mayoría de edad
+# Solicita la edad de una persona e indica si puede ingresar a un evento para mayores de 18 años. Valida que la edad no sea negativa.
 
 print("Bienvenido a Blue Label club")
 print("Debemos revisar si cumples con la edad mínima para ingresar")

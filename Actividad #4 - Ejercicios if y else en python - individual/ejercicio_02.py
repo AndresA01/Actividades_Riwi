@@ -1,4 +1,5 @@
 # Suma y resta
+#Solicita dos números, calcula su suma y resta. Indica si la suma es mayor que 10.
 
 print("Bienvenido")
 

@@ -1,4 +1,5 @@
 # Calculadora basica
+# Solicita dos números y una operación (+, -, *, /). Muestra el resultado y evita la división entre cero.
 
 print("Bienvenido")
 
