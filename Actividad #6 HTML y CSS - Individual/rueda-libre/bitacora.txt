@@ -1,0 +1,22 @@
+1- kilometro 0
+
+- Se crea una estructura con las siguientes carpetas rueda-libre/paginas/img. con los archivos index.htm, logo.png y bitacora.txt en sus correspondientes directorios.
+
+- Se realiza la estructura base del index.html como lo solicita el parrafo 3.
+
+- Al abrir las DevTools, ubicarme en la utilidad network y recargar la pagina podemos evidenciar los siguientes datos solicitados:
+URL completa: http://127.0.0.1:5500/Actividad%20%236%20HTML%20y%20CSS%20-%20Individual/rueda-libre/paginas/
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /Actividad%20%236%20HTML%20y%20CSS%20-%20Individual/rueda-libre/paginas/
+Metodo de la petición: GET
+codigo de estado: 304 Not Modified
+
+- se añade la siguiente dirección en el buscador de nuestra pagina /promociones.html y se registra el siguiente codigo de error: 404 Not Found, lo cual indica que la pagina no ha sido encontrada y esto es debido a que no tenemos un archivo con este nombre.
+
+- Los roles a cumplir: 
+HTML: Será quien realice el esqueleto base de la pagina a realizar.
+CSS: Será el encargado de la parte bonita, pues dará vida a la pagina desde lo visual.
+JavaScript: Se encargará de la parte de funcionalidades, integración con aplicaciones, solicitudes a servidor etc..
+
