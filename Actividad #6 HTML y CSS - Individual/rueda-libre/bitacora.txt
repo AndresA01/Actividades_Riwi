@@ -20,3 +20,15 @@ HTML: Será quien realice el esqueleto base de la pagina a realizar.
 CSS: Será el encargado de la parte bonita, pues dará vida a la pagina desde lo visual.
 JavaScript: Se encargará de la parte de funcionalidades, integración con aplicaciones, solicitudes a servidor etc..
 
+2- La vitrina de rueda libre
+
+- Se debe estructurar la pagina a partir de la información brindada.
+
+- Titulo unico principal con el nombre del negocio
+- Secciones para: Quienes somos?, nuestro servicios, como alquilar ? y encuentranos. Cada servicio debe tener su propio subtitulo dentro de "Nuestros servicios"
+- Escribe cada servicio con su subtitulo y un parrafo, resalta con importancia la información clave (ej: "incluye casco y candado")
+- Presenta los cuantro pasos para alquilar en una lista numerada y tres beneficios del servicio en una lista con viñetas.
+- Agregar al menos 2 imagenes guardadas en img/ (portada, una bicicleta y una ruta ) con rutas relativas, texto alternativo descriptivo y ancho definido.
+- Agregar tres tipos de enlace: uno absoluto hacia la ubicación en un mapa (que abra en otra pestaña ), uno para escribir al correo hola@ruedalibre.example y uno interno desde el primero párrafo hacia la sección "Encuentranos".
+- Verifica en DevTools (Elements) que árbol del documento coincide con tu esquema; si un elemento aparece dentro de otro que no corresponde, revisa las etiquetas de cierre.
+- Hacer un commit y push.
