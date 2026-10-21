@@ -30,4 +30,4 @@ Sitio publicado: https://TU-USUARIO.github.io/parche-dev/
 
 ## Hecho por
 
-Tu nombre · [GitHub](https://github.com/TU-USUARIO)
+Tu nombre · [GitHub](https://github.com/AndresA01)
