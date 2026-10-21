@@ -32,9 +32,9 @@
 
 ## 3. Perfiles y extensiones (Etapa 3)
 
-- Con mis palabras, un perfil de VS Code es:
-- ¿Qué cambia en el Explorador entre un perfil y otro?:
-- ¿Por qué VS Code pregunta si confío en el publicador de una extensión?:
+- Con mis palabras, un perfil de VS Code es: 
+- ¿Qué cambia en el Explorador entre un perfil y otro?: 
+- ¿Por qué VS Code pregunta si confío en el publicador de una extensión?: 
 
 ## 4. Duelo de perfiles (Etapa 4)
 
