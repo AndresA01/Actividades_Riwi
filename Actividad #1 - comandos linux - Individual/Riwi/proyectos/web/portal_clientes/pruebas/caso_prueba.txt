@@ -1,3 +1,0 @@
-1. prueba de etiquetas HTML.
-2. prueba de estilos CSS. 
-3. prueba de funcionalidad.
