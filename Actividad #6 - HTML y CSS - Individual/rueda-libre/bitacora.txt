@@ -1,0 +1,57 @@
+1- kilometro 0
+
+- Se crea una estructura con las siguientes carpetas rueda-libre/paginas/img. con los archivos index.htm, logo.png y bitacora.txt en sus correspondientes directorios.
+
+- Se realiza la estructura base del index.html como lo solicita el parrafo 3.
+
+- Al abrir las DevTools, ubicarme en la utilidad network y recargar la pagina podemos evidenciar los siguientes datos solicitados:
+URL completa: http://127.0.0.1:5500/Actividad%20%236%20HTML%20y%20CSS%20-%20Individual/rueda-libre/paginas/
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /Actividad%20%236%20HTML%20y%20CSS%20-%20Individual/rueda-libre/paginas/
+Metodo de la petición: GET
+codigo de estado: 304 Not Modified
+
+- se añade la siguiente dirección en el buscador de nuestra pagina /promociones.html y se registra el siguiente codigo de error: 404 Not Found, lo cual indica que la pagina no ha sido encontrada y esto es debido a que no tenemos un archivo con este nombre.
+
+- Los roles a cumplir: 
+HTML: Será quien realice el esqueleto base de la pagina a realizar.
+CSS: Será el encargado de la parte bonita, pues dará vida a la pagina desde lo visual.
+JavaScript: Se encargará de la parte de funcionalidades, integración con aplicaciones, solicitudes a servidor etc..
+
+2- La vitrina de rueda libre
+
+- Se debe estructurar la pagina a partir de la información brindada.
+
+- Se establece el titulo unico principal con el nombre del negocio
+- Se establecen las secciones para: Quienes somos?, nuestro servicios, como alquilar ? y encuentranos. Cada servicio debe tener su propio subtitulo dentro de "Nuestros servicios"
+- Se escriben cada servicio con su subtitulo y un parrafo, resalta con importancia la información clave (ej: "incluye casco y candado")
+- Se presentan los cuantro pasos para alquilar en una lista numerada y tres beneficios del servicio en una lista con viñetas.
+- Se agregan al menos 2 imagenes guardadas en img/ (portada, una bicicleta y una ruta ) con rutas relativas, texto alternativo descriptivo y ancho definido.
+- Se agregan tres tipos de enlace: uno absoluto hacia la ubicación en un mapa (que abra en otra pestaña ), uno para escribir al correo hola@ruedalibre.example y uno interno desde el primero párrafo hacia la sección "Encuentranos".
+- Se verifica en DevTools (Elements) que árbol del documento coincide con tu esquema; si un elemento aparece dentro de otro que no corresponde, revisa las etiquetas de cierre.
+- Re realiza el commit y push.
+
+3- Tarifas claras: tablas y rutas relativas
+
+- Se crea una nueva pagina llamada tarifas dentro de la carpeta paginas con su estructura base completa
+- Se contruye una tabla de tarifas de alquiler con título de tabla, grupo de encabezados, grupo de datos y celdas de ancabezado que indican si describen una columna o una fila.
+- Se construye una segunda tabla con lo recorridos guiados, siguiendo la misma estructura, Se asgina a su sección un id para poder enlazarla directamente.
+- Se agrega debajo de las tablas la información adicional del cliente: la nota sobre casco y candado, los horarios de salida y la lista de que llevar o recomendaciones.
+- Se muestra el logo ubicado en la carpeta img/.
+- Se enlazan las páginas en ambos sentidos: desde el inicio hacia tarifas y desde tarifas de vuelta a inicio, ademas desde el servicio de rutas guiadas en inicio, enlaza directamente a la tabla de recorridos guiados de ratifas.html.
+- Se verifica en Network que no haya errores 404 y se hace commit y push.
+
+4- Sitio navegable y página de reservas
+
+- Se crea la página reservas.html dentro de la carpeta paginas, con la estructura base de HTML y un título propio: “Rueda Libre | Reservas”. Se incluye el encabezado principal “Reserva tu bicicleta”.
+- Se agrega el correo de contacto hola@ruedalibre.example mediante un enlace mailto, para que el usuario pueda abrir su aplicación de correo y escribir un mensaje.
+- Se presenta el horario de atención usando una lista de definiciones con las etiquetas <dl>, <dt> y <dd>: de lunes a viernes, de 7:00 a. m. a 7:00 p. m.; sábados, domingos y festivos, de 6:00 a. m. a 2:00 p. m.
+- Se incorpora un menú de navegación común en las tres páginas, compuesto por una lista <ul> con enlaces <a> a Inicio, Tarifas y rutas, y Reservas. Las rutas se ajustan según la ubicación de cada archivo: desde index.html se utilizan paginas/tarifas.html y paginas/reservas.html; desde tarifas.html se utilizan ../index.html y reservas.html; desde reservas.html se utilizan ../index.html y tarifas.html.
+- Se añade un pie de página común al final de index.html, paginas/tarifas.html y paginas/reservas.html. Incluye el nombre del negocio, el correo de contacto y el aviso de derechos de autor con el año 2026.
+- Se agregan enlaces “Reservar ahora” en la página de inicio y debajo de la tabla de recorridos guiados en tarifas.html. Ambos dirigen a la página de reservas usando la ruta relativa correspondiente.
+- Se revisan los títulos de las tres páginas para que sean únicos y descriptivos, y se comprueba que los enlaces del menú permitan desplazarse entre las páginas.
+- Se utiliza la herramienta Network de DevTools para revisar las solicitudes y comprobar que los archivos enlazados carguen correctamente, prestando atención a posibles errores 404.
+- Se documentan las rutas relativas utilizadas entre las páginas para dejar registro del archivo de origen, el destino y la ruta escrita.
+- Se prepara la versión v0.1 del sitio para registrarla en Git mediante un commit y subir los cambios al repositorio remoto con push.
