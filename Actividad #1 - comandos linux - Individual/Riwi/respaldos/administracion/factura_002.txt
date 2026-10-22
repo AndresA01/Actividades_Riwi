@@ -1,0 +1,4 @@
+Número: 002.
+Cliente: Luis.
+Valor: 150000.
+Estado: pendiente.
