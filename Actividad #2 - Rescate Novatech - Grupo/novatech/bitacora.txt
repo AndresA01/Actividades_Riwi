@@ -1,0 +1,67 @@
+Equipo los chachos: Andres Acevedo, Juan Pineda, Victor Mercado, samuel Patiño
+
+Mision 1: Reconocimiento
+
+1- La ruta absoluta de la carpeta novatech se encuentra en ~/novatech
+
+2- La cantidad de carpetas adicionales dentro novatech es de 10 carpetas en total, esto lo sabemos gracias al comando find [ruta] -type d | wc -l
+
+3- En el servidor viejo encontramos un total de 5 archivos .tmp, esto lo sabemos gracias a el comando find [ruta] -type f -name *.tmp
+
+4- El archivo notas_dev.txt menciona lo siguiente: Recordatorio: el cliente queria algo con cafe... o era te ?
+
+
+Mision 2 - Tras las pistas
+
+1- Para encontrar la primera pista fue necesario el ejecutar el comando ls -a parar poder ver el archivo que contiene la pista #1, en ella nos dice Bien hecho. La siguiente pista esta en archivo_muerto, dentro del año mas reciente. Tambien esta oculta.
+
+2- Para encontrar la segunda pista fue necesario ejecutar nuevamente el comando ls -a en la ruta indicada, pudiendo encontrar la pista #2, la cual indica lo siguiente "Vas bien. Revisa corre/bandeja. El mensaje que importa es el mas pesado (ls -l te lo dice).
+
+3- Para encontrar la tercera pista fue necesario ejecutar el comando ls -l para ver el tamaño de los archivos en la ruta especificada, con eso se accede al archivo con la siguiente información :
+Nombre del cliente: Cafe Montana
+Ruta absoluta del archivo donde encontraron el pedido:
+Palabra clave: ESPRESSO
+
+4- Requisitos del cliente:
+
+1. Carpeta del proyecto con el nombre "cafe-montana".
+
+2. El la raiz de la carpeta crear los siguientes archivos: "contacto", "nosotros".
+
+3. Crear una carpeta con el nombre "Paginas" y dentro de ella crear el archivo "index.html" y "menu.html".
+
+4. Crear las siguientes carpetas con al menos 1 archivo dentro con su correspondiente extension: Estilos en  "css" escripts  "js" imagenes en "assets/img" audio en "assets/audio" PDFs en "docs".
+
+5. Crear script principal con el nombre "app.js" y un banner con el nombre "banner.jpg".
+
+6. Crea un archivo README.md con el nombre del equipo y un ".gitignore.
+
+Mision 3 - Respaldo
+
+1- Se realizo una copia completa del servidor-viejo llamada respaldo_servidor en novatech.
+
+2- Se intenta realizar la copia de la carpeta con los archivos con el comando cp, el cual no funciona debido a que este comando solo funciona para archivos individuales.
+
+3- Para poder realizar la copia de una carpeta con todo su contenido incluyendo subcarpetas y archivos ocultos es necesario el comando cp -r, sin el -r no se realizará la copia de la carpeta incluyendo su contenido ya que el comando cp solo funciona para mover archivos individuales.
+
+Mision 4 - Construir el proyecto
+
+1- Se creó una carpeta llamada "cafe-montana" dentro de novatech.
+
+2- se crean las carpetas y subcarpetas solicitados en conjunto con los archivos pertinentes en su interior.
+
+3- Se movió cada archivo de servidor viejo a su correspondiente carpeta dentro de "cafe-montana".
+
+4- Se crea la pagina solicitada por el cliente.
+
+Mision 5 - Limpieza y entrega
+
+1- Se realizo el borrado de todos los archivos con extension .tmp y .log utilizando el comando find [ruta] -type f -name"*extension" -delete, esto realizo el borrado de dichos archivos dentro de la carpeta novatech y todas su subcarpetas.
+
+2- Se realiza el borrado de la carpeta servidor_viejo.
+
+3- Se edita el README.md dentro de la carpeta proyecto cafe-montana y se agrega en nombre del cliente junto con los integrantes del grupo por cada linea.
+
+4- Se crea el .gitignore solictado por el cliente.
+
+5- Se logran los 14 puntos de la actividad.
