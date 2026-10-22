@@ -138,17 +138,21 @@
 
 | Herramienta | Chrome: nombre y atajo | Firefox: nombre y atajo | Diferencia que noté |
 |---|---|---|---|
-| Inspeccionar HTML y CSS | | | |
-| Consola | | | |
-| Red | | | |
-| Simulación de dispositivos | | | |
-| Almacenamiento local | | | |
-| Mensaje del error que reintroduje | | | |
+| Inspeccionar HTML y CSS |Elements Ctrl + Shift + C|Inspector Ctrl + Shift + C|Ambas permiten modificar elementos y estilos. Firefox organiza algunas opciones de manera diferente.|
+| Consola |Console Ctrl + Shift + J|Consola Ctrl + Shift + K|Las dos permiten ejecutar JavaScript y revisar errores, pero presentan los mensajes de forma diferente.|
+| Red |Network Ctrl + Shift + I y pestaña Network|Red Ctrl + Shift + E|Ambas muestran las solicitudes, tamaños y tiempos de carga de los archivos.|
+| Simulación de dispositivos |Device Toolbar Ctrl + Shift + M|Modo de diseño adaptable Ctrl + Shift + M|Ambas permiten probar diferentes resoluciones de pantalla.|
+| Almacenamiento local |Application → Local Storage|Almacenamiento → Almacenamiento local|La ubicación y el nombre de las herramientas cambian, pero ambas permiten consultar y modificar los datos guardados.|
+| Mensaje del error que reintroduje |Cannot read properties of null (reading 'addEventListener')|can't access property "addEventListener", boton is null|Firefox suele indicar directamente qué variable es null, lo que puede facilitar la identificación del problema.|
 
-- Una característica de Firefox interesante o diferente a Chrome (qué es, para qué sirve y cómo la probé):
+- Una característica de Firefox interesante o diferente a Chrome (qué es, para qué sirve y cómo la probé): Una herramienta que me pareció interesante fue el Editor de estilos de Firefox. Permite visualizar y modificar los archivos CSS de una página desde las herramientas de desarrollo. Para probarlo, puedo abrir el archivo styles.css, modificar temporalmente el color de fondo y observar cómo cambia la apariencia de la página sin editar directamente el archivo en VS Code.
 
 ## 11. Reflexión final (Etapa 11)
 
-- La herramienta que más voy a usar y por qué:
-- Lo más difícil del día y cómo lo resolví:
-- Las DevTools explicadas para alguien que no programa (3 líneas):
+- La herramienta que más voy a usar y por qué: La herramienta que más voy a utilizar es la consola, porque me permite identificar errores de JavaScript, comprobar valores de variables y ejecutar instrucciones para entender cómo funciona mi código. Considero que será muy útil cuando esté desarrollando páginas web.
+- Lo más difícil del día y cómo lo resolví: Lo más difícil fue identificar por qué el botón de saludo no funcionaba. Al revisar la consola encontré un error relacionado con addEventListener. Después de analizar el código, descubrí que el identificador del botón en JavaScript no coincidía con el del HTML. Lo solucioné corrigiendo el selector y también un error en el nombre de una variable.
+- Las DevTools explicadas para alguien que no programa (3 líneas): Las DevTools son herramientas que permiten revisar cómo funciona una página web desde el navegador. 
+
+   Sirven para encontrar errores, modificar temporalmente la apariencia y comprobar cómo se cargan los archivos.
+
+   Son útiles para entender qué está pasando dentro de una página y detectar problemas sin modificar directamente sus archivos originales.
