@@ -35,7 +35,158 @@
 
     <main id="contenido">
 
+        <h2>Inscripción</h2>
+            <p>
+                La entrada es gratuita y los cupos son limitados. <br>
+                Completa el formulario para reservar el tuyo. <br>
+            </p>
+            <p>    
+                Los campos marcados con * son obligatorios. 
+            </p>
 
+        <form action="gracias.html" method="get">
+
+            <fieldset>
+                <legend>Tus datos</legend>
+                
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <br><br>
+
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <br><br>
+
+                <label for="celular">Celular *</label>
+                <input type="tel" id="celular" name="celular" pattern="3[0-9]{9}" title="Escribe 10 dígitos, empieza por 3" required>
+
+
+                <br><br>
+
+                <label for="ciudad">Ciudad</label>
+                
+                <select id="ciudad" name="ciudad">
+
+                    <option value="">Selecciona tu ciudad</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Bello">Bello</option>
+                    <option value="itagüí">Itagüí</option>
+                    <option value="Envigado">Envigado</option>
+                    <option value="Sabaneta">Sabaneta</option>
+                    <option value="La Estrella">La Estrella</option>
+                    <option value="Caldas">Caldas</option>
+                    <option value="Copacabana">Copacabana</option>
+                    <option value="Girardota">Girardota</option>
+                    <option value="Barbosa">Barbosa</option>
+                    <option value="Otra">Otra</option>
+
+                </select>
+
+            </fieldset>
+
+            <fieldset>
+                
+                <legend>¿En qué momento estás? *</legend>
+
+                    <input type="radio" id="perfil-iniciado" name="perfil" value="empezando" required>
+
+                        <label for="perfil-iniciado">Estoy empezando a programar</label>
+                        
+                            <br>
+
+                    <input type="radio" id="perfil-no-tecnologia" name="perfil" value="programo-no-trabajo-tecnologia">
+
+                        <label for="perfil-no-tecnologia">Ya programo, pero no trabajo en tecnología</label>
+
+                            <br>
+
+                    <input type="radio" id="perfil-tecnologia" name="perfil" value="trabajo-tecnologia">
+
+                        <label for="perfil-tecnologia">Trabajo en tecnología</label>
+
+            </fieldset>
+            
+            <fieldset>
+
+                <legend>¿Qué temas te interesan?</legend>
+
+                    <input type="checkbox" id="tema-web" name="temas" value="desarrollo-web">
+
+                        <label for="tema-web">Desarrollo web</label>
+
+                            <br>
+
+                    <input type="checkbox" id="tema-sql" name="temas" value="datos-sql">
+
+                        <label for="tema-sql">Datos y SQL</label>
+
+                            <br>
+
+                    <input type="checkbox" id="tema-accesibilidad" name="temas" value="accesibilidad">
+
+                        <label for="tema-accesibilidad">Accesibilidad</label>
+
+                            <br>
+
+                    <input type="checkbox" id="tema-python" name="temas" value="python">
+
+                        <label for="tema-python">Python</label>
+
+                            <br>
+
+                    <input type="checkbox" id="tema-nube" name="temas" value="despliegue-nube">
+
+                        <label for="tema-nube">Despliegue en la nube</label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Agenda</legend>
+
+                    <input type="checkbox" id="taller-python" name="taller" value="primer-bot-python">
+
+                        <label for="taller-python">Quiero inscribirme al taller "Tu primer bot con Python" (30 cupos, trae tu computador)</label>
+
+                            <br><br>
+
+                        <label for="talla">Talla de camiseta:</label>
+
+                            <select id="talla" name="talla">
+
+                                <option value="">Selecciona tu talla</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+
+                            </select>
+
+                                <br><br>
+
+                        <label for="expectativas">¿Qué esperas aprender en Parche Dev?</label>
+
+                            <br>
+
+                        <textarea id="expectativas" name="expectativas" maxlength="300" rows="5" cols="40" placeholder="Cuéntanos qué esperas aprender..."></textarea>
+
+                            <br><br>
+
+                    <input type="checkbox" id="acepta-conducta" name="acepta_conducta" value="si" required>
+
+                            <label for="acepta-conducta">Acepto el código de <a href="conducta.html">conducta</a> del evento. *</label>
+
+                                <br><br>
+
+                    <button type="submit">Reservar mi cupo</button>
+                    
+            </fieldset>
+
+        </form>
 
     </main>
 
