@@ -141,3 +141,114 @@ Justificación de tres elecciones de controles:
 
 También se usaron email para validar el formato del correo, tel para el celular, date para la fecha, number para la cantidad, select para el plan y el recorrido guiado, y checkbox obligatorio para aceptar las políticas. El botón final es type="submit".
 
+7- Reservas sin errores: validación y teclado
+
+Objetivo:
+Aplicar validación nativa de HTML al formulario de reservas según las reglas de negocio del cliente y facilitar su uso con teclado.
+
+Reglas de validación aplicadas en paginas/reservas.html:
+- Nombre completo: input type="text", required y minlength="3".
+- Número de documento: input type="text", required y pattern="[0-9]{6,10}". Se usa inputmode="numeric" para sugerir teclado numérico en dispositivos compatibles. El atributo title y el texto de ayuda explican que se aceptan entre 6 y 10 dígitos, sin letras.
+- Correo: input type="email" y required para validar el formato.
+- Celular: input type="tel", required y pattern="3[0-9]{9}". El atributo title y el texto de ayuda indican que deben ser 10 dígitos y comenzar por 3.
+- Fecha del alquiler: input type="date", required, min="2026-11-01" y max="2026-12-31".
+- Tipo de bicicleta: grupo de radio con name="tipo_bicicleta"; el atributo required en una opción del grupo exige que se seleccione una.
+- Plan: select con required y una opción inicial vacía y deshabilitada para obligar a elegir un plan.
+- Cantidad de bicicletas: input type="number", required, min="1", max="6" y step="1".
+- Recorrido guiado: select con opción “Ninguno” y las tres rutas. “Ninguno” es una selección válida porque el recorrido guiado puede ser ninguno.
+- Comentarios: textarea opcional con maxlength="300".
+- Políticas: checkbox required.
+- Se mantiene form con action="#" y method="post". El botón de envío es type="submit". Los controles conservan id, name y etiquetas asociadas mediante for.
+
+Tabla de pruebas de validación nativa
+
+Nota: esta tabla registra los resultados previstos a partir de los atributos de validación presentes en el HTML. No se ha ejecutado una prueba interactiva real en un navegador desde aquí; para cumplir completamente la comprobación práctica, repite los casos en el navegador y confirma los mensajes nativos.
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido en revisión del HTML |
+|---|---|---|---|
+| Nombre completo | Vacío | Bloquear envío por required | Configurado: required |
+| Nombre completo | Ana | Aceptar; tiene 3 caracteres | Configurado: minlength="3" |
+| Documento | 12345 | Bloquear: menos de 6 dígitos | Configurado: patrón de 6 a 10 dígitos |
+| Documento | 123ABC | Bloquear: contiene letras | Configurado: el patrón solo acepta dígitos |
+| Documento | 123456 | Aceptar: 6 dígitos numéricos | Configurado: coincide con el patrón |
+| Correo | usuario@ | Bloquear: formato inválido | Configurado: type="email" y required |
+| Celular | 3001234567 | Aceptar: 10 dígitos, empieza por 3 | Configurado: coincide con el patrón |
+| Celular | 1234567890 | Bloquear: no empieza por 3 | Configurado: no coincide con el patrón |
+| Celular | 300123 | Bloquear: menos de 10 dígitos | Configurado: no coincide con el patrón |
+| Fecha del alquiler | 2026-10-31 | Bloquear: fecha anterior al rango | Configurado: min="2026-11-01" |
+| Fecha del alquiler | 2027-01-01 | Bloquear: fecha posterior al rango | Configurado: max="2026-12-31" |
+| Cantidad de bicicletas | 0 | Bloquear: menor que 1 | Configurado: min="1" |
+| Cantidad de bicicletas | 7 | Bloquear: mayor que 6 | Configurado: max="6" |
+| Cantidad de bicicletas | 2.5 | Bloquear: no es entero | Configurado: step="1" |
+| Comentarios | 301 caracteres | Impedir superar el límite | Configurado: maxlength="300" |
+| Políticas de alquiler | Casilla sin marcar | Bloquear envío | Configurado: checkbox con required |
+
+Revisión de navegación con teclado:
+- El orden del documento sigue el orden visual y lógico: datos personales, datos del alquiler, confirmación y botón de envío.
+- Tab avanza por los controles interactivos; Shift + Tab retrocede.
+- Las opciones de tipo de bicicleta comparten name y se pueden recorrer/seleccionar con el teclado según el navegador.
+- La casilla de políticas se puede marcar y desmarcar con la barra espaciadora cuando tiene el foco.
+- Enter puede enviar el formulario cuando la validación es satisfactoria.
+- Verificación manual pendiente: recorrer el formulario en un navegador real, comprobar los mensajes nativos y confirmar que no haya saltos de foco inesperados.
+
+Commit sugerido:
+git add paginas/reservas.html bitacora.txt
+git commit -m "Agregar validación nativa al formulario de reservas"
+git push
+
+
+8- Rueda Libre v0.2 en línea: accesible y publicada
+
+Objetivo: auditar la accesibilidad de index.html, paginas/tarifas.html y paginas/reservas.html, documentar la paleta de marca y preparar la publicación en GitHub Pages.
+
+Auditoría de accesibilidad (inspección estática de HTML, no sustituye pruebas de navegador):
+| Página | Hallazgo | Corrección aplicada |
+|---|---|---|
+| Inicio y tarifas | Texto alternativo del logotipo poco claro y redundante | Se reemplazó por «Rueda Libre, alquiler de bicicletas en Medellín» |
+| Inicio | Texto alternativo de bicicleta con descripción gramatical poco clara | Se cambió a «Bicicleta verde disponible para alquiler» |
+| Inicio | Texto alternativo de la ruta mejorable | Se cambió a «Grupo de ciclistas participando en un recorrido guiado» |
+| Inicio | Enlaces «Ubicación», «Correo» y «WhatsApp» poco específicos fuera de contexto | Se sustituyeron por textos que explican su destino o acción |
+| Inicio | Enlace «Encuéntranos» no describe claramente su destino | Se reemplazó por «Ver información de contacto y ubicación» |
+| Inicio y tarifas | «Reservar ahora» es genérico fuera de contexto | Se reemplazó por «Ir al formulario de reserva de bicicletas» |
+| Las tres páginas | No había enlace directo para omitir la navegación repetida con teclado | Se añadió «Saltar al contenido principal», enlazado a id="contenido-principal" en main |
+
+Comprobaciones estáticas satisfactorias:
+- Las tres páginas declaran lang="es", contienen un h1 y un main, y mantienen la jerarquía de encabezados.
+- Todas las imágenes referenciadas tienen atributo alt. Debe comprobarse visualmente la función real de cada imagen para confirmar su descripción.
+- Los enlaces internos relativos se mantienen; el enlace de salto apunta al main de cada página.
+- Las etiquetas del formulario apuntan a controles con id, y todos los controles mantienen name.
+- No se agregó tabindex positivo ni se alteró el orden del DOM; debe comprobarse el recorrido real con teclado.
+
+Evaluación de contraste WCAG (cálculo de luminancia relativa; redondeado a dos decimales):
+| Texto | Fondo | Contraste | Clasificación |
+|---|---|---|---|
+| Blanco #FFFFFF | Verde Ruta #1E7A4F | 5,31:1 | Apta para texto normal |
+| Blanco #FFFFFF | Naranja Pedal #F39A2B | 2,22:1 | No apta |
+| Azul Noche #14213D | Naranja Pedal #F39A2B | 7,20:1 | Apta para texto normal |
+| Azul Noche #14213D | Crema #FAF6EF | 14,83:1 | Apta para texto normal |
+| Gris Asfalto #5B6470 | Crema #FAF6EF | 5,57:1 | Apta para texto normal |
+| Verde Ruta #1E7A4F | Crema #FAF6EF | 4,93:1 | Apta para texto normal |
+| Naranja Pedal #F39A2B | Crema #FAF6EF | 2,06:1 | No apta |
+| Blanco #FFFFFF | Azul Noche #14213D | 15,97:1 | Apta para texto normal |
+
+Criterios WCAG AA: 4,5:1 para texto normal y 3:1 para texto grande. Ninguna de las ocho combinaciones es apta exclusivamente para texto grande. Verificar opcionalmente los valores en WebAIM Contrast Checker o DevTools.
+
+Mapa de uso de color para aplicar posteriormente con CSS:
+- Fondo general: Crema #FAF6EF.
+- Encabezados, títulos y texto principal: Azul Noche #14213D sobre Crema.
+- Texto secundario: Gris Asfalto #5B6470 sobre Crema.
+- Enlaces: Verde Ruta #1E7A4F sobre Crema; deben identificarse también con subrayado o señal adicional, no solo por color.
+- Botones principales: Verde Ruta #1E7A4F con texto blanco.
+- Botones secundarios y destacados: Naranja Pedal #F39A2B con texto Azul Noche.
+- Encabezado o pie de página: Azul Noche #14213D con texto blanco.
+- Evitar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema.
+
+Pruebas manuales pendientes antes de cerrar el MiniReto 8:
+1. Navegar por las tres páginas con Tab, Shift+Tab, flechas, espacio y Enter. Comprobar el enlace «Saltar al contenido principal», el orden del foco, las etiquetas y los mensajes de validación.
+2. Confirmar que las imágenes reales existen en img/ con exactamente estos nombres y mayúsculas: logo-rueda-libre.jpg, bicicleta.png y ruta.png.
+3. Verificar las tres páginas y enlaces en GitHub Pages, incluidas las rutas internas y los enlaces externos. Revisar Network para detectar 404.
+4. En GitHub: Settings > Pages > Build and deployment > Deploy from a branch > main > /(root) > Save (si la carpeta rueda-libre es la raíz del repositorio; si está dentro de otro repositorio, habrá que adaptar la publicación).
+5. Copiar la URL pública real de GitHub Pages y agregarla en la descripción/About del repositorio y aquí en la bitácora.
+
+URL pública v0.2: PENDIENTE DE PUBLICACIÓN Y VERIFICACIÓN.
+Estado: correcciones HTML y mapa de color preparados; publicación y pruebas manuales pendientes.
