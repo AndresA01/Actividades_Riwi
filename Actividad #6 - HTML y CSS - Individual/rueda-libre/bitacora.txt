@@ -55,3 +55,77 @@ JavaScript: Se encargará de la parte de funcionalidades, integración con aplic
 - Se utiliza la herramienta Network de DevTools para revisar las solicitudes y comprobar que los archivos enlazados carguen correctamente, prestando atención a posibles errores 404.
 - Se documentan las rutas relativas utilizadas entre las páginas para dejar registro del archivo de origen, el destino y la ruta escrita.
 - Se prepara la versión v0.1 del sitio para registrarla en Git mediante un commit y subir los cambios al repositorio remoto con push.
+
+5- Estructura con significado
+
+Objetivo:
+Reestructurar index.html, paginas/tarifas.html y paginas/reservas.html con etiquetas semánticas, conservando el contenido y la navegación del sitio Rueda Libre.
+
+Esquema de regiones de cada página
+
+A. index.html — Inicio
+- header: contiene el título principal “Rueda Libre” y el menú de navegación.
+- nav: navegación principal con enlaces a Inicio, Tarifas y rutas, y Reservas.
+- main: contiene el contenido específico de la página.
+  - Imagen del logo.
+  - section: ¿Quiénes somos?
+  - section: Nuestros servicios.
+    - article: Alquiler por horas.
+    - article: Alquiler por días.
+    - article: Rutas guiadas.
+  - section: ¿Cómo alquilar?
+    - Lista ordenada con los cuatro pasos.
+    - section: Beneficios.
+  - section: Encuéntranos, con el enlace interno desde el primer párrafo.
+- footer: nombre del negocio, correo y derechos de autor.
+
+- paginas/tarifas.html — Tarifas y rutas
+- header: contiene el nombre del negocio, el título principal “Tarifas y rutas” y el menú de navegación.
+- nav: navegación principal con enlaces a las tres páginas.
+- main: contiene la introducción, el logo y el contenido de tarifas y rutas.
+  - section: Tarifas de alquiler, con la tabla de precios y la nota sobre casco y candado.
+  - section: Rutas guiadas, con la tabla de recorridos y el enlace “Reservar ahora”.
+  - section: Horarios de salida.
+  - aside: Recomendaciones para los usuarios.
+- footer: nombre del negocio, correo y derechos de autor.
+
+- paginas/reservas.html — Reservas
+- header: contiene el nombre del negocio, el título principal “Reserva tu bicicleta” y el menú de navegación.
+- nav: navegación principal con enlaces a las tres páginas.
+- main: contiene el contenido de reservas.
+  - section: Reserva tu bicicleta, con información sobre la disponibilidad del formulario y el enlace de correo.
+  - aside: Horarios de atención, con la lista de definiciones dl, dt y dd.
+- footer: nombre del negocio, correo y derechos de autor.
+
+Justificación de etiquetas
+- header identifica el encabezado de cada página.
+- nav identifica el menú principal de navegación.
+- main delimita el contenido principal único de cada página.
+- section agrupa contenido temático relacionado y cada sección cuenta con un encabezado.
+- article identifica cada servicio independiente de la página de inicio.
+- aside contiene información complementaria: recomendaciones en tarifas y horarios de atención en reservas.
+- footer identifica el pie común del sitio.
+- No se utilizaron div ni span, porque las etiquetas semánticas disponibles describen adecuadamente la estructura requerida.
+
+Verificaciones pendientes tras integrar los archivos:
+- Abrir las tres páginas en el navegador y comprobar que se conserva el contenido y la presentación.
+- Comprobar los enlaces del menú, el enlace directo a #rutas y “Reservar ahora”.
+- Revisar que cada página tenga un único main y un footer.
+- Confirmar que cada section tenga encabezado y que no existan errores 404.
+- Realizar commit y push de los cambios.
+
+- Revisión final de estructura con significado
+
+- Las tres páginas contienen header, nav, un único main y footer.
+- En index.html, cada bloque temático está dentro de section y cada servicio está dentro de article.
+- El primer párrafo de la página de inicio contiene un enlace interno a #encuentranos.
+- En tarifas.html, cada tabla está en su propia section e incluye caption, thead, tbody y encabezados th con scope.
+- Las recomendaciones están en aside y la nota de casco y candado resalta esa información con strong.
+- En reservas.html, los horarios están en aside y utilizan dl, dt y dd.
+- Se corrigieron errores ortográficos evidentes en el contenido editado y se normalizó la escritura de los horarios.
+- No se utilizan div ni span en las tres páginas.
+- Se conservaron los enlaces de navegación, el enlace directo a #rutas y los enlaces “Reservar ahora”.
+- Pendiente de comprobación local: las imágenes referenciadas (img/logo-rueda-libre.jpg, img/bicicleta.png e img/ruta.png) deben estar en la carpeta img del proyecto original; los archivos de imagen no venían incluidos en los archivos recibidos para esta revisión. Abrir con Live Server y comprobar Network antes de afirmar que no hay errores 404.
+- Pendiente del usuario: verificar presentación en el navegador y realizar commit y push.
+
+
