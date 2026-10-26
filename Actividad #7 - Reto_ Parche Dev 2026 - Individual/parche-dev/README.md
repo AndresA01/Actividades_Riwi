@@ -58,3 +58,8 @@ Sitio publicado: https://andresa01.github.io/Actividades_Riwi/
 ## Hecho por
 
 Neider Andres Acevedo A. · [GitHub](https://github.com/AndresA01)
+
+
+![Auditoría Lighthouse de la página de inicio](img/prueba-inicio.png)
+![Auditoría Lighthouse de la página de agenda](img/prueba-agenda.png)
+![Auditoría Lighthouse de la página de inscripcion](img/prueba-inscripcion.png)
