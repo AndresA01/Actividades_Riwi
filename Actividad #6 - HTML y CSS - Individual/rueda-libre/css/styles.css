@@ -1,0 +1,403 @@
+/* =========================================================
+   RUEDA LIBRE v1.0 — hoja de estilos compartida
+   ========================================================= */
+
+/* 1. Variables de marca, tipografía y espaciado */
+:root {
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #FAF6EF;
+    --gris-asfalto: #5B6470;
+
+    --fuente-titulos: "Montserrat", "Arial", sans-serif;
+    --fuente-texto: "Open Sans", "Segoe UI", sans-serif;
+
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
+}
+
+/* 2. Base, modelo de caja y tipografía */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: var(--espacio-lg) var(--espacio-lg) 7rem;
+    color: var(--azul-noche);
+    background: var(--crema);
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-block: var(--espacio-lg) var(--espacio-sm);
+    color: var(--azul-noche);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-block: var(--espacio-md);
+}
+
+a {
+    color: var(--verde-ruta);
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--azul-noche);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 0.2rem solid var(--verde-ruta);
+    outline-offset: 0.2rem;
+}
+
+/* 3. Encabezado y navegación compartidos */
+header {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: var(--espacio-md);
+    border-bottom: 0.2rem solid var(--verde-ruta);
+}
+
+.marca {
+    margin: 0;
+    color: var(--verde-ruta);
+    font-family: var(--fuente-titulos);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+header h1 {
+    margin-block: var(--espacio-xs) var(--espacio-md);
+}
+
+nav ul,
+#menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espacio-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu li {
+    display: inline-block;
+}
+
+#menu a {
+    color: var(--gris-asfalto);
+    text-decoration-thickness: 0.12em;
+}
+
+#menu a.activo {
+    color: var(--verde-ruta);
+    font-weight: 700;
+    text-decoration-thickness: 0.18em;
+    text-underline-offset: 0.25em;
+}
+
+#menu a:hover,
+#menu a:focus {
+    color: var(--azul-noche);
+    text-decoration-thickness: 0.18em;
+    text-underline-offset: 0.25em;
+}
+
+/* 4. Contenido, portada y tarjetas de servicios */
+#contenido-principal {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: var(--espacio-lg) var(--espacio-sm) var(--espacio-xl);
+}
+
+section,
+article,
+aside {
+    margin-block: var(--espacio-lg);
+}
+
+.portada {
+    display: block;
+    min-height: 35vh;
+    margin-block: var(--espacio-lg);
+    padding: var(--espacio-xl);
+    background: #E8F5EF;
+    border: 2px solid var(--verde-ruta);
+    border-radius: 0.75rem;
+}
+
+.servicios {
+    display: block;
+}
+
+.tarjeta-servicio {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0 0 var(--espacio-lg);
+    padding: var(--espacio-md);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 0.75rem;
+    background: #FFFFFF;
+    box-shadow: 0 0.15rem 0.4rem rgb(20 33 61 / 8%);
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.35rem;
+}
+
+.tarjeta-electrica {
+    padding-top: var(--espacio-xl);
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-xs);
+    right: var(--espacio-xs);
+    padding: 0.2rem var(--espacio-sm);
+    border-radius: 0.3rem;
+    background: var(--naranja-pedal);
+    color: var(--azul-noche);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* 5. Botones de acción y acceso fijo a WhatsApp */
+a.boton-accion {
+    display: inline-block;
+    margin-block: var(--espacio-sm);
+    padding: var(--espacio-xs) var(--espacio-md);
+    border: 0.125rem solid var(--verde-ruta);
+    border-radius: 0.35rem;
+    background: var(--verde-ruta);
+    color: var(--crema);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.boton-accion:hover,
+a.boton-accion:focus {
+    border-color: var(--azul-noche);
+    background: var(--azul-noche);
+    color: var(--crema);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.whatsapp-fijo {
+    position: fixed;
+    right: var(--espacio-lg);
+    bottom: var(--espacio-lg);
+    z-index: 1000;
+    display: inline-block;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border: 0.15rem solid var(--crema);
+    border-radius: 999px;
+    background: var(--verde-ruta);
+    color: var(--crema);
+    box-shadow: 0 0.25rem 0.75rem rgb(20 33 61 / 25%);
+    text-decoration: none;
+}
+
+.whatsapp-fijo:hover,
+.whatsapp-fijo:focus-visible {
+    background: var(--azul-noche);
+    color: var(--crema);
+}
+
+/* 6. Tablas de tarifas y recorridos */
+table {
+    width: 100%;
+    margin-block: var(--espacio-lg);
+    border-collapse: collapse;
+}
+
+caption {
+    margin-block-end: var(--espacio-xs);
+    font-weight: 600;
+    text-align: left;
+}
+
+th,
+td {
+    padding: var(--espacio-sm);
+    border: 1px solid var(--gris-asfalto);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--azul-noche);
+    color: var(--crema);
+}
+
+/* 7. Formulario y controles */
+form {
+    width: 100%;
+    max-width: 48rem;
+    margin-inline: auto;
+}
+
+form fieldset {
+    margin-block: var(--espacio-lg);
+    padding: var(--espacio-md);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 0.5rem;
+}
+
+form p {
+    margin-block: var(--espacio-md);
+}
+
+form label {
+    display: block;
+    margin-block-end: var(--espacio-xs);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: var(--espacio-sm);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 0.35rem;
+    background: #FFFFFF;
+    color: var(--azul-noche);
+}
+
+form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-inline-end: var(--espacio-xs);
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    display: inline-block;
+    margin-block-end: 0;
+}
+
+button {
+    padding: var(--espacio-sm) var(--espacio-lg);
+    border: 2px solid var(--verde-ruta);
+    border-radius: 0.5rem;
+    background: var(--verde-ruta);
+    color: var(--crema);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    border-color: var(--azul-noche);
+    background: var(--azul-noche);
+    color: var(--crema);
+}
+
+/* 8. Pie de página compartido */
+small,
+footer {
+    color: var(--gris-asfalto);
+}
+
+footer {
+    max-width: 72rem;
+    margin: var(--espacio-xl) auto 0;
+    padding: var(--espacio-md) var(--espacio-sm);
+    border-top: 1px solid var(--gris-asfalto);
+}
+
+/* 9. Adaptación a pantallas estrechas */
+@media (max-width: 40rem) {
+    body {
+        padding: var(--espacio-sm) var(--espacio-sm) 6rem;
+    }
+
+    header {
+        padding: var(--espacio-sm);
+    }
+
+    #contenido-principal {
+        padding-inline: 0;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacio-xs);
+    }
+
+    .portada {
+        min-height: 25vh;
+        padding: var(--espacio-md);
+    }
+
+    .tarjeta-servicio {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: var(--espacio-xs);
+    }
+
+    .whatsapp-fijo {
+        right: var(--espacio-sm);
+        bottom: var(--espacio-sm);
+    }
+}

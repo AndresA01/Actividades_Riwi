@@ -252,3 +252,221 @@ Pruebas manuales pendientes antes de cerrar el MiniReto 8:
 
 URL pública v0.2: PENDIENTE DE PUBLICACIÓN Y VERIFICACIÓN.
 Estado: correcciones HTML y mapa de color preparados; publicación y pruebas manuales pendientes.
+
+9- La identidad de Rueda Libre: hoja de estilos externa, variables y herencia
+
+Objetivo:
+Crear css/styles.css y conectarlo a index.html, paginas/tarifas.html y paginas/reservas.html con variables CSS, Google Fonts y colores de marca aplicados por herencia.
+
+Cambios realizados a partir de los archivos recibidos:
+- Se conservaron los contenidos de las tres páginas y se añadieron los enlaces de Google Fonts y a css/styles.css.
+- index.html utiliza la ruta relativa css/styles.css.
+- paginas/tarifas.html y paginas/reservas.html utilizan la ruta relativa ../css/styles.css.
+- Se cargan Montserrat 700 y Open Sans 400 y 600 desde Google Fonts. Los preconnect aparecen antes de la hoja de Google Fonts, y esta antes de styles.css.
+- En :root se declararon las cinco variables de color, las dos variables de familia tipográfica con fuentes de respaldo y cinco niveles de espaciado expresados en rem.
+- body define font-family, color y background-color usando var(), por lo que los párrafos heredan la familia tipográfica y el color cuando no existe una regla más específica.
+- Los encabezados h1, h2, h3, h4, h5 y h6 comparten un único selector agrupado que aplica Montserrat 700.
+- No se añadieron atributos style ni elementos <style> en los HTML.
+- Los códigos hexadecimales de la paleta se declararon una sola vez cada uno dentro de :root; las demás reglas CSS usan var().
+- Se añadieron estilos de foco visible y ajustes básicos para pantallas estrechas.
+
+Mapa de uso de color respetado:
+- Fondo general: Crema.
+- Texto principal y encabezados: Azul Noche sobre Crema.
+- Enlaces: Verde Ruta sobre Crema.
+- Texto secundario: Gris Asfalto sobre Crema.
+- Botones: Verde Ruta con texto Crema (blanco/crema sobre Verde Ruta alcanza el contraste aprobado).
+- Encabezados de tabla: Azul Noche con texto Crema.
+- Se evita el texto blanco sobre Naranja Pedal y el texto Naranja Pedal sobre Crema, por no alcanzar 4,5:1 para texto normal.
+
+Comprobaciones estáticas realizadas:
+- Las tres páginas declaran lang="es".
+- Las rutas relativas a styles.css corresponden a la ubicación de cada HTML.
+- Google Fonts está enlazado antes de styles.css.
+- No se encontraron atributos style="" ni etiquetas <style> en los tres HTML recibidos.
+- La hoja CSS contiene :root, variables de color, tipografías, escala de espaciado y selector agrupado para encabezados.
+- Los cinco códigos de color aparecen una sola vez en la hoja CSS.
+- Se conservaron el formulario y los atributos de validación presentes en reservas.html.
+
+Comprobación de herencia en DevTools — pendiente de ejecutar en navegador:
+1. Abrir el sitio con Live Server y abrir DevTools > Elements.
+2. Seleccionar un párrafo. En Styles y Computed, comprobar que font-family se calcula como Open Sans y color como Azul Noche, heredados de body.
+3. Comprobar una propiedad que no se hereda automáticamente, por ejemplo margin.
+4. Anotar el resultado observado después de ejecutar la prueba. Esta bitácora no marca esa prueba manual como realizada.
+
+Pruebas finales pendientes:
+- En Network, confirmar que styles.css, Google Fonts y los archivos de fuente cargan sin errores.
+- En Computed, verificar Open Sans para párrafos y Montserrat para encabezados.
+- Recorrer las tres páginas y el formulario con teclado y confirmar que el foco sea visible.
+- Realizar commit y push.
+
+Commit sugerido:
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Agregar identidad visual con CSS y Google Fonts"
+git push
+
+
+10- Navegación con estados y sin conflictos
+
+Objetivo:
+Distinguir la página actual en el menú, mostrar estados hover y focus, aplicar una apariencia de botón a los enlaces de llamada a la acción y resolver el conflicto de cascada sin !important ni estilos en línea.
+
+Cambios realizados:
+- Se añadió id="menu" a la lista ul de navegación en index.html, paginas/tarifas.html y paginas/reservas.html.
+- Se marcó el enlace de la página actual con class="activo" y aria-current="page": Inicio en index.html, Tarifas y rutas en paginas/tarifas.html y Reservas en paginas/reservas.html.
+- Se añadió la clase boton-accion a los enlaces que llevan al formulario de reserva, conservando su texto descriptivo.
+- Se definieron estados :hover y :focus para los enlaces del menú, y :hover y :focus-visible para los enlaces de llamada a la acción y los controles.
+- Se mantuvo un indicador visible para los campos: borde verde y contorno verde con separación. No se elimina el outline sin reemplazarlo.
+- Se reutilizaron variables de color de :root; no se añadieron códigos hexadecimales nuevos ni se usó !important o style="".
+
+Conflicto de cascada y especificidad:
+- #menu a { color: var(--gris-asfalto); } tiene especificidad (1, 0, 1): un selector ID, cero clases/atributos/pseudoclases y un selector de tipo.
+- .activo { color: var(--verde-ruta); font-weight: 600; } tiene especificidad (0, 1, 0): cero ID, una clase y cero selectores de tipo.
+- Por eso, cuando ambas reglas declaran color para el enlace activo, #menu a gana sobre .activo, aunque .activo aparezca después. En DevTools > Styles, la declaración de menor especificidad puede aparecer tachada.
+- La solución aplicada es #menu a.activo, con especificidad (1, 1, 1). Es más específica que #menu a y define el color verde y el peso tipográfico del enlace activo sin recurrir a !important.
+- La especificidad se compara como (ID, clase/atributo/pseudoclase, tipo). El orden de aparición solo decide cuando la importancia y la especificidad están empatadas.
+
+Paleta y contraste:
+- Enlaces normales: Gris Asfalto sobre Crema (5,57:1, según el cálculo registrado en MiniReto 8).
+- Enlace activo: Verde Ruta sobre Crema (4,93:1).
+- Botón de acción: texto Crema sobre Verde Ruta (contraste aprobado en MiniReto 8); al pasar el mouse o recibir foco, texto Crema sobre Azul Noche.
+- Se evita texto Naranja Pedal sobre Crema y texto blanco sobre Naranja Pedal.
+
+Comprobaciones estáticas realizadas:
+- Las tres páginas incluyen id="menu" en la lista de navegación y marcan su enlace actual con activo y aria-current="page".
+- La hoja incluye selectores de ID, clase, descendientes y pseudoclases :hover, :focus y :focus-visible.
+- No se encontró !important ni estilos en línea en los tres HTML.
+- Las reglas de foco son visibles y no eliminan el contorno del navegador sin reemplazo.
+- Los enlaces de llamada a la acción usan la clase boton-accion.
+- Se conservaron las variables de color del MiniReto 9.
+
+Pruebas manuales pendientes en DevTools:
+1. Abrir cada página con Live Server y entrar a DevTools > Elements > Styles.
+2. Seleccionar un enlace del menú con class="activo". Revisar #menu a y .activo; identificar la declaración de color tachada y comprobar que #menu a.activo gana.
+3. Usar el botón :hov para forzar :hover y :focus en enlaces del menú y en el enlace boton-accion. Confirmar que el cambio se distingue claramente.
+4. Recorrer las tres páginas con Tab y Shift+Tab. Confirmar que el foco se ve en enlaces, campos, opciones y botón de envío.
+5. En Network, comprobar que las páginas y css/styles.css cargan sin errores 404.
+6. Registrar aquí cualquier resultado real o corrección adicional después de la prueba. La inspección estática no sustituye la comprobación interactiva en el navegador.
+
+Commit sugerido:
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Estilizar navegación y estados interactivos"
+git push
+
+
+11- Todo en su lugar: modelo de caja
+
+Objetivo:
+Controlar el tamaño y el espaciado con box-sizing, el modelo de caja, medidas relativas y márgenes automáticos; mejorar las tarjetas de servicios, tablas, menú y formulario.
+
+Cambios realizados:
+- Se aplicó box-sizing: border-box a todos los elementos y pseudoelementos con el selector universal (*, *::before, *::after).
+- #contenido-principal usa width: 100%, max-width: 72rem y margin-inline: auto para limitar y centrar el contenido.
+- Se añadió una portada de inicio con class="portada" y min-height: 35vh (25vh en pantallas estrechas).
+- Los tres servicios de inicio tienen class="tarjeta-servicio", relleno, borde, esquinas redondeadas y separación con variables de espaciado.
+- Las imágenes dentro de tarjetas usan width: 100% y max-width: 100%, manteniendo height: auto para no desbordarse.
+- Las tablas tienen ancho completo, separación vertical, relleno en celdas y bordes en px. Los encabezados usan Azul Noche con texto Crema, combinación aprobada por contraste.
+- En el formulario, las etiquetas se muestran sobre los campos; los controles de texto, select y textarea ocupan el ancho disponible; los fieldset están separados y el botón tiene relleno generoso.
+- El menú usa display: flex en fila y flex-wrap: wrap; en pantallas estrechas pasa a columna para evitar desbordamiento.
+- Se mantuvieron las clases y estados del MiniReto 10.
+
+Modelo de caja:
+- content: área donde se dibuja el contenido.
+- padding: espacio interior entre el contenido y el borde.
+- border: borde alrededor del relleno y contenido.
+- margin: espacio exterior que separa el elemento de otros elementos.
+- Con box-sizing: content-box, width define solo el contenido; padding y border se suman al ancho exterior.
+- Con box-sizing: border-box, width incluye contenido, padding y border; resulta más sencillo controlar el ancho final.
+
+Medición solicitada en DevTools — pendiente de realizar y registrar valores reales:
+1. Abrir index.html con Live Server y DevTools > Elements.
+2. Seleccionar un article.tarjeta-servicio y abrir Computed.
+3. Medir el ancho total con box-sizing: border-box.
+4. Cambiar temporalmente la declaración a content-box en Styles y medir nuevamente. Mantener igual width, padding y border.
+5. Registrar los dos valores en píxeles aquí: border-box = ______ px; content-box = ______ px. La diferencia esperada corresponde al padding horizontal y los bordes; los valores exactos dependen del ancho de ventana y de la tarjeta seleccionada.
+6. Restaurar box-sizing: border-box y comprobarlo en Computed.
+
+Comprobaciones estáticas realizadas:
+- Las tres páginas mantienen los enlaces de CSS relativos correctos y los estados del MiniReto 10.
+- La hoja declara box-sizing: border-box para todos los elementos y pseudoelementos.
+- El contenedor principal tiene max-width en rem y márgenes automáticos.
+- La portada usa min-height en vh.
+- Las tarjetas usan padding, margin, border y border-radius; las imágenes usan width: 100%.
+- Tablas y formulario usan la escala de espaciado en rem; los bordes están expresados en px.
+- El menú se dispone en fila en escritorio y se adapta a columna en pantallas estrechas.
+- No se marcaron como realizadas las mediciones de DevTools ni la comprobación visual manual.
+
+Pruebas manuales pendientes:
+- Revisar las tres páginas en escritorio y móvil.
+- Confirmar que ninguna imagen de tarjeta se desborde y que las tablas se puedan leer en pantallas estrechas.
+- Medir la tarjeta con ambos valores de box-sizing y completar los valores reales en la bitácora.
+- Comprobar en Computed que box-sizing sea border-box.
+- Confirmar que el formulario mantenga el foco visible y que no haya errores 404 en Network.
+
+Commit sugerido:
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Aplicar modelo de caja a Rueda Libre"
+git push
+
+12- Rueda Libre v1.0: lanzamiento
+
+Objetivo:
+Integrar los doce MiniRetos en un sitio informativo consistente, añadir los detalles posicionados solicitados y preparar la versión final para su publicación.
+
+Cambios realizados en esta revisión:
+- Se organizó css/styles.css por secciones comentadas: variables, base y modelo de caja, encabezado y navegación, contenido y tarjetas, botones y WhatsApp, tablas, formulario, pie de página y adaptación móvil.
+- Se agruparon selectores compartidos y se retiraron reglas duplicadas de versiones anteriores, conservando las variables de marca, los estados de interacción y los estilos de las tres páginas.
+- Se estandarizó la presentación del encabezado, la navegación y el pie de página mediante la hoja compartida css/styles.css. El enlace de la página actual conserva class="activo" y aria-current="page".
+- Se añadió a la página de inicio una tarjeta para bicicletas eléctricas con la etiqueta «Nuevo». La tarjeta usa position: relative y la etiqueta position: absolute con top y right, por lo que la etiqueta se ancla a la tarjeta sin participar en el flujo normal del contenido.
+- Se añadió el enlace fijo «WhatsApp» a las tres páginas. Apunta a https://wa.me/573000000000, abre en otra pestaña con target="_blank" y rel="noopener noreferrer", incluye texto visible y tiene estado de foco visible.
+- Se reservó espacio inferior en body para reducir el riesgo de que el acceso fijo a WhatsApp cubra el contenido al final de cada página. En móvil se ajusta su posición y el espacio reservado.
+- Se mantuvieron las rutas relativas de la hoja de estilos y de los enlaces internos según la ubicación de cada HTML.
+- No se agregaron imágenes nuevas: el MiniReto 12 no pide crear imágenes; las imágenes ya existentes deben conservarse en la carpeta img/ del repositorio original.
+
+Comprobaciones estáticas realizadas en los archivos preparados:
+- Las tres páginas enlazan a la misma hoja css/styles.css mediante la ruta relativa correspondiente.
+- Las tres páginas contienen un enlace visible de WhatsApp con la URL solicitada, target="_blank", rel="noopener noreferrer" y clase whatsapp-fijo.
+- La etiqueta «Nuevo» está dentro de la tarjeta de bicicletas eléctricas; la tarjeta tiene posición relativa y la etiqueta posición absoluta.
+- La hoja de estilos está organizada en secciones comentadas y contiene reglas agrupadas para navegación, controles, tablas y pie de página.
+- Se mantiene box-sizing: border-box para todos los elementos y pseudoelementos.
+- Los enlaces de navegación mantienen su estado activo y no usan la clase boton-accion como estilo de botón en el menú.
+- La regla de WhatsApp tiene posición fija y se añadió espacio inferior al documento para evitar que tape el final del contenido.
+- Estas comprobaciones son estáticas; no equivalen a una prueba real de navegador ni confirman la publicación en GitHub Pages.
+
+Cierre de la semana — resumen de los doce MiniRetos:
+1. Kilómetro 0: creación del repositorio, estructura inicial y bitácora.
+2. La vitrina de Rueda Libre: contenido inicial de la página de inicio, listas, enlaces e imágenes.
+3. Tarifas claras: tablas de precios y recorridos, y enlaces relativos.
+4. Rueda Libre v0.1: creación de la página de reservas, menú y pie de página común.
+5. Estructura con significado: uso de regiones semánticas en las tres páginas.
+6. El formulario de reservas: grupos de campos, etiquetas y controles.
+7. Reservas sin errores: validación nativa y navegación por teclado.
+8. Rueda Libre v0.2 en línea: preparación de accesibilidad, contraste y publicación.
+9. La identidad de Rueda Libre: hoja de estilos externa, variables, tipografías y colores.
+10. Navegación con estados y sin conflictos: enlace activo, hover, foco y botones de acción.
+11. Todo en su lugar: modelo de caja, contenedor, tarjetas, tablas, formulario y menú.
+12. Rueda Libre v1.0: etiqueta posicionada, acceso fijo a WhatsApp, consolidación de estilos y preparación del lanzamiento.
+
+Qué mejoraría en una siguiente iteración:
+- Conectar el formulario a un servicio real de reservas; actualmente action="#" no envía datos a un sistema de gestión.
+- Sustituir el teléfono de ejemplo de WhatsApp por el número oficial del negocio, cuando el cliente lo confirme.
+- Confirmar que los archivos de imagen reales estén en img/ y optimizarlos si fuera necesario.
+- Hacer una prueba completa de escritorio y móvil, revisar foco y validación con teclado, inspeccionar Network/Console y verificar la URL pública.
+- Revisar con el cliente los textos, tarifas, rutas y condiciones de alquiler para confirmar que todos los datos sigan vigentes.
+
+Pruebas manuales pendientes antes de dar por verificado el lanzamiento:
+1. Abrir las tres páginas en navegador y recorrerlas con Tab y Shift+Tab. Confirmar que WhatsApp recibe foco, que el indicador es visible y que Enter abre el enlace.
+2. Hacer scroll hasta el final de cada página en escritorio y móvil y confirmar que WhatsApp no tapa texto, botones ni contenido del pie.
+3. En DevTools > Elements/Computed, verificar position: relative en la tarjeta eléctrica, position: absolute en la etiqueta y position: fixed en WhatsApp.
+4. En DevTools > Network y Console, comprobar que no haya errores 404, errores de CSS ni recursos faltantes. Los archivos de img/ deben venir del repositorio original; no se incluyeron en los archivos recibidos para esta revisión.
+5. Repetir las pruebas de validación del formulario y la medición de box-sizing del MiniReto 11; completar en esta bitácora los valores reales que se observen.
+6. Publicar desde GitHub Pages y abrir la URL pública para comprobar las tres páginas, los enlaces, las imágenes y los estilos. La URL pública no se registra aquí porque no se ha proporcionado ni verificado desde esta revisión.
+
+Commit de lanzamiento sugerido:
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Lanzar Rueda Libre v1.0"
+git push
+
+Estado de entrega:
+- Archivos actualizados y revisión estática preparada.
+- La publicación y las pruebas manuales descritas arriba siguen pendientes de ejecución real.
