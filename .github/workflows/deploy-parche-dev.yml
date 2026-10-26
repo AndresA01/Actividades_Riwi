@@ -1,4 +1,5 @@
-name: Publicar Parche Dev
+
+name: Publicar Parche Dev y Rueda Libre
 
 on:
   push:
@@ -6,6 +7,7 @@ on:
       - main
     paths:
       - 'Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/**'
+      - 'Actividad #6 - HTML y CSS - Individual/rueda-libre/**'
       - '.github/workflows/deploy-parche-dev.yml'
   workflow_dispatch:
 
@@ -31,7 +33,13 @@ jobs:
 
       - name: Preparar archivos
         run: |
-          mkdir public
+          mkdir -p public/parche-dev
+          mkdir -p "public/Actividad #6 - HTML y CSS - Individual/rueda-libre"
+
+          cp -a "Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/." public/parche-dev/
+
+          cp -a "Actividad #6 - HTML y CSS - Individual/rueda-libre/." "public/Actividad #6 - HTML y CSS - Individual/rueda-libre/"
+
           cp -a "Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/." public/
 
       - name: Configurar GitHub Pages
