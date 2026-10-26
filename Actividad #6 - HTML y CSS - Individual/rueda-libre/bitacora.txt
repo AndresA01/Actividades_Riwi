@@ -128,4 +128,16 @@ Verificaciones pendientes tras integrar los archivos:
 - Pendiente de comprobación local: las imágenes referenciadas (img/logo-rueda-libre.jpg, img/bicicleta.png e img/ruta.png) deben estar en la carpeta img del proyecto original; los archivos de imagen no venían incluidos en los archivos recibidos para esta revisión. Abrir con Live Server y comprobar Network antes de afirmar que no hay errores 404.
 - Pendiente del usuario: verificar presentación en el navegador y realizar commit y push.
 
+6- Formulario de reservas
+
+Se agregó en paginas/reservas.html la sección “Formulario de reserva”, dentro de main, con un formulario method="post" y action="#". Se conservaron la navegación y el aside de horarios de atención.
+
+Los campos se organizaron en tres grupos: “Tus datos”, “Tu alquiler” y “Confirmación”. Cada control tiene un id, un name y una etiqueta visible asociada mediante for. Los tres tipos de bicicleta usan el mismo name (tipo_bicicleta), por lo que solo se puede seleccionar una opción.
+
+Justificación de tres elecciones de controles:
+1. Número de documento: se utiliza input type="text" y no type="number", porque el documento es un identificador, no una cantidad para hacer operaciones, y así se pueden conservar ceros iniciales.
+2. Tipo de bicicleta: se utilizan botones radio porque el cliente debe elegir solo una opción entre urbana, montaña y eléctrica. Comparten el name="tipo_bicicleta".
+3. Comentarios: se utiliza textarea porque permite escribir observaciones de varias líneas, a diferencia de un campo de texto de una sola línea.
+
+También se usaron email para validar el formato del correo, tel para el celular, date para la fecha, number para la cantidad, select para el plan y el recorrido guiado, y checkbox obligatorio para aceptar las políticas. El botón final es type="submit".
 

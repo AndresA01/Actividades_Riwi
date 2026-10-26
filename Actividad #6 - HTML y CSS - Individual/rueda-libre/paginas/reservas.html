@@ -21,10 +21,99 @@
 
     <main>
         <section>
-            <h2>Información de la reserva</h2>
-            <p>En este apartado podrás reservar tu bicicleta para que la tengas lista en el momento que la necesites. <br>
-                Por el momento no tenemos disponible nuestro formulario para reservas, pero pronto estará disponible.</p>
-            <a href="mailto:hola@ruedalibre.example">correo</a>
+            <h2>Formulario de reserva</h2>
+            <p>Completa los siguientes datos para solicitar el alquiler de tu bicicleta.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </p>
+
+                    <p>
+                        <label for="documento">Número de documento:</label>
+                        <input type="text" id="documento" name="documento" inputmode="numeric" autocomplete="off" required>
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="celular">Celular:</label>
+                        <input type="tel" id="celular" name="celular" autocomplete="tel" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <p>
+                        <label for="fecha">Fecha del alquiler:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+
+                    <fieldset>
+                        <legend>Tipo de bicicleta:</legend>
+                        <p>
+                            <input type="radio" id="urbana" name="tipo_bicicleta" value="urbana" required>
+                            <label for="urbana">Urbana</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="montana" name="tipo_bicicleta" value="montana">
+                            <label for="montana">Montaña</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="electrica" name="tipo_bicicleta" value="electrica">
+                            <label for="electrica">Eléctrica</label>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <label for="plan">Plan de alquiler:</label>
+                        <select id="plan" name="plan" required>
+                            <option value="" selected disabled>Selecciona un plan</option>
+                            <option value="1_hora">1 hora</option>
+                            <option value="medio_dia">Medio día</option>
+                            <option value="dia_completo">Día completo</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" step="1" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="recorrido">Recorrido guiado:</label>
+                        <select id="recorrido" name="recorrido" required>
+                            <option value="ninguno" selected>Ninguno</option>
+                            <option value="rio_y_parques">Río y Parques</option>
+                            <option value="sabores_de_barrio">Sabores de Barrio</option>
+                            <option value="reto_las_palmas">Reto Las Palmas</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="comentarios">Comentarios:</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escribe aquí alguna solicitud o información adicional."></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación</legend>
+                    <p>
+                        <input type="checkbox" id="politicas" name="acepta_politicas" value="si" required>
+                        <label for="politicas">Acepto las políticas de alquiler de Rueda Libre.</label>
+                    </p>
+                </fieldset>
+
+                <button type="submit">Enviar reserva</button>
+            </form>
         </section>
 
         <aside>
