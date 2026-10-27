@@ -1,0 +1,24 @@
+ACTIVIDAD #6 - RUEDA LIBRE
+
+SEMANA #1 
+    
+    DÍA 1 - KILÓMETRO 0: EL REPOSITORIO Y LA PÁGINA BASE
+
+        MINIRETO #1
+
+- URL: http://127.0.0.1:5500/index.html -> Es la dirección completa del recurso web.
+- Protocolo: HTTP:// -> Indica el protocolo utilizado para la comunicación.
+- Host: 127.0.0.1 -> Es la dirección del servidor al que se conecta el navegador.
+- Puerto: 5500 -> Es el puerto por el que se accede al servidor web.
+- Ruta: index.html -> Indica el recurso que se solicita al servidor.
+- Metodo de petición: GET -> Indica qué operación solicita el navegador.
+- Código de estado: 200 OK -> Indica el resultado de la petición HTTP.
+- Código ruta erronea y que significa: 404 not found, este codigo indica que el navegador se conectó con éxito al servidor, pero este no puedo encontrar el recurso o la página web solicitada.
+- Que rol cumplirá HTML ? -> Será el encargado del maquetado de la página, estructura y boceto principal.
+- Que rol cumplirá CSS ? -> Será el encargado del estilado de las pagínas de nuestro proyecto
+- Que rol cumplirá Java Script ? -> Aportar interactividad, dinamismo y lógica a las páginas web y aplicaciones.
+- Primer commit: Feat: Kilometro 0 | El repositorio y la pagina base
+
+        MINIRETO #2
+
+-
