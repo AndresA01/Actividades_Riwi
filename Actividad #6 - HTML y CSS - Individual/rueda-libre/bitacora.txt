@@ -5,6 +5,8 @@ SEMANA #1
     DÍA 1 - KILÓMETRO 0: EL REPOSITORIO Y LA PÁGINA BASE
 
         MINIRETO #1
+ 
+ Configurar el entorno de trabajo y crear el documento HTML base del sitio, comprobando en DevTools cómo se solicita y se escribre una página.
 
 - URL: http://127.0.0.1:5500/index.html -> Es la dirección completa del recurso web.
 - Protocolo: HTTP:// -> Indica el protocolo utilizado para la comunicación.
@@ -19,6 +21,17 @@ SEMANA #1
 - Que rol cumplirá Java Script ? -> Aportar interactividad, dinamismo y lógica a las páginas web y aplicaciones.
 - Primer commit: Feat: Kilometro 0 | El repositorio y la pagina base
 
-        MINIRETO #2
+        MINIRETO #2 - La vitrina de Rueda Libre
 
--
+Estructurar el contenido de la página de inicio con una jerarquía de encabezados correcta, párrafos, listas, imágenes y enlaces
+
+Organización de la página
+- Titulo unico <h1>, con el nombre del negocio.
+- Secciones para: Quienes somos ?, Nuestros servicio?, Como alquilar? y encuentranos?.
+- Cada servicio con su subtitulo <h2> y un párrafo. Resalta con importancia la información clave. ej: Incluye casco y candado. y con énfasis un matiz de texto.
+- Presenta los cuatro pasos para alquilar en una lista númerada y tres beneficios del servicio en una lista con viñetas.
+- Agrega al menos tres imágenes guardadas en img/ (portada, una bicicleta y una ruta), con rutas relativas, texto alternativo descriptivo y ancho definido.
+- Agrega tres tipos de enlace: uno absoluto hacia la ubicación en un mapa (que abra en otra pestaña), uno para escribir al correo hola@ruedalibre.example y uno interno desde el primero párrafo ahcia la sección "Encuentranos"
+- Verificar el DevTools (Elements) que el árbol de documento conincide con tu esquema, revisa las etiquetas de cierre. 
+- Commit y push con el nombre: Feat: La vitrina de Rueda Libre.
+ 
