@@ -35,3 +35,35 @@ Organización de la página
 - Verificar el DevTools (Elements) que el árbol de documento conincide con tu esquema, revisa las etiquetas de cierre. 
 - Commit y push con el nombre: Feat: La vitrina de Rueda Libre.
  
+        MINIRETO #3 - TARIFAS CLARAS: TABLAS Y RUTAS RELATIVAS
+
+Presentar datos tabulares con tablas accesibles y conectar páginas ubicadas en carpetas distintaas usando rutas relativas.
+
+- El cliente quiere una página donde se consulten de un vistazo las tarifas de alquiler y los recorridos griados de la siguiente manera: 
+
+Tarifas de alquiler de bicicletas
+
+| Tipo de bicicleta | 1 hora  | Medio día (4 h) | Día completo |
+|-------------------|---------|-----------------|--------------|
+| Urbana            | $10.000 | $30.000         | $50.000      |
+| Montaña           | $15.000 | $45.000         | $70.000      |
+| Eléctrica         | $25.000 | $70.000         | $110.000     |
+
+
+Tarifas de recorridos turísticos
+
+| Recorrido         | Distancia | Duración | Nivel  | Precio por persona |
+|-------------------|-----------|----------|--------|--------------------|
+| Río y Parques     | 12 km     | 2 h      | Fácil  | $45.000            |
+| Sabores de Barrio | 18 km     | 3 h      | Medio  | $60.000            |
+| Reto Las Palmas   | 25 km     | 4 h      | Difícil| $85.000            |
+
+    INSTRUCCIONES
+
+- Crear paginas/tarifas.html con su estructura base completa: titulo de pestaña y una descripción propios.
+- Construir la tabla de tarifas de alquiler con titulo de tabla, grupo de encabezados, grupo de datos y celdas de encabezados que indiquen si describen una columna o una fila.
+- Construir una segunda tabla con los recorridos guiados, siguiendo la misma estructura. Asigna a su sección un id para poder enlazarla directamente.
+- Ingresar debajo de las tablas información adicional del cliente: la nota sobre casco y candado, los horarios de salida y la lista de qué llevar.
+- Mostrar el logo de img/ en tarifas.html. Como la página está en una subcarpeta tendrás que construir la ruta subiendo un nivel.
+- Enlaza las páginas en ambos sentidos: desde inicio hacia tarifas y desde tarifas de vuelta a inicio. Ademas, desde el servicio de recorridos guiados en inicio, enlaza directamente a la tabla de recorridos de tarifas.html.
+- Verificar en Network que no haya errores 404 y haz commit y push. 
