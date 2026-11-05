@@ -21,6 +21,14 @@ SEMANA #1
 - Que rol cumplirá Java Script ? -> Aportar interactividad, dinamismo y lógica a las páginas web y aplicaciones.
 - Primer commit: Feat: Kilometro 0 | El repositorio y la pagina base
 
+    CHECK LIST
+
+- El repositorio rueda-libre es público y contiene index.html, img/ con al menos una imagen y bitacora.txt (recuerda: Git no sube carpetas vacías).
+- La página abre en Live Server y la pestaña del navegador muestra el título definido.
+- La bitácora registra la petición del documento con código 200 y la ruta inexistente con código 404.
+- La bitácora identifica correctamente protocolo, host, puerto y ruta de la URL local.
+- GitHub muestra al menos un commit con un mensaje que describe el cambio.
+
         MINIRETO #2 - La vitrina de Rueda Libre
 
 Estructurar el contenido de la página de inicio con una jerarquía de encabezados correcta, párrafos, listas, imágenes y enlaces
@@ -34,6 +42,14 @@ Organización de la página
 - Agrega tres tipos de enlace: uno absoluto hacia la ubicación en un mapa (que abra en otra pestaña), uno para escribir al correo hola@ruedalibre.example y uno interno desde el primero párrafo ahcia la sección "Encuentranos"
 - Verificar el DevTools (Elements) que el árbol de documento conincide con tu esquema, revisa las etiquetas de cierre. 
 - Commit y push con el nombre: Feat: La vitrina de Rueda Libre.
+
+    CHECK LIST
+
+- La página tiene un solo h1 y los niveles de encabezado no se saltan.
+- Hay una lista ordenada con los cuatro pasos y una lista con viñetas con los beneficios.
+- Las imágenes cargan desde img/ con rutas relativas (ninguna ruta del tipo C:\...) y todas tienen un alt que describe lo que muestran.
+- El enlace externo abre en otra pestaña, el de correo abre la aplicación de correo y el interno lleva a "Encuéntranos".
+- DevTools (Network) no muestra errores 404 al cargar la página.
  
         MINIRETO #3 - TARIFAS CLARAS: TABLAS Y RUTAS RELATIVAS
 
@@ -68,3 +84,33 @@ Tarifas de recorridos turísticos
 - Enlaza las páginas en ambos sentidos: desde inicio hacia tarifas y desde tarifas de vuelta a inicio. Ademas, desde el servicio de recorridos guiados en inicio, enlaza directamente a la tabla de recorridos de tarifas.html.
 - Verificar en Network que no haya errores 404
 - Realizar push: Feat: Tarifas claras: Tablas y rutas relativas.
+
+    CHECK LIST
+
+- tarifas.html está dentro de paginas/ y tiene una estructura base válida con título propio.
+- Las dos tablas tienen caption, encabezados th con scope y todos los datos del cliente, sin celdas vacías.
+- Las tablas solo se usan para datos: la información adicional está en párrafos y listas.
+- Desde inicio se llega a tarifas y viceversa, y el enlace de recorridos abre la página directamente en esa tabla.
+- El logo se ve en tarifas.html y no hay errores 404 en Network.
+
+        MINIRETO #4 - RUEDA LIBRE V0.1: UN SITIO NAVEGABLE
+
+Integrar las tres páginas en un sitio navegable con un menú y un bloque final comunes, y una página de reservas inicial.
+
+    INSTRUCCIONES
+
+- Crear paginas/reservas.html con su estructura base, un título principal "Reserva tu bicicleta", el correo de contacto como enlace y el horario de atención presentado como una lista de definiciones (día -> horario).
+- construye un menú con una lista de enlaces (Inicio, Tarifas y Rutas, Reservas) y ubicalo al comienzo de las tres páginas. Ajusta cada ruta según la carpeta en la que está cada archivo.
+- Agrega al final  de las tres páginas un bloque con el nombre del negocio, el correo y el año (será el pie de página).
+- Agrega enlaces "Reservar ahora" en inicio y debajo de la tabla de recorridos en tarifas, que lleven a reservas.html.
+- Recorrer el sitio completo usando solo el menú: desde cada página visita las otras dos (nueve combinaciones) y confirma en Network que no hay errores.
+- Registar el la bitácora la tabla de rutas que usaste: archivo de origen -> destino -> ruta escrita.
+- Realizar push: Feat: Rueda Libre v0.1: un sitio navegable.
+
+    CHECK LIST
+
+- Las tres páginas tienen el mismo menú y todos sus enlaces funcionan desde cualquier página (cero errores 404).
+- reservas.html muestra el horario con una lista de definiciones y el correo abre la aplicación de correo.
+- Cada página tiene un title distinto que describe su contenido.
+- La bitácora contiene la tabla de rutas y cada ruta coincide con la ubicación real de los archivos.
+- El historial del repositorio muestra un commit por cada MiniReto del día.
