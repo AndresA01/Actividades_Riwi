@@ -66,4 +66,5 @@ Tarifas de recorridos turísticos
 - Ingresar debajo de las tablas información adicional del cliente: la nota sobre casco y candado, los horarios de salida y la lista de qué llevar.
 - Mostrar el logo de img/ en tarifas.html. Como la página está en una subcarpeta tendrás que construir la ruta subiendo un nivel.
 - Enlaza las páginas en ambos sentidos: desde inicio hacia tarifas y desde tarifas de vuelta a inicio. Ademas, desde el servicio de recorridos guiados en inicio, enlaza directamente a la tabla de recorridos de tarifas.html.
-- Verificar en Network que no haya errores 404 y haz commit y push. 
+- Verificar en Network que no haya errores 404
+- Realizar push: Feat: Tarifas claras: Tablas y rutas relativas.
