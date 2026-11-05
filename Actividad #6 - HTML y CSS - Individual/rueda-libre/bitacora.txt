@@ -114,3 +114,15 @@ Integrar las tres páginas en un sitio navegable con un menú y un bloque final 
 - Cada página tiene un title distinto que describe su contenido.
 - La bitácora contiene la tabla de rutas y cada ruta coincide con la ubicación real de los archivos.
 - El historial del repositorio muestra un commit por cada MiniReto del día.
+
+    TABLA DE RUTAS
+
+- Ruta de navegación index.html:
+ 1. index.html -> tarifas.html ruta: paginas/tarifas.html.
+ 2. index.html -> reservas.html ruta: paginas/reservas.html.
+ - Ruta de navegación de tarifas.html:
+ 1. tarifas.html -> index.html ruta: ../index.html.
+ 2. tarifas.html -> reservas.html ruta: reservas.html.
+ - Ruta de navegación de reservas.html:
+ 1. reservas.html -> index.html ruta: ../index.html.
+ 2. reservas.html -> tarifas.html ruta: tarifas.html.
