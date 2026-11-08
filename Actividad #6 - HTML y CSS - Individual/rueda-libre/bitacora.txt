@@ -27,7 +27,7 @@ SEMANA #1
 - Git (init, add, commit, remote, push) y GitHub.
 - <!DOCTYPE html>, <html lang>, <head>, <meta charset>, <meta name="viewport">, <meta name="description">, <title>, <body>, <h1> y <p>.
 
-    CHECK LIST
+    CHECKLIST
 
 - El repositorio rueda-libre es público y contiene index.html, img/ con al menos una imagen y bitacora.txt (recuerda: Git no sube carpetas vacías).
 - La página abre en Live Server y la pestaña del navegador muestra el título definido.
@@ -57,7 +57,7 @@ Organización de la página
 - <a> con href absoluto, mailto: y fragmento #id; atributos id y target="_blank".
 
 
-    CHECK LIST
+    CHECKLIST
 
 - La página tiene un solo h1 y los niveles de encabezado no se saltan.
 - Hay una lista ordenada con los cuatro pasos y una lista con viñetas con los beneficios.
@@ -106,7 +106,7 @@ Tarifas de recorridos turísticos
 - Enlace a una sección de otra página (archivo + #id).
 - <img> con alt y <ul>.
 
-    CHECK LIST
+    CHECKLIST
 
 - tarifas.html está dentro de paginas/ y tiene una estructura base válida con título propio.
 - Las dos tablas tienen caption, encabezados th con scope y todos los datos del cliente, sin celdas vacías.
@@ -135,7 +135,7 @@ Integrar las tres páginas en un sitio navegable con un menú y un bloque final 
 - <dl>, <dt>, <dd>; enlace mailto:.
 - DevTools (Network) y Git.
 
-    CHECK LIST
+    CHECKLIST
 
 - Las tres páginas tienen el mismo menú y todos sus enlaces funcionan desde cualquier página (cero errores 404).
 - reservas.html muestra el horario con una lista de definiciones y el correo abre la aplicación de correo.
@@ -177,7 +177,7 @@ Reestructurar las tres páginas con etiquetas semánticas, manteniendo su conten
 - <div> y <span> solo cuando no exista una etiqueta con significado.
 - Jerarquía de encabezados del Día 1.
 
-    CHECK LIST
+    CHECKLIST
 
 - Las tres páginas tienen header con nav dentro, un único main y footer.
 - Cada section tiene su propio encabezado y cada servicio de inicio es un article.
@@ -324,3 +324,38 @@ Reestructurar las tres páginas con etiquetas semánticas, manteniendo su conten
 │
 └── footer
     └── p (Nombre, correo y año)
+
+        MINIRETO #2 - EL FORMULARIO DE RESERVAS
+
+Construir un formulario completo y bien organizado, eligiendo el control más adecuado para cada dato.
+
+    INSTRUCCIONES
+
+- En reservas.html, dentro del contenido principal, crea una sección "Formulario de reserva" con un formulario que se envíe por el método post.
+- Agrupa los campos en tres grupos con título: "Tus datos", "Tu alquiler" y "Confirmación".
+- Elige el control más adecuado para cada dato del cliente (tipo de campo, lista desplegable, opciones únicas, casilla o área de texto). Justifica en la bitácora tres de tus elecciones.
+- Asocia cada control con su etiqueta visible y asigna a cada uno un nombre para el envío de datos.
+- Agrega el botón de envío al final del formulario.
+- Prueba haciendo clic en cada etiqueta: el campo 
+- Realizar push: Feat: El formulario de reservas.
+
+    REQUISITOS
+
+- <form> con action y method.
+- <fieldset> y <legend>; <label> con for e id en el control.
+- <input> de tipo text, email, tel, date, number, radio y checkbox; <select> y <option>; <textarea>.
+- <button type="submit"> y atributo name en todos los controles.
+
+    CHECKLIST
+
+- El formulario tiene los tres grupos con su título y todos los datos solicitados por el cliente.
+- Al hacer clic en cualquier etiqueta, su control recibe el foco o se selecciona.
+- Las opciones de tipo de bicicleta comparten el mismo nombre y solo permiten elegir una.
+- Todos los controles tienen name (verificable en DevTools).
+- El formulario vive dentro de main y la estructura semántica del MiniReto 5 se mantiene.
+
+    JUSTIFICACIÓN DE LAS ELECCIONES 
+
+-  Número de documento (input type="text"): Elegí este tipo de campo porque, aunque el documento de identidad está compuesto principalmente por números, no representa una cantidad matemática. Utilizar text permite conservar posibles ceros iniciales y evita las restricciones propias de los campos numéricos.
+- Tipo de bicicleta (input type="radio"): Utilicé botones de opción porque el cliente debe seleccionar un único tipo de bicicleta entre las alternativas disponibles: urbana, montaña o eléctrica. Los tres controles comparten el mismo atributo name, lo que permite que solamente una opción pueda permanecer seleccionada.
+- Observaciones adicionales (textarea): Elegí este control porque permite al cliente escribir información adicional mediante un área de texto de varias líneas. Esto resulta útil para registrar solicitudes especiales, aclaraciones o comentarios relacionados con su reserva.
