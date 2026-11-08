@@ -21,6 +21,12 @@ SEMANA #1
 - Que rol cumplirá Java Script ? -> Aportar interactividad, dinamismo y lógica a las páginas web y aplicaciones.
 - Primer commit: Feat: Kilometro 0 | El repositorio y la pagina base
 
+    REQUISITOS
+
+- VS Code, Live Server y DevTools (paneles Elements y Network).
+- Git (init, add, commit, remote, push) y GitHub.
+- <!DOCTYPE html>, <html lang>, <head>, <meta charset>, <meta name="viewport">, <meta name="description">, <title>, <body>, <h1> y <p>.
+
     CHECK LIST
 
 - El repositorio rueda-libre es público y contiene index.html, img/ con al menos una imagen y bitacora.txt (recuerda: Git no sube carpetas vacías).
@@ -42,6 +48,14 @@ Organización de la página
 - Agrega tres tipos de enlace: uno absoluto hacia la ubicación en un mapa (que abra en otra pestaña), uno para escribir al correo hola@ruedalibre.example y uno interno desde el primero párrafo ahcia la sección "Encuentranos"
 - Verificar el DevTools (Elements) que el árbol de documento conincide con tu esquema, revisa las etiquetas de cierre. 
 - Commit y push con el nombre: Feat: La vitrina de Rueda Libre.
+
+    REQUISITOS
+
+- <h1> a <h3>, <p>, <strong>, <em>.
+- <ul>, <ol>, <li>.
+- <img> con src, alt y width; rutas relativas.
+- <a> con href absoluto, mailto: y fragmento #id; atributos id y target="_blank".
+
 
     CHECK LIST
 
@@ -85,6 +99,13 @@ Tarifas de recorridos turísticos
 - Verificar en Network que no haya errores 404
 - Realizar push: Feat: Tarifas claras: Tablas y rutas relativas.
 
+    REQUISITOS
+
+- <table>, <caption>, <thead>, <tbody>, <tr>, <th> con scope, <td>.
+- Rutas relativas hacia una subcarpeta (paginas/...) y hacia la carpeta superior (../).
+- Enlace a una sección de otra página (archivo + #id).
+- <img> con alt y <ul>.
+
     CHECK LIST
 
 - tarifas.html está dentro de paginas/ y tiene una estructura base válida con título propio.
@@ -107,6 +128,13 @@ Integrar las tres páginas en un sitio navegable con un menú y un bloque final 
 - Registar el la bitácora la tabla de rutas que usaste: archivo de origen -> destino -> ruta escrita.
 - Realizar push: Feat: Rueda Libre v0.1: un sitio navegable.
 
+    REQUISITOS
+
+- Estructura base de documento en las tres páginas.
+- <ul> y <a> para el menú; rutas relativas con ../ y sin él.
+- <dl>, <dt>, <dd>; enlace mailto:.
+- DevTools (Network) y Git.
+
     CHECK LIST
 
 - Las tres páginas tienen el mismo menú y todos sus enlaces funcionan desde cualquier página (cero errores 404).
@@ -126,3 +154,173 @@ Integrar las tres páginas en un sitio navegable con un menú y un bloque final 
  - Ruta de navegación de reservas.html:
  1. reservas.html -> index.html ruta: ../index.html.
  2. reservas.html -> tarifas.html ruta: tarifas.html.
+
+    DÍA 2: HTML SEMÁNTICO, ACCESIBILIDAD Y FORMULARIOS
+
+        MINIRETO #1 - ESTRUCTURA CON SIGNIFICADO
+
+Reestructurar las tres páginas con etiquetas semánticas, manteniendo su contenido y su navegación.
+
+    INSTRUCCIONES
+
+- Dibuja en la bitácora el esquema de regiones de cada página: encabezado, navegación, contenido principal, secciones, articulos, contenido complementario  y pie.
+- En las tres páginas, agrupa el nombre del negocio y el menú en el encabezado, marca el menú como navegación principal, envuelve el contenido propio de cada página como contenido principal y convierte el bloque final en el pie de página.
+- En inicio, convierte cada bloque temático en una sección con su encabezado y cada servicio en un artículo, porque tiene sentido por sí solo.
+- En tarifas, ubica cada tabla en su propia sección y marca la lista de qué llevar como contenido complementario. En reservas, haz lo mismo con el horario de atención.
+- Reemplaza cualquier div o span que tenga un equivalente semántico. Si alguno debe quedarse, justifícalo en la bitácora.
+- Comprueba que cada página tiene un solo contenido principal, que la jerarquía de encabezados no cambió y que todos los enlaces siguen funcionando.
+- Realizar push: Feat: Estructura con significado
+
+    REQUISITOS
+
+- <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>.
+- <div> y <span> solo cuando no exista una etiqueta con significado.
+- Jerarquía de encabezados del Día 1.
+
+    CHECK LIST
+
+- Las tres páginas tienen header con nav dentro, un único main y footer.
+- Cada section tiene su propio encabezado y cada servicio de inicio es un article.
+- No hay div ni span sin justificación en la bitácora.
+- El sitio se ve y navega igual que la v0.1: no se perdió contenido ni se rompió ningún enlace.
+
+
+
+      ESQUEMA DE REGIONES DE CADA PÁGINA
+
+    INDEX.HTML
+  
+        body
+├── header
+│   ├── nav
+│   │   └── ul
+│   │       └── li
+│   │           └── a (Inicio, Tarifas y Rutas, Reservas)
+│   └── img (Logo)
+│
+├── main
+│   ├── h1 (Rueda Libre)
+│   ├── p (Bienvenida y enlace interno)
+│   │
+│   ├── section (¿Quiénes somos?)
+│   │   ├── h2
+│   │   ├── img (Portada)
+│   │   └── p
+│   │
+│   ├── section (Nuestros servicios)
+│   │   ├── h2
+│   │   ├── article (Alquiler por horas)
+│   │   │   ├── h3
+│   │   │   └── p
+│   │   ├── article (Alquiler por días)
+│   │   │   ├── h3
+│   │   │   └── p
+│   │   └── article (Rutas guiadas)
+│   │       ├── h3
+│   │       └── p
+│   │
+│   ├── section (¿Cómo alquilar?)
+│   │   ├── h2
+│   │   ├── img (Bicicleta)
+│   │   ├── img (Ruta)
+│   │   ├── p
+│   │   ├── ol (Cuatro pasos)
+│   │   ├── section (Beneficios)
+│   │   │   ├── h3
+│   │   │   └── ul (Tres beneficios)
+│   │   └── a (Reservar ahora)
+│   │
+│   └── section (Encuéntranos)
+│       ├── h2
+│       └── aside
+│           ├── p (Ubicación)
+│           ├── a (Mapa)
+│           └── a (Correo)
+│
+└── footer
+    └── p (Nombre, correo y año)
+
+    TARFIAS.HTML
+
+        body
+├── header
+│   ├── nav
+│   │   └── ul
+│   │       └── li
+│   │           └── a (Inicio, Tarifas y Rutas, Reservas)
+│   └── img (Logo)
+│
+├── main
+│   ├── h1 (Tarifas y rutas)
+│   │
+│   ├── section (Tarifas de alquiler)
+│   │   ├── h2
+│   │   └── table
+│   │       ├── caption
+│   │       ├── thead
+│   │       │   └── tr
+│   │       │       └── th
+│   │       └── tbody
+│   │           ├── tr
+│   │           ├── tr
+│   │           └── tr
+│   │
+│   └── section (Tarifas de recorridos turísticos)
+│       ├── h2
+│       ├── table
+│       │   ├── caption
+│       │   ├── thead
+│       │   │   └── tr
+│       │   │       └── th
+│       │   └── tbody
+│       │       ├── tr
+│       │       ├── tr
+│       │       └── tr
+│       ├── p (Enlace Reservar ahora)
+│       ├── p (Nota sobre casco y candado)
+│       ├── p (Horario de salida)
+│       └── aside (Elementos necesarios)
+│           ├── p
+│           └── ul
+│               ├── li (Prendas de protección)
+│               └── li (Hidratación)
+│
+└── footer
+    └── p (Nombre, correo y año)
+
+    RESERVAS.HTML
+
+        body
+├── header
+│   ├── nav
+│   │   └── ul
+│   │       └── li
+│   │           └── a (Inicio, Tarifas y Rutas, Reservas)
+│   └── img (Logo)
+│
+├── main
+│   ├── section
+│   │   ├── h1 (Reserva tu bicicleta)
+│   │   └── p
+│   │       └── a (Correo electrónico)
+│   │
+│   └── aside (Horarios de atención)
+│       ├── h2
+│       └── dl
+│           ├── dt (Lunes)
+│           ├── dd (Horario)
+│           ├── dt (Martes)
+│           ├── dd (Horario)
+│           ├── dt (Miércoles)
+│           ├── dd (Horario)
+│           ├── dt (Jueves)
+│           ├── dd (Horario)
+│           ├── dt (Viernes)
+│           ├── dd (Horario)
+│           ├── dt (Sábado)
+│           ├── dd (Horario)
+│           ├── dt (Domingo)
+│           └── dd (Horario)
+│
+└── footer
+    └── p (Nombre, correo y año)
