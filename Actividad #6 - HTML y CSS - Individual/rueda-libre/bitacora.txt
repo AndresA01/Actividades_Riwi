@@ -359,3 +359,103 @@ Construir un formulario completo y bien organizado, eligiendo el control más ad
 -  Número de documento (input type="text"): Elegí este tipo de campo porque, aunque el documento de identidad está compuesto principalmente por números, no representa una cantidad matemática. Utilizar text permite conservar posibles ceros iniciales y evita las restricciones propias de los campos numéricos.
 - Tipo de bicicleta (input type="radio"): Utilicé botones de opción porque el cliente debe seleccionar un único tipo de bicicleta entre las alternativas disponibles: urbana, montaña o eléctrica. Los tres controles comparten el mismo atributo name, lo que permite que solamente una opción pueda permanecer seleccionada.
 - Observaciones adicionales (textarea): Elegí este control porque permite al cliente escribir información adicional mediante un área de texto de varias líneas. Esto resulta útil para registrar solicitudes especiales, aclaraciones o comentarios relacionados con su reserva.
+
+        MINIRETO #3 - RESERVAS SIN ERRORES: VALIDACIÓN Y TECLADO
+
+Aplicar validación nativa a partir de reeglas de negocio y garantizar que el formulario sea usable con el teclado.
+
+    INSTRUCCIONES
+
+- Traduce cada regla del cliente a atributos de validación nativa en su control.
+- Construye los patrones para el documento y el celular, y agrega un mensaje que explique el formato esperado.
+- Prueba cada regla enviando datos incorrectos. Registra en la bitácora una tabla de pruebas con: campo, dato de prueba, resultado esperado y resultado obtenido (mínimo 8 pruebas).
+- Recorre el formulario completo solo con el teclado (Tab, Shift + Tab, flechas en las opciones, barra espaciadora en la casilla y Enter para enviar). Corrige cualquier orden que no sea lógico.
+- Realiza push: Feat: Reservas sin errores: validación y teclado.
+
+    CONTEXTO
+
+El cliente definió sus reglas de negocio para aceptar una reserva:
+Campo
+Regla
+
+Nombre completo
+
+Obligatorio, mínimo 3 caracteres.
+
+Documento
+
+Obligatorio, solo números, entre 6 y 10 dígitos.
+
+Correo
+
+Obligatorio, con formato de correo válido.
+
+Celular
+
+Obligatorio, 10 dígitos y debe empezar por 3.
+
+Fecha del alquiler
+
+Obligatoria, entre el 1 de noviembre y el 31 de diciembre de 2026.
+
+Tipo de bicicleta y plan
+
+Obligatorios.
+
+Cantidad de bicicletas
+
+Obligatoria, entre 1 y 6.
+
+Comentarios
+
+Opcional, máximo 300 caracteres.
+
+Políticas de alquiler
+
+Es obligatorio aceptarlas.
+
+    REQUISITOS
+
+- required, minlength, maxlength, pattern con title, min y max.
+- Tipos de campo que validan formato (email, number, date).
+- Navegación por teclado.
+
+    CHECKLIST
+
+- El formulario no se envía si falta cualquier dato obligatorio o si un dato no cumple su regla.
+- El celular acepta 3001234567 y rechaza 1234567890 y 300123; el documento rechaza letras.
+- La fecha no acepta días fuera del rango definido y la cantidad solo admite valores de 1 a 6.
+- La bitácora contiene al menos 8 pruebas con su resultado.
+- El formulario se completa y se envía solo con el teclado, en un orden lógico.
+
+    PRUEBAS
+
++----------------------+----------------------+----------------------+----------------------+
+| Campo                | Dato de prueba       | Resultado esperado   | Resultado obtenido   |
++----------------------+----------------------+----------------------+----------------------+
+| Nombre               | Vacío                | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Documento            | ABC123               | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Documento            | 123456               | Aceptado             | Aceptado             |
++----------------------+----------------------+----------------------+----------------------+
+| Correo               | usuario              | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Celular              | 300123               | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Celular              | 3001234567           | Aceptado             | Aceptado             |
++----------------------+----------------------+----------------------+----------------------+
+| Fecha                | 2027-01-01           | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Cantidad             | 7                    | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Tipo de bicicleta    | Sin seleccionar      | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Plan de alquiler     | Sin seleccionar      | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Condiciones          | Sin marcar           | Rechazado            | Rechazado            |
++----------------------+----------------------+----------------------+----------------------+
+| Observaciones        | Más de 300 caracteres| No permite superar   | No permite superar   |
+|                      |                      | el límite            | el límite            |
++----------------------+----------------------+----------------------+----------------------+
+

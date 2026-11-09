@@ -49,13 +49,18 @@
                 <legend>Tus datos</legend>
 
                 <label for="nombre">Nombre y apellido: </label>
-                <input type="text" id="nombre" name="nombre">
+                <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                required 
+                minlength="3">
 
                 <br><br>
 
                 <label for="tipo_documento">Tipo de documento: </label>
 
-                <select id="tipo_documento" name="tipo_documento">
+                <select id="tipo_documento" name="tipo_documento" required>
                 <option value="">Selecciona tu documento</option>
                 <option value="CC">Cédula de ciudadanía</option>
                 <option value="CE">Cédula de extranjería</option>
@@ -64,30 +69,62 @@
                 </select> &nbsp;
                 
                 <label for="numero_documento">Número: </label>
-                <input type="text" id="numero_documento" name="numero_documento">
+                <input 
+                type="text" 
+                id="numero_documento" 
+                name="numero_documento" 
+                required minlength="6" 
+                maxlength="10" 
+                pattern="[0-9]{6,10}" 
+                title="Ingresa un número de documento con 6 a 10 dígitos">
 
                 <br><br>
 
                 <label for="telefono">Número de teléfono</label>
-                <input type="tel" id="telefono" name="telefono">
+                <input 
+                type="tel" 
+                id="telefono" 
+                name="telefono" 
+                required
+                pattern="3[0-9]{9}"
+                title="Ingresa un celular de 10 dígitos que comience por 3.">
 
                 <br><br>
 
                 <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo">
+                <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                required>
 
                 <br><br>
 
                 <label for="direccion">Dirección de residencia: </label>
-                <input type="text" id="direccion" name="direccion">
+                <input 
+                type="text" 
+                id="direccion" 
+                name="direccion">
             </fieldset>
 
             <fieldset>
                 <legend>Tu alquiler</legend>
 
-                <p>Tipo de bicicleta: </p>
+                <label for="cantidad_bicicletas">Cantidad de bicicletas: </label>
 
-                <input type="radio" id="urbana" name="tipo_bicicleta" value="urbana">
+                <input 
+                type="number" 
+                id="cantidad_bicicletas" 
+                name="cantidad_bicicletas" 
+                min="1" 
+                max="6"
+                required>
+
+                <br><br>
+
+                <strong>Tipo de bicicleta: </strong>
+
+                <input type="radio" id="urbana" name="tipo_bicicleta" value="urbana" required>
                 <label for="urbana">Urbana</label>
 
                 <input type="radio" id="montaña" name="tipo_bicicleta" value="montaña">
@@ -98,10 +135,10 @@
 
                 <br><br>
 
-                <label for="tiempo_alquiler">Tiempo de alquiler: </label>
+                <label for="tiempo_alquiler">Plan de alquiler: </label>
 
-                <select id="tiempo_alquiler" name="tiempo_alquiler">
-                <option value="">Selecciona el tiempo de alquiler</option>
+                <select id="tiempo_alquiler" name="tiempo_alquiler" required>
+                <option value="">Selecciona un plan de alquiler</option>
                 <option value="1h">1 hora</option>
                 <option value="4h">Medio día (4 horas)</option>
                 <option value="1d">Día completo</option>
@@ -110,7 +147,13 @@
                 <br><br>
 
                 <label for="fecha_alquiler">Fecha del alquiler: </label>
-                <input type="date" id="fecha_alquiler" name="fecha_alquiler">
+                <input 
+                type="date" 
+                id="fecha_alquiler" 
+                name="fecha_alquiler" 
+                required
+                min="2026-11-01"
+                max="2026-12-31">
             </fieldset>
 
             <fieldset>
@@ -118,7 +161,7 @@
 
                 <label for="tipo_pago">Tipo de pago: </label>
 
-                <select id="tipo_pago" name="tipo_pago">
+                <select id="tipo_pago" name="tipo_pago" required>
                 <option value="">Selecciona un método de pago</option>
                 <option value="efectivo">Efectivo</option>
                 <option value="transferencia">Transferencia bancaria</option>
@@ -127,15 +170,22 @@
 
                 <br><br> 
 
-                <input type="checkbox" id="condiciones" name="condiciones" value="aceptadas">
+                <input 
+                type="checkbox" id="condiciones" name="condiciones" value="aceptadas" required>
                 <label for="condiciones">Acepto las condiciones del servicio</label>
 
                 <br><br>
 
                 <label for="observaciones">Observaciones adicionales: </label>
-                <textarea id="observaciones" name="observaciones" rows="1" cols="40"></textarea>
+                <textarea 
+                id="observaciones" 
+                name="observaciones" 
+                rows="1" 
+                cols="40"
+                maxlength="300"
+                ></textarea>
             </fieldset>
-            <button type="submit">Enviar reserva</button>
+            <button type="submit" name="enviar_reserva">Enviar reserva</button>
         </form>
        </section>
 
