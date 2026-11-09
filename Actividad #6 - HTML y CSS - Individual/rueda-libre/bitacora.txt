@@ -575,3 +575,46 @@ CLASIFICACIÓN DE CONTRASTE
 - Después de evaluar las ocho combinaciones de la paleta de Rueda Libre, se determinó que seis son aptas para texto normal y dos no cumplen con los niveles mínimos de contraste WCAG AA.
 - Por esta razón, se utilizará Azul Noche y Gris Asfalto para los textos, Crema para el fondo general, Verde Ruta para botones y enlaces, y Naranja Pedal para destacados y botones secundarios con texto Azul Noche.
 - Se evitará utilizar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema, debido a que estas combinaciones no alcanzan el contraste mínimo requerido.
+
+        DÍA 3 - HTML & CSS
+
+    MINIRETO #1 - LA IDENTIDAD DE RUEDA LIBRE
+
+Crear y conectar una hoja de estilos externa con variables, tipografías de google y colores de marca aplicados por herencia.
+
+    INSTRUCCIONES
+
+- Crea css/styles.css y enlázalo en las tres páginas. Ten en cuenta la carpeta en la que está cada archivo.
+- Carga Montserrat y Open Sans desde Google Fonts en las tres páginas, antes de tu hoja de estilos.
+- Declara variables globales para los cinco colores, las dos familias tipográficas (con fuentes de respaldo) y una escala de espaciado de al menos tres tamaños en rem.
+- Aplica al cuerpo del documento la fuente de texto, el color de texto y el color de fondo mediante las variables, aprovechando la herencia. Aplica la fuente de títulos a todos los encabezados con un solo selector agrupado.
+- Usa únicamente combinaciones aprobadas en tu mapa de uso de color.
+- Verifica que no queden estilos en línea ni etiquetas <style> en ningún HTML.
+- En DevTools (Styles y Computed), comprueba qué propiedades hereda un párrafo desde el cuerpo. Registra en la bitácora una propiedad que se hereda y una que no, comprobadas en tu sitio.
+-Realizar push: Feat: La identidad de Rueda Libre.
+
+    CONTEXTO
+
+El manual de marca del cliente define la paleta que validaste ayer y dos tipografías de Google Fonts: Montserrat (grosor 700) para títulos y Open Sans (grosores 400 y 600) para textos. El cliente pide que el sitio "se sienta de la marca" desde la primera pantalla.
+
+    REQUISITOS
+
+- <link rel="stylesheet"> con rutas relativas; Google Fonts (preconnect y hoja de la fuente).
+- :root, propiedades personalizadas (--nombre) y var().
+- font-family con respaldo, color, background-color; selectores de elemento y agrupados.
+- Herencia; DevTools (Styles y Computed).
+
+    CHECKLIST
+
+- Las tres páginas cargan styles.css y las dos fuentes sin errores en Network.
+- Todos los colores y fuentes se aplican con var(); ningún código de color se repite fuera de :root.
+- Ningún HTML contiene style="" ni <style>.
+- En Computed los títulos muestran Montserrat y los párrafos Open Sans.
+- La bitácora registra la comprobación de herencia con una propiedad que se hereda y otra que no.
+
+    COMPROBACIÓN DE HERENCIA
+
+- Se utilizó DevTools para inspeccionar las propiedades CSS de un párrafo de la página de inicio, mediante las pestañas Inspector y Calculado.
+- Propiedad heredada – font-family: se comprobó que el párrafo recibe la tipografía Open Sans definida en el elemento body.
+- Propiedad no heredada – background-color: se comprobó que el párrafo no recibe automáticamente el color de fondo definido en body, ya que esta propiedad no se transmite por herencia.
+- También se verificó que los encabezados utilizan Montserrat y los párrafos Open Sans.

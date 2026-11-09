@@ -1,0 +1,33 @@
+
+/* VARIABLES GLOBALES */
+:root {
+    /* Colores de marca */
+    --color-verde: #1E7A4F;
+    --color-naranja: #F39A2B;
+    --color-azul: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris: #5B6470;
+
+    /* Familias tipográficas */
+    --fuente-titulos: "Montserrat", sans-serif;
+    --fuente-textos: "Open Sans", sans-serif;
+
+    /* Escala de espaciado */
+    --espacio-pequeno: 0.5rem;
+    --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
+}
+
+/* ESTILOS GENERALES DEL DOCUMENTO */
+body {
+    font-family: var(--fuente-textos);
+    color: var(--color-azul);
+    background-color: var(--color-crema);
+}
+
+/* TIPOGRAFÍA DE LOS ENCABEZADOS */
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+}
