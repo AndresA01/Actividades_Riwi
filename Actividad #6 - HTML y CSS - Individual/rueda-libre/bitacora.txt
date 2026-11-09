@@ -769,3 +769,66 @@ En el monitor del cliente, el menú de la v1.0 queda separado del nombre del neg
 - Al estrechar la ventana, los enlaces del menú bajan de línea en lugar de desbordarse.
 - El pie muestra sus tres bloques en fila en pantallas anchas.
 - Las tres páginas se ven igual, porque los estilos están en la hoja compartida.
+
+    MINIRETO #2 - LA FLOTA EN CUADÍCULA: GRID
+
+Construir una cuadrícula de tarjetas adaptable con Grid y alinear el contenido interno de cada tarjeta con Flexbox.
+
+    INSTRUCCIONES
+
+- En inicio, crea la sección "Nuestra flota" con su encabezado; cada modelo es un artículo con imagen, nombre, descripción, precio y enlace.
+- Construye la cuadrícula con Grid para que la cantidad de columnas dependa del espacio disponible, sin media queries, con un ancho mínimo razonable para cada tarjeta.
+- Separa filas y columnas con una separación uniforme.
+- Organiza el contenido de cada tarjeta en columna con Flexbox, de forma que el enlace "Reservar" quede siempre al final de la tarjeta, aunque las descripciones tengan longitudes distintas.
+- Agrega un séptimo modelo (Tándem, "Para dos personas; perfecta para pasear en pareja", $20.000) y comprueba que la cuadrícula se reorganiza sin tocar el CSS.
+- Con el modo dispositivo de DevTools, registra en la bitácora cuántas columnas se ven a 1280 px, 900 px y 500 px.
+- Realizar push: Feat: La flota en cuadrícula: Grid
+
+    CONTEXTO
+
+El cliente amplió su flota y quiere mostrarla en inicio. Cada modelo tiene foto, nombre, descripción corta, precio por hora y un enlace "Reservar":
++-------------------+--------------------------------------------------------+-----------------+
+| Modelo            | Descripción                                            | Precio por hora |
++-------------------+--------------------------------------------------------+-----------------+
+| Urbana Clásica    | Cómoda y liviana para las ciclorutas.                  | $10.000         |
++-------------------+--------------------------------------------------------+-----------------+
+| Urbana Plegable   | Se dobla en segundos; ideal para combinar con el metro.| $12.000         |
++-------------------+--------------------------------------------------------+-----------------+
+| Montaña Trail     | Suspensión delantera y 21 cambios para las subidas.    | $15.000         |
++-------------------+--------------------------------------------------------+-----------------+
+| Gravel Aventura   | Para rutas mixtas de asfalto y destapado.              | $18.000         |
++-------------------+--------------------------------------------------------+-----------------+
+| Eléctrica Urbana  | Asistencia eléctrica con 45 km de autonomía.           | $25.000         |
++-------------------+--------------------------------------------------------+-----------------+
+| Infantil          | Para niños de 6 a 10 años.                             | $8.000          |
++-------------------+--------------------------------------------------------+-----------------+
+La flota seguirá creciendo, así que la sección debe adaptarse sola a la cantidad de modelos.
+
+    REQUISITOS
+
+- display: grid, grid-template-columns, repeat(), auto-fit, minmax(), unidad fr y gap.
+- Flexbox en columna (flex-direction, justify-content).
+- Box model de la semana 1 en las tarjetas; DevTools (modo dispositivo).
+
+    CHECKLIST
+
+- La cuadrícula cambia la cantidad de columnas según el ancho, sin media queries.
+- Las tarjetas de una misma fila tienen la misma altura y sus enlaces "Reservar" quedan alineados al final.
+- El séptimo modelo se acomoda sin modificar el CSS.
+- Las tarjetas conservan el relleno, el borde y las esquinas de la semana 1.
+- La bitácora registra las columnas observadas en los tres anchos.
+
+    PRUEBA CON DEVTOOLS
++----------------------+----------------------+--------------------------------------+
+| Ancho de pantalla    | Columnas esperadas   | Comportamiento                       |
++----------------------+----------------------+--------------------------------------+
+| 1280 px              | 4 columnas           | Tarjetas distribuidas en cuatro      |
+|                      |                      | columnas.                            |
++----------------------+----------------------+--------------------------------------+
+| 900 px               | 3 columnas           | La cuadrícula se reorganiza en tres  |
+|                      |                      | columnas.                            |
++----------------------+----------------------+--------------------------------------+
+| 500 px               | 1 columna            | Las tarjetas se organizan en una     |
+|                      |                      | sola columna.                        |
++----------------------+----------------------+--------------------------------------+
+
