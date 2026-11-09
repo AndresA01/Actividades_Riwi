@@ -459,3 +459,119 @@ Es obligatorio aceptarlas.
 |                      |                      | el límite            | el límite            |
 +----------------------+----------------------+----------------------+----------------------+
 
+
+        MINIRETO #4 - RUDA LIBRE V0.2 EN LÍNEA: ACCESIBLE Y PUBLICA
+
+Auditar y corregir la accesibilidad del sitio, validad el contraste de la paleta de marca y publicar el sitio en Github Pages.
+
+    INSTRUCCIONES
+
+- Audita las tres páginas con esta lista: textos alternativos (descriptivos o vacíos si la imagen es decorativa), jerarquía de encabezados, textos de enlace que se entiendan fuera de contexto, idioma del documento y recorrido completo con teclado. Corrige lo que encuentres.
+- Registra en la bitácora cada hallazgo y su corrección.
+- Con un verificador de contraste (WebAIM Contrast Checker o el selector de color de DevTools), evalúa estas combinaciones: texto blanco sobre Verde Ruta, blanco sobre Naranja Pedal, Azul Noche sobre Naranja Pedal, Azul Noche sobre Crema, Gris Asfalto sobre Crema, Verde Ruta sobre Crema, Naranja Pedal sobre Crema y blanco sobre Azul Noche.
+- Clasifica cada combinación como apta para texto normal, apta solo para texto grande o no apta, y escribe en la bitácora tu mapa de uso de color: qué color usarás para texto, fondos, botones y enlaces.
+- Publica el sitio en GitHub Pages desde la rama principal.
+- Recorre el sitio publicado: verifica las tres páginas, las imágenes y los enlaces. Si algo falla en línea y no en local, revisa mayúsculas y minúsculas en los nombres de archivo.
+- Agrega el enlace publicado en la descripción del repositorio y en la bitácora.
+- Realizar push: Feat: Rueda Libre v0.2 en línea: accesible y publica.
+
+    CONTEXTO
+
+Antes de mostrarle el sitio al cliente, tu líder técnico pide dos cosas: una auditoría de accesibilidad y publicar la versión en internet. Además, el cliente envió la paleta de su marca y quiere saber qué combinaciones se pueden usar para texto; mañana las aplicarás con CSS.
+
++---------------+---------+--------------------------------------+
+| Color         | Código    | Uso que propone el cliente         |
++---------------+---------+--------------------------------------+
+| Verde Ruta    | #1E7A4F | Botones y enlaces                  |
++---------------+---------+--------------------------------------+
+| Naranja Pedal | #F39A2B | Destacados y botones secundarios   |
++---------------+---------+--------------------------------------+
+| Azul Noche    | #14213D | Títulos y encabezado               |
++---------------+---------+--------------------------------------+
+| Crema         | #FAF6EF | Fondo general                      |
++---------------+---------+--------------------------------------+
+| Gris Asfalto  | #5B6470 | Texto secundario                   |
++---------------+---------+--------------------------------------+
+
+    REQUISITOS
+
+- Textos alternativos, jerarquía de encabezados, textos de enlace y atributo lang.
+- Navegación por teclado.
+- Relación de contraste WCAG: 4.5:1 para texto normal y 3:1 para texto grande.
+- WebAIM Contrast Checker o DevTools; GitHub Pages.
+
+    CHECKLIST
+
+- El sitio publicado carga las tres páginas sin imágenes rotas ni enlaces con error.
+- Todas las imágenes tienen un alt adecuado según su función.
+- La bitácora registra al menos cinco hallazgos de accesibilidad con su corrección.
+- Tu clasificación de contraste coincide con los valores del verificador y ninguna combinación marcada como apta para texto normal está por debajo de 4.5:1.
+- La descripción del repositorio muestra el enlace de GitHub Pages.
+
+    HALLAZGOS Y CORRECIONES
+
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| N.º| Archivo         | Hallazgo identificado                     | Corrección realizada                                 |
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 1  | index.html      | Texto alternativo del logotipo mejorable. | Se ajustó el atributo alt para describir el logotipo.|
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 2  | index.html      | Algunos enlaces poco descriptivos.        | Se mejoraron los textos para indicar su destino.     |
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 3  | tarifas.html    | Texto alternativo del logotipo mejorable. | Se ajustó el atributo alt para describir el logotipo.|
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 4  | tarifas.html    | Enlace «Reservar ahora» poco específico.  | Se cambió por «Reservar un recorrido».               |
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 5  | reservas.html   | Verificar asociación de etiquetas.        | Se comprobó la asociación mediante for e id.         |
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+| 6  | Las tres páginas| Verificar navegación mediante teclado.    | Se probó con Tab, Shift + Tab y Enter.               |
++----+-----------------+-------------------------------------------+------------------------------------------------------+
+
+    EVALUACIÓN DE COLORES 
+
+MAPA DE USO DE COLORES
++---------------+---------+------------------------------------------------+
+| Elemento      | Código  | Uso propuesto                                  |
++---------------+---------+------------------------------------------------+
+| Texto         | #14213D | Texto principal de las páginas.              |
++---------------+---------+------------------------------------------------+
+| Texto secund. | #5B6470 | Descripciones y textos complementarios.      |
++---------------+---------+------------------------------------------------+
+| Fondo general | #FAF6EF | Fondo principal de las tres páginas.         |
++---------------+---------+------------------------------------------------+
+| Botones       | #1E7A4F | Botones con texto blanco.                    |
++---------------+---------+------------------------------------------------+
+| Bot. secund.  | #F39A2B | Botones secundarios con texto Azul Noche.    |
++---------------+---------+------------------------------------------------+
+| Enlaces       | #1E7A4F | Enlaces con fondo Crema.                     |
++---------------+---------+------------------------------------------------+
+| Destacados    | #F39A2B | Elementos visuales y destacados decorativos. |
++---------------+---------+------------------------------------------------+
+| Encabezado    | #14213D | Fondo Azul Noche con texto blanco.           |
++---------------+---------+------------------------------------------------+
+
+CLASIFICACIÓN DE CONTRASTE
++----+----------------------+----------------------+------------+-----------------------------+
+| N.º| Texto                  | Fondo                  | Contraste  | Clasificación           |
++----+----------------------+----------------------+------------+-----------------------------+
+| 1  | Blanco #FFFFFF       | Verde #1E7A4F        | 5.31:1     | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+| 2  | Blanco #FFFFFF       | Naranja #F39A2B      | 2.22:1     | No apta                 |
++----+----------------------+----------------------+------------+-----------------------------+
+| 3  | Azul #14213D         | Naranja #F39A2B      | 7.20:1     | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+| 4  | Azul #14213D         | Crema #FAF6EF        | 14.83:1    | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+| 5  | Gris #5B6470         | Crema #FAF6EF        | 5.57:1     | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+| 6  | Verde #1E7A4F        | Crema #FAF6EF        | 4.93:1     | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+| 7  | Naranja #F39A2B      | Crema #FAF6EF        | 2.06:1     | No apta                 |
++----+----------------------+----------------------+------------+-----------------------------+
+| 8  | Blanco #FFFFFF       | Azul #14213D         | 15.97:1    | Apta para texto normal  |
++----+----------------------+----------------------+------------+-----------------------------+
+
+    CONCLUSION
+
+- Después de evaluar las ocho combinaciones de la paleta de Rueda Libre, se determinó que seis son aptas para texto normal y dos no cumplen con los niveles mínimos de contraste WCAG AA.
+- Por esta razón, se utilizará Azul Noche y Gris Asfalto para los textos, Crema para el fondo general, Verde Ruta para botones y enlaces, y Naranja Pedal para destacados y botones secundarios con texto Azul Noche.
+- Se evitará utilizar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema, debido a que estas combinaciones no alcanzan el contraste mínimo requerido.
