@@ -108,6 +108,45 @@ nav ul {
     min-height: 50vh;
 }
 
+/* Portada en dos columnas con Grid */
+.portada-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--espacio-grande);
+}
+
+/* Galería de rutas con Grid */
+#rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-grande);
+}
+
+/* Estilos de las tarjetas de rutas */
+.tarjeta-ruta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-pequeno);
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris);
+    border-radius: var(--espacio-pequeno);
+}
+
+/* Imágenes de las rutas */
+.tarjeta-ruta img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--espacio-pequeno);
+}
+
+/* Encabezado de la galería */
+#rutas h2 {
+    grid-column: 1 / -1;
+}
+
 /* Tarjetas de servicios */
 article {
     padding: var(--espacio-mediano);
@@ -280,4 +319,24 @@ footer {
     font-weight: 600;
     border-radius: var(--espacio-pequeno);
     z-index: 1000;
+}
+
+/* Distribución del formulario y horarios de atención */
+.reservas-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espacio-grande);
+    align-items: start;
+}
+
+/* Campos del formulario en una misma fila */
+.campos-en-fila {
+    display: flex;
+    gap: var(--espacio-mediano);
+}
+
+.campos-en-fila div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }

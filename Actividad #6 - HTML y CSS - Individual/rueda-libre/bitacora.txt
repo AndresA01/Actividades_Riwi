@@ -832,3 +832,32 @@ La flota seguirá creciendo, así que la sección debe adaptarse sola a la canti
 |                      |                      | sola columna.                        |
 +----------------------+----------------------+--------------------------------------+
 
+    MINIRETO #3 - LAYOUT EN DOS DIMENSIONES
+
+Construir el layout general de las páginas combinando Grid y Flexbox según lo que necesite cada caso.
+
+    INSTRUCCIONES
+
+- Construye la portada de inicio en dos columnas con Grid y unidades fr; el bloque de texto debe quedar centrado verticalmente.
+- Construye la galería "Nuestras rutas" con tres tarjetas en una fila.
+- En reservas, distribuye el formulario y la información de contacto en proporción 2:1.
+- Dentro del formulario, ubica en la misma fila dos campos cortos relacionados (por ejemplo, documento y celular). Tú decides si con Flexbox o con Grid.
+- Registra en la bitácora, para cada caso (portada, galería, reservas, fila del formulario, encabezado y pie), si usaste Flexbox o Grid y por qué.
+- Realizar push: Feat: Layout en dos dimenciones
+
+    CONTEXTO
+
+El equipo de diseño de Nodo Digital entregó el boceto de escritorio: en inicio, la portada con el texto a la izquierda y una foto a la derecha, y una galería con las tres rutas guiadas (foto, nombre y nivel) en una fila; en reservas, el formulario a la izquierda ocupando dos tercios y la información de contacto a la derecha ocupando un tercio.
+
+    REQUISITOS
+
+- Grid: grid-template-columns, fr, repeat(), gap.
+- Flexbox: align-items, justify-content, gap.
+- Criterio de elección entre una dimensión (Flexbox) y dos dimensiones (Grid).
+
+    CHECKLIST
+
+- En escritorio, el layout coincide con el boceto: portada en dos columnas, galería de tres rutas y reservas en proporción 2:1.
+- Las columnas se definen con fr, no con porcentajes ni anchos fijos en px.
+- La bitácora justifica las seis decisiones con el criterio de una o dos dimensiones.
+- El menú, la flota y la validación del formulario siguen funcionando.
