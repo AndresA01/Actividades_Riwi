@@ -93,3 +93,98 @@ button:focus {
     outline-offset: 2px;
 }
 
+/* CONFIGURACIÓN GLOBAL DEL BOX MODEL */
+* {
+    box-sizing: border-box;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+/* IMAGEN DE PORTADA */
+.portada {
+    width: 100%;
+    min-height: 50vh;
+}
+
+/* TARJETAS DE SERVICIOS */
+article {
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris);
+    border-radius: var(--espacio-pequeno);
+    margin-bottom: var(--espacio-mediano);
+}
+
+/* TABLAS */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris);
+}
+
+th {
+    background-color: var(--color-verde);
+    color: var(--color-crema);
+}
+
+/* ORGANIZACIÓN DEL FORMULARIO */
+label {
+    display: block;
+    margin-bottom: var(--espacio-pequeno);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: var(--espacio-pequeno);
+}
+
+fieldset {
+    margin-bottom: var(--espacio-mediano);
+}
+
+button {
+    padding: var(--espacio-mediano) var(--espacio-grande);
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* AJUSTE DE OPCIONES Y CASILLAS */
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    vertical-align: middle;
+}
+
+footer {
+    text-align: center;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    width: auto;
+}
+
+/* MENÚ HORIZONTAL */
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: var(--espacio-mediano);
+}

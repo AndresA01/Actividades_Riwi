@@ -662,3 +662,44 @@ En la revisión, el cliente notó tres cosas: no se distingue en qué página es
 - #menu a: especificidad 1-0-1 (un ID y un elemento).
 - .activo: especificidad 0-1-0 (una clase).
 - Aunque .activo está declarado después, el selector #menu a tiene prioridad debido a su mayor especificidad. Por esta razón, la propiedad color de .activo aparece tachada en DevTools.
+
+    MINIRETO #3 - TODO EN SU LUGAR: MODELO DE CAJA
+
+Controlar en tamaño y el espaciado de los elementos con el box model, box-sizing y unidades relativas.
+
+    INSTRUCCIONES
+
+- Haz que el ancho de todos los elementos incluya su relleno y su borde.
+- Limita el ancho del contenido principal con una medida en rem y céntralo en la página. Dale a la portada de inicio una altura mínima relativa al alto de la ventana.
+- Convierte cada servicio de inicio en una tarjeta con relleno, borde, esquinas redondeadas y separación entre tarjetas, usando tu escala de variables. Haz que su imagen ocupe todo el ancho de la tarjeta con una unidad porcentual.
+- Mejora la lectura de las tablas: relleno en las celdas, bordes y encabezados con un fondo de marca que cumpla contraste.
+- Ordena el formulario: cada etiqueta sobre su campo, campos a todo el ancho disponible, separación entre grupos y un botón con relleno generoso.
+- Muestra las opciones del menú en una fila usando el valor de display adecuado.
+- Mide en DevTools (Computed) el ancho total de una tarjeta antes y después de cambiar box-sizing y registra ambos valores en la bitácora.
+-Realizar push: Feat: Todo en su lugar: modelo de caja.
+    
+    CONTEXTO
+
+El cliente comentó: "Se ve todo pegado. Los servicios parecen un solo bloque, las tablas cuestan leerlas, el formulario se ve apretado y en pantallas grandes las líneas de texto son larguísimas".
+
+    REQUISITOS
+
+- Box model: content, padding, border, margin; box-sizing: border-box.
+- width, max-width, min-height y márgenes automáticos para centrar.
+- Unidades px (solo bordes), %, rem, vh.
+- display (block, inline-block); DevTools (Computed).
+
+    CHECKLIST
+
+- Todos los elementos usan border-box (verificable en Computed).
+- El contenido principal tiene un ancho máximo en rem y está centrado; la portada usa una altura en vh.
+- Tarjetas, tablas y formulario usan la escala de espaciado en rem: solo los bordes están en px.
+- Las opciones del menú aparecen en una fila y ninguna imagen de tarjeta se sale de su tarjeta.
+- La bitácora registra la medición del ancho de la tarjeta con ambos valores de box-sizing.
+
+    VALORES DE BOX-SIZING
+
+- content-box: 534.5 px
+- border-box: 500 px
+- Para comparar ambos modelos se aplicó temporalmente width: 500px al mismo elemento <article>, manteniendo iguales el padding y los bordes. La medición se realizó con getBoundingClientRect().width.
+- Después se retiró el ancho temporal y se restauró box-sizing: border-box.
