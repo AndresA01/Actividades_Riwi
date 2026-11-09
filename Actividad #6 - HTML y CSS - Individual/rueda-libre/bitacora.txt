@@ -735,3 +735,37 @@ Faltan los últimos detalles antes del lanzamiento. El cliente quiere destacar c
 - Las tres páginas comparten el mismo estilo de encabezado, menú, botones y pie desde una sola hoja de estilos.
 - styles.css está organizado por secciones comentadas (variables, base, navegación, componentes, formulario).
 - El sitio v1.0 publicado funciona sin errores: enlaces, imágenes, fuentes, estados y validación del formulario.
+
+    SEMANA #2
+
+        DÍA #1 - FLEXBOX, GRID Y DISEÑO RESPONSIVE
+
+    MINIRETO #1 - UN ENCABEZADO QUE SE ACOMODA: FLEXBOX
+
+Distribuir y alinear el encabezado, el menú y el pie de página en una dimensión con Flexbox.
+
+    INSTRUCCIONES
+
+-En el encabezado, ubica el nombre del negocio en un extremo y el menú en el otro, centrados verticalmente entre sí.
+- Convierte la lista del menú en un contenedor flexible con una separación uniforme entre enlaces. Elimina los márgenes y el inline-block que usaste en la semana 1 para separarlos.
+- Permite que los enlaces del menú pasen a otra línea cuando no quepan.
+- Organiza el pie en tres bloques en fila (marca, contacto y horario), alineados por arriba y separados de forma uniforme.
+- Estrecha poco a poco la ventana del navegador y describe en la bitácora qué ocurre con el encabezado y el pie.
+- Realizar push: Feat: Un encabezado que se acomoda: flexbox
+
+    CONTEXTO
+
+En el monitor del cliente, el menú de la v1.0 queda separado del nombre del negocio, y en el celular se amontona. El pie de página es una columna larga incluso en pantallas anchas. Nodo Digital decide rehacer la distribución con técnicas modernas, empezando por el encabezado y el pie.
+
+    REQUISITOS
+
+- display: flex, flex-direction, justify-content, align-items, flex-wrap y gap.
+- Estilos en css/styles.css (compartidos por las tres páginas).
+
+    CHECKLIST
+
+- En pantallas anchas, nombre y menú quedan en extremos opuestos y alineados verticalmente.
+- El menú separa sus enlaces con gap: ya no usa márgenes ni inline-block para eso.
+- Al estrechar la ventana, los enlaces del menú bajan de línea en lugar de desbordarse.
+- El pie muestra sus tres bloques en fila en pantallas anchas.
+- Las tres páginas se ven igual, porque los estilos están en la hoja compartida.

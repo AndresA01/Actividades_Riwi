@@ -18,6 +18,7 @@
     /* Escala de espaciado */
     --espacio-pequeno: 0.5rem;
     --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
 }
 
 
@@ -64,14 +65,24 @@ main {
     font-weight: 600;
 }
 
-/* Menú horizontal */
-nav ul {
-    padding: 0;
+/* Encabezado con Flexbox */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-grande);
 }
 
-nav li {
-    display: inline-block;
-    margin-right: var(--espacio-mediano);
+/* Menú con Flexbox */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--espacio-mediano);
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 /* Estados de interacción */
@@ -210,7 +221,12 @@ button:focus {
 ================================================== */
 
 footer {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: var(--espacio-grande);
+    padding: var(--espacio-grande);
     padding-bottom: 5rem;
 }
 
