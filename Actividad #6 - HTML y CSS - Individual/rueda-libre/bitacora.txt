@@ -703,3 +703,35 @@ El cliente comentó: "Se ve todo pegado. Los servicios parecen un solo bloque, l
 - border-box: 500 px
 - Para comparar ambos modelos se aplicó temporalmente width: 500px al mismo elemento <article>, manteniendo iguales el padding y los bordes. La medición se realizó con getBoundingClientRect().width.
 - Después se retiró el ancho temporal y se restauró box-sizing: border-box.
+
+    MINIRETO #4 - RUEDA LIBRE V1.0: LANZAMIENTO
+
+Aplicar posicionamiento a los últimos componentes, consolidar el estilo de las tres páginas y publicar la versión 1.0.
+
+    INSTRUCCIONES
+
+- Agrega la etiqueta "Nuevo" a la tarjeta del servicio de bicicletas eléctricas, ubicada en una esquina superior de la tarjeta, sin desplazar su contenido.
+- Agrega en las tres páginas un enlace "WhatsApp" que permanezca visible en la esquina inferior derecha al hacer scroll (enlace a https://wa.me/573000000000 en otra pestaña, con texto visible).
+- Asegúrate de que ese enlace no tape el contenido del final de las páginas.
+- Revisa la consistencia de las tres páginas: encabezado, menú, títulos, botones y pie idénticos. Elimina reglas duplicadas o sin uso, agrupa selectores repetidos y organiza styles.css por secciones con comentarios.
+- Revisa en DevTools que no haya declaraciones tachadas inesperadas ni errores 404, y recorre el sitio con teclado una última vez.
+- Publica la v1.0 con un commit: Rueda Libre v1.0: lanzamiento y verifica el sitio en GitHub Pages.
+- Cierra la bitácora con un resumen de lo que construiste en cada MiniReto de la semana y lo que mejorarías.
+
+     CONTEXTO
+
+Faltan los últimos detalles antes del lanzamiento. El cliente quiere destacar con una etiqueta "Nuevo" su servicio de bicicletas eléctricas, y tener un acceso a WhatsApp siempre visible, porque es su principal canal de atención. Nodo Digital, además, exige una revisión final de calidad antes de entregar.
+
+    REQUISITOS
+
+- position (relative, absolute, fixed) con top, right, bottom y left.
+- Relleno y márgenes; agrupación de selectores; comentarios en CSS.
+- DevTools; Git y GitHub Pages.
+
+    CHECKLIST
+
+- La etiqueta "Nuevo" queda anclada a su tarjeta y no desplaza el contenido.
+- El enlace de WhatsApp es visible en todo momento en las tres páginas, no tapa contenido y se puede enfocar con el teclado.
+- Las tres páginas comparten el mismo estilo de encabezado, menú, botones y pie desde una sola hoja de estilos.
+- styles.css está organizado por secciones comentadas (variables, base, navegación, componentes, formulario).
+- El sitio v1.0 publicado funciona sin errores: enlaces, imágenes, fuentes, estados y validación del formulario.

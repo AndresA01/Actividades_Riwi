@@ -1,5 +1,8 @@
 
-/* VARIABLES GLOBALES */
+/* ==================================================
+   1. VARIABLES GLOBALES
+================================================== */
+
 :root {
     /* Colores de marca */
     --color-verde: #1E7A4F;
@@ -15,103 +18,86 @@
     /* Escala de espaciado */
     --espacio-pequeno: 0.5rem;
     --espacio-mediano: 1rem;
-    --espacio-grande: 2rem;
 }
 
-/* ESTILOS GENERALES DEL DOCUMENTO */
+
+/* ==================================================
+   2. ESTILOS GENERALES
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--fuente-textos);
     color: var(--color-azul);
     background-color: var(--color-crema);
 }
 
-/* TIPOGRAFÍA DE LOS ENCABEZADOS */
 h1,
 h2,
 h3 {
     font-family: var(--fuente-titulos);
 }
 
-/* REGLAS DEL COMPAÑERO */
-#menu a {
-    color: var(--color-gris);
-}
-
-#menu a.activo {
-    color: var(--color-verde);
-    font-weight: 600;
-}
-
-/* NAVEGACIÓN */
-#menu a {
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* ESTADO HOVER */
-#menu a:hover {
-    color: var(--color-azul);
-    text-decoration: underline;
-}
-
-/* ESTADO FOCUS */
-#menu a:focus {
-    color: var(--color-azul);
-    outline: 2px solid var(--color-verde);
-    outline-offset: 3px;
-}
-
-/* BOTONES DE RESERVA */
-.btn-reserva {
-    display: inline-block;
-    background-color: var(--color-verde);
-    color: var(--color-crema);
-    padding: var(--espacio-pequeno) var(--espacio-mediano);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-/* ESTADO HOVER */
-.btn-reserva:hover {
-    background-color: var(--color-azul);
-    color: var(--color-crema);
-}
-
-/* ESTADO FOCUS */
-.btn-reserva:focus {
-    outline: 2px solid var(--color-azul);
-    outline-offset: 3px;
-}
-
-/* ESTADO FOCUS DE LOS CAMPOS */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: 2px solid var(--color-verde);
-    outline-offset: 2px;
-}
-
-/* CONFIGURACIÓN GLOBAL DEL BOX MODEL */
-* {
-    box-sizing: border-box;
-}
-
-/* CONTENIDO PRINCIPAL */
 main {
     width: 100%;
     max-width: 70rem;
     margin: 0 auto;
 }
 
-/* IMAGEN DE PORTADA */
+
+/* ==================================================
+   3. NAVEGACIÓN
+================================================== */
+
+#menu a {
+    color: var(--color-gris);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Página actual */
+#menu a.activo {
+    color: var(--color-verde);
+    font-weight: 600;
+}
+
+/* Menú horizontal */
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: var(--espacio-mediano);
+}
+
+/* Estados de interacción */
+#menu a:hover {
+    color: var(--color-azul);
+    text-decoration: underline;
+}
+
+#menu a:focus {
+    color: var(--color-azul);
+    outline: 2px solid var(--color-verde);
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   4. COMPONENTES Y CONTENIDO
+================================================== */
+
+/* Imagen de portada */
 .portada {
     width: 100%;
     min-height: 50vh;
 }
 
-/* TARJETAS DE SERVICIOS */
+/* Tarjetas de servicios */
 article {
     padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris);
@@ -119,7 +105,44 @@ article {
     margin-bottom: var(--espacio-mediano);
 }
 
-/* TABLAS */
+/* Posicionamiento de la tarjeta eléctrica */
+.tarjeta-electrica {
+    position: relative;
+}
+
+/* Etiqueta de novedad */
+.etiqueta-nuevo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-naranja);
+    color: var(--color-azul);
+    padding: var(--espacio-pequeno);
+    font-weight: 600;
+}
+
+/* Botones de reserva */
+.btn-reserva {
+    display: inline-block;
+    background-color: var(--color-verde);
+    color: var(--color-crema);
+    padding: var(--espacio-pequeno) var(--espacio-mediano);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--espacio-pequeno);
+}
+
+.btn-reserva:hover {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+}
+
+.btn-reserva:focus {
+    outline: 2px solid var(--color-azul);
+    outline-offset: 3px;
+}
+
+/* Tablas */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -136,7 +159,11 @@ th {
     color: var(--color-crema);
 }
 
-/* ORGANIZACIÓN DEL FORMULARIO */
+
+/* ==================================================
+   5. FORMULARIOS
+================================================== */
+
 label {
     display: block;
     margin-bottom: var(--espacio-pequeno);
@@ -149,28 +176,12 @@ textarea {
     padding: var(--espacio-pequeno);
 }
 
-fieldset {
-    margin-bottom: var(--espacio-mediano);
-}
-
-button {
-    padding: var(--espacio-mediano) var(--espacio-grande);
-}
-
-input[type="checkbox"] {
-    width: auto;
-}
-
-/* AJUSTE DE OPCIONES Y CASILLAS */
+/* Opciones de selección */
 input[type="radio"],
 input[type="checkbox"] {
     display: inline;
     width: auto;
     vertical-align: middle;
-}
-
-footer {
-    text-align: center;
 }
 
 input[type="radio"] + label,
@@ -179,12 +190,44 @@ input[type="checkbox"] + label {
     width: auto;
 }
 
-/* MENÚ HORIZONTAL */
-nav ul {
-    padding: 0;
+/* Organización del formulario */
+fieldset {
+    margin-bottom: var(--espacio-mediano);
 }
 
-nav li {
-    display: inline-block;
-    margin-right: var(--espacio-mediano);
+/* Estados de enfoque de los campos */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid var(--color-verde);
+    outline-offset: 2px;
+}
+
+
+/* ==================================================
+   6. PIE DE PÁGINA
+================================================== */
+
+footer {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+
+/* ==================================================
+   7. ENLACE FIJO DE WHATSAPP
+================================================== */
+
+.whatsapp-fijo {
+    position: fixed;
+    right: var(--espacio-mediano);
+    bottom: var(--espacio-mediano);
+    background-color: var(--color-verde);
+    color: var(--color-crema);
+    padding: var(--espacio-mediano);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--espacio-pequeno);
+    z-index: 1000;
 }
