@@ -31,3 +31,65 @@ h2,
 h3 {
     font-family: var(--fuente-titulos);
 }
+
+/* REGLAS DEL COMPAÑERO */
+#menu a {
+    color: var(--color-gris);
+}
+
+#menu a.activo {
+    color: var(--color-verde);
+    font-weight: 600;
+}
+
+/* NAVEGACIÓN */
+#menu a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ESTADO HOVER */
+#menu a:hover {
+    color: var(--color-azul);
+    text-decoration: underline;
+}
+
+/* ESTADO FOCUS */
+#menu a:focus {
+    color: var(--color-azul);
+    outline: 2px solid var(--color-verde);
+    outline-offset: 3px;
+}
+
+/* BOTONES DE RESERVA */
+.btn-reserva {
+    display: inline-block;
+    background-color: var(--color-verde);
+    color: var(--color-crema);
+    padding: var(--espacio-pequeno) var(--espacio-mediano);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* ESTADO HOVER */
+.btn-reserva:hover {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+}
+
+/* ESTADO FOCUS */
+.btn-reserva:focus {
+    outline: 2px solid var(--color-azul);
+    outline-offset: 3px;
+}
+
+/* ESTADO FOCUS DE LOS CAMPOS */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid var(--color-verde);
+    outline-offset: 2px;
+}
+

@@ -618,3 +618,47 @@ El manual de marca del cliente define la paleta que validaste ayer y dos tipogra
 - Propiedad heredada – font-family: se comprobó que el párrafo recibe la tipografía Open Sans definida en el elemento body.
 - Propiedad no heredada – background-color: se comprobó que el párrafo no recibe automáticamente el color de fondo definido en body, ya que esta propiedad no se transmite por herencia.
 - También se verificó que los encabezados utilizan Montserrat y los párrafos Open Sans.
+
+    MINIRETO #2 - NAVEGACIÓN CON ESTADOS Y SIN CONFLICTOS
+
+Estilizar navegación, enlaces, botones y campos con selectores de clase, descendientes y pseudoclases, resolviendo conflictos de cascada y especificidad.
+
+    INSTRUCCIONES
+
+- Agrega a tu hoja las reglas del compañero (adapta los nombres de las variables a los que definiste en el MiniReto 9), asigna id="menu" a la lista del menú y marca con la clase activo el enlace de la página actual en cada página.
+- Usa DevTools para descubrir por qué la clase no se aplica. Registra en la bitácora la especificidad de cada selector y la causa del problema.
+- Corrige el conflicto sin usar !important ni estilos en línea.
+- Estiliza los enlaces del menú con un selector descendiente y define estados :hover y :focus que se distingan claramente.
+- Crea una clase para los enlaces de llamada a la acción ("Reservar ahora") con apariencia de botón y sus estados, usando solo combinaciones aprobadas.
+- Define un indicador de foco visible para los campos del formulario. Si modificas el contorno del navegador, reemplázalo por otro indicador.
+- Recorre las tres páginas con Tab y comprueba que el foco siempre se ve. Usa el botón :hov de DevTools para revisar los estados. 
+- Realizar push: Feat: Navegación con estados y sin conflictos.
+
+    CONTEXTO
+
+En la revisión, el cliente notó tres cosas: no se distingue en qué página está el usuario, los enlaces no reaccionan al pasar el mouse y, al navegar con Tab, no se ve dónde está el foco. Además, un compañero dejó estas reglas en la hoja de estilos y dice que "la clase no funciona":
+
+#menu a { color: var(--gris-asfalto); }
+.activo { color: var(--verde-ruta); font-weight: 600; }
+
+    REQUISITOS
+
+- Selectores de clase, de id y descendientes.
+- Pseudoclases :hover y :focus.
+- Cascada, especificidad y herencia.
+- DevTools (Styles, declaraciones tachadas y botón :hov).
+
+    CHECKLIST
+
+- En cada página se distingue el enlace de la página actual y el conflicto está resuelto sin !important.
+- La bitácora explica el conflicto con el cálculo de especificidad de ambos selectores.
+- Menú, botones y campos muestran estados :hover y :focus visibles.
+- Al recorrer el sitio con Tab, siempre se ve qué elemento tiene el foco.
+- Los colores de texto de todos los estados cumplen 4.5:1 de contraste.
+
+    REGISTRO CONFLICTO
+    
+- Se identificó que la clase .activo no aplicaba el color verde porque el selector #menu a tenía mayor especificidad.
+- #menu a: especificidad 1-0-1 (un ID y un elemento).
+- .activo: especificidad 0-1-0 (una clase).
+- Aunque .activo está declarado después, el selector #menu a tiene prioridad debido a su mayor especificidad. Por esta razón, la propiedad color de .activo aparece tachada en DevTools.
