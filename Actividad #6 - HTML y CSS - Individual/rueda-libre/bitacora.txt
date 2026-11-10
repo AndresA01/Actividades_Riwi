@@ -861,3 +861,28 @@ El equipo de diseño de Nodo Digital entregó el boceto de escritorio: en inicio
 - Las columnas se definen con fr, no con porcentajes ni anchos fijos en px.
 - La bitácora justifica las seis decisiones con el criterio de una o dos dimensiones.
 - El menú, la flota y la validación del formulario siguen funcionando.
+
+    TABLA CON DESICIONES TOMADAS 
++--------------------------+----------------------+----------------------------------------------------------+
+| Elemento                 | Técnica utilizada    | Justificación                                            |
++--------------------------+----------------------+----------------------------------------------------------+
+| Portada                  | Grid                 | Se utilizaron dos columnas de igual tamaño con           |
+|                          |                      | grid-template-columns: 1fr 1fr y align-items: center     |
+|                          |                      | para organizar el texto y la imagen.                     |
++--------------------------+----------------------+----------------------------------------------------------+
+| Galería Nuestras rutas   | Grid                 | Se utilizó repeat(3, 1fr) para distribuir las tres       |
+|                          |                      | tarjetas en una fila y gap para separarlas.              |
++--------------------------+----------------------+----------------------------------------------------------+
+| Formulario y horarios    | Grid                 | Se utilizó grid-template-columns: 2fr 1fr para           |
+|                          |                      | distribuir el formulario y los horarios en dos           |
+|                          |                      | columnas, dando el doble de espacio al formulario.       |
++--------------------------+----------------------+----------------------------------------------------------+
+| Campos del formulario    | Flexbox              | Se utilizó display: flex y gap para colocar los          |
+|                          |                      | campos de documento y teléfono en una misma fila.        |
++--------------------------+----------------------+----------------------------------------------------------+
+| Encabezado y navegación  | Flexbox              | Se utilizaron justify-content, align-items y gap         |
+|                          |                      | para distribuir y alinear el logotipo y la navegación.   |
++--------------------------+----------------------+----------------------------------------------------------+
+| Pie de página            | Flexbox              | Se utilizaron justify-content, align-items y gap         |
+|                          |                      | para distribuir los tres bloques de información.         |
++--------------------------+----------------------+----------------------------------------------------------+
