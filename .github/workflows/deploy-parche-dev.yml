@@ -1,14 +1,15 @@
 
-name: Publicar Parche Dev y Rueda Libre
+name: Desplegar sitios HTML y CSS
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/**'
-      - 'Actividad #6 - HTML y CSS - Individual/rueda-libre/**'
+      - '#4 HTML & CSS/parche-dev/**'
+      - '#4 HTML & CSS/rueda-libre/**'
       - '.github/workflows/deploy-parche-dev.yml'
+
   workflow_dispatch:
 
 permissions:
@@ -25,22 +26,20 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Preparar archivos
+      - name: Preparar sitios web
         run: |
           mkdir -p public/parche-dev
-          mkdir -p "public/Actividad #6 - HTML y CSS - Individual/rueda-libre"
+          mkdir -p public/rueda-libre
 
-          cp -a "Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/." public/parche-dev/
-
-          cp -a "Actividad #6 - HTML y CSS - Individual/rueda-libre/." "public/Actividad #6 - HTML y CSS - Individual/rueda-libre/"
-
-          cp -a "Actividad #7 - Reto_ Parche Dev 2026 - Individual/parche-dev/." public/
+          cp -a "#4 HTML & CSS/parche-dev/." public/parche-dev/
+          cp -a "#4 HTML & CSS/rueda-libre/." public/rueda-libre/
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
@@ -50,6 +49,7 @@ jobs:
         with:
           path: public
 
-      - name: Desplegar página
+      - name: Desplegar sitios
         id: deployment
         uses: actions/deploy-pages@v4
+
