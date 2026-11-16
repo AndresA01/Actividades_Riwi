@@ -1,292 +1,219 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Esta página es el apartado de reservas de Rueda Libre."
-    />
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Esta página es el apartado de reservas de Rueda Libre." />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
 
-    <title>Reservas - Rueda Libre</title>
-  </head>
+  <!-- HOJA DE ESTILOS -->
+  <link rel="stylesheet" href="../css/styles.css" />
 
-  <body>
-    <!-- ENCABEZADO Y NAVEGACIÓN -->
-    <header>
-      <nav>
-        <ul id="menu">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="tarifas.html">Tarifas y Rutas</a></li>
-          <li><a href="reservas.html" class="activo">Reservas</a></li>
-        </ul>
-      </nav>
+  <title>Reservas - Rueda Libre</title>
+</head>
 
-      <img
-        src="../img/logo.png"
-        alt="Logo de Rueda Libre con el diseño de una bicicleta en color verde claro y oscuro"
-        width="500"
-      />
-    </header>
+<body>
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
+  <header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
+    <img src="../img/logo.png" alt="Logo de Rueda Libre con el diseño de una bicicleta en color verde claro y oscuro"
+      width="500" />
+
+    <nav>
+      <ul id="menu">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="tarifas.html">Tarifas y Rutas</a></li>
+        <li><a href="reservas.html" class="activo">Reservas</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <section>
+      <h1>Reserva tu bicicleta</h1>
+
+      <p>
+        Para realizar tu reserva o solicitar información, puedes comunicarte
+        con nosotros a través de nuestro correo electrónico:
+        <a href="mailto:hola@ruedalibre.example"> hola@ruedalibre.example </a>
+      </p>
+    </section>
+
+    <!-- FORMULARIO DE RESERVA -->
+    <div class="reservas-grid">
       <section>
-        <h1>Reserva tu bicicleta</h1>
+        <h2>Formulario de reserva</h2>
 
-        <p>
-          Para realizar tu reserva o solicitar información, puedes comunicarte
-          con nosotros a través de nuestro correo electrónico:
-          <a href="mailto:hola@ruedalibre.example"> hola@ruedalibre.example </a>
-        </p>
-      </section>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Tus datos</legend>
 
-      <!-- FORMULARIO DE RESERVA -->
-      <div class="reservas-grid">
-        <section>
-          <h2>Formulario de reserva</h2>
+            <label for="nombre">Nombre y apellido: </label>
+            <input type="text" id="nombre" name="nombre" required minlength="3" />
 
-          <form action="#" method="post">
-            <fieldset>
-              <legend>Tus datos</legend>
+            <br /><br />
 
-              <label for="nombre">Nombre y apellido: </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                minlength="3"
-              />
+            <label for="tipo_documento">Tipo de documento: </label>
 
-              <br /><br />
+            <select id="tipo_documento" name="tipo_documento" required>
+              <option value="">Selecciona tu documento</option>
+              <option value="CC">Cédula de ciudadanía</option>
+              <option value="CE">Cédula de extranjería</option>
+              <option value="TI">Tarjeta de identidad</option>
+              <option value="PP">Pasaporte</option>
+            </select>
+            &nbsp;
 
-              <label for="tipo_documento">Tipo de documento: </label>
-
-              <select id="tipo_documento" name="tipo_documento" required>
-                <option value="">Selecciona tu documento</option>
-                <option value="CC">Cédula de ciudadanía</option>
-                <option value="CE">Cédula de extranjería</option>
-                <option value="TI">Tarjeta de identidad</option>
-                <option value="PP">Pasaporte</option>
-              </select>
-              &nbsp;
-
-              <div class="campos-en-fila">
-                <div>
-                  <label for="numero_documento">Número de documento:</label>
-                  <input
-                    type="text"
-                    id="numero_documento"
-                    name="numero_documento"
-                    required
-                    minlength="6"
-                    maxlength="10"
-                    pattern="[0-9]{6,10}"
-                    title="Ingresa un número de documento con 6 a 10 dígitos"
-                  />
-                </div>
-
-                <div>
-                  <label for="telefono">Número de teléfono:</label>
-                  <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    required
-                    pattern="3[0-9]{9}"
-                    title="Ingresa un celular de 10 dígitos que comience por 3."
-                  />
-                </div>
+            <div class="campos-en-fila">
+              <div>
+                <label for="numero_documento">Número de documento:</label>
+                <input type="text" id="numero_documento" name="numero_documento" required minlength="6" maxlength="10"
+                  pattern="[0-9]{6,10}" title="Ingresa un número de documento con 6 a 10 dígitos" />
               </div>
 
-              <br /><br />
+              <div>
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}"
+                  title="Ingresa un celular de 10 dígitos que comience por 3." />
+              </div>
+            </div>
 
-              <label for="correo">Correo electrónico</label>
-              <input type="email" id="correo" name="correo" required />
+            <br /><br />
 
-              <br /><br />
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required />
 
-              <label for="direccion">Dirección de residencia: </label>
-              <input type="text" id="direccion" name="direccion" />
-            </fieldset>
+            <br /><br />
 
-            <fieldset>
-              <legend>Tu alquiler</legend>
+            <label for="direccion">Dirección de residencia: </label>
+            <input type="text" id="direccion" name="direccion" />
+          </fieldset>
 
-              <label for="cantidad_bicicletas">Cantidad de bicicletas: </label>
+          <fieldset>
+            <legend>Tu alquiler</legend>
 
-              <input
-                type="number"
-                id="cantidad_bicicletas"
-                name="cantidad_bicicletas"
-                min="1"
-                max="6"
-                required
-              />
+            <label for="cantidad_bicicletas">Cantidad de bicicletas: </label>
 
-              <br /><br />
+            <input type="number" id="cantidad_bicicletas" name="cantidad_bicicletas" min="1" max="6" required />
 
-              <strong>Tipo de bicicleta: </strong>
+            <br /><br />
 
-              <input
-                type="radio"
-                id="urbana"
-                name="tipo_bicicleta"
-                value="urbana"
-                required
-              />
-              <label for="urbana">Urbana</label>
+            <strong>Tipo de bicicleta: </strong>
 
-              <input
-                type="radio"
-                id="montaña"
-                name="tipo_bicicleta"
-                value="montaña"
-              />
-              <label for="montaña">Montaña</label>
+            <input type="radio" id="urbana" name="tipo_bicicleta" value="urbana" required />
+            <label for="urbana">Urbana</label>
 
-              <input
-                type="radio"
-                id="electrica"
-                name="tipo_bicicleta"
-                value="eléctrica"
-              />
-              <label for="electrica">Eléctrica</label>
+            <input type="radio" id="montaña" name="tipo_bicicleta" value="montaña" />
+            <label for="montaña">Montaña</label>
 
-              <br /><br />
+            <input type="radio" id="electrica" name="tipo_bicicleta" value="eléctrica" />
+            <label for="electrica">Eléctrica</label>
 
-              <label for="tiempo_alquiler">Plan de alquiler: </label>
+            <br /><br />
 
-              <select id="tiempo_alquiler" name="tiempo_alquiler" required>
-                <option value="">Selecciona un plan de alquiler</option>
-                <option value="1h">1 hora</option>
-                <option value="4h">Medio día (4 horas)</option>
-                <option value="1d">Día completo</option>
-              </select>
+            <label for="tiempo_alquiler">Plan de alquiler: </label>
 
-              <br /><br />
+            <select id="tiempo_alquiler" name="tiempo_alquiler" required>
+              <option value="">Selecciona un plan de alquiler</option>
+              <option value="1h">1 hora</option>
+              <option value="4h">Medio día (4 horas)</option>
+              <option value="1d">Día completo</option>
+            </select>
 
-              <label for="fecha_alquiler">Fecha del alquiler: </label>
-              <input
-                type="date"
-                id="fecha_alquiler"
-                name="fecha_alquiler"
-                required
-                min="2026-11-01"
-                max="2026-12-31"
-              />
-            </fieldset>
+            <br /><br />
 
-            <fieldset>
-              <legend>Confirmación</legend>
+            <label for="fecha_alquiler">Fecha del alquiler: </label>
+            <input type="date" id="fecha_alquiler" name="fecha_alquiler" required min="2026-11-01" max="2026-12-31" />
+          </fieldset>
 
-              <label for="tipo_pago">Tipo de pago: </label>
+          <fieldset>
+            <legend>Confirmación</legend>
 
-              <select id="tipo_pago" name="tipo_pago" required>
-                <option value="">Selecciona un método de pago</option>
-                <option value="efectivo">Efectivo</option>
-                <option value="transferencia">Transferencia bancaria</option>
-                <option value="tarjeta">Tarjeta de crédito/débito</option>
-              </select>
+            <label for="tipo_pago">Tipo de pago: </label>
 
-              <br /><br />
+            <select id="tipo_pago" name="tipo_pago" required>
+              <option value="">Selecciona un método de pago</option>
+              <option value="efectivo">Efectivo</option>
+              <option value="transferencia">Transferencia bancaria</option>
+              <option value="tarjeta">Tarjeta de crédito/débito</option>
+            </select>
 
-              <input
-                type="checkbox"
-                id="condiciones"
-                name="condiciones"
-                value="aceptadas"
-                required
-              />
-              <label for="condiciones"
-                >Acepto las condiciones del servicio</label
-              >
+            <br /><br />
 
-              <br /><br />
+            <input type="checkbox" id="condiciones" name="condiciones" value="aceptadas" required />
+            <label for="condiciones">Acepto las condiciones del servicio</label>
 
-              <label for="observaciones">Observaciones adicionales: </label>
-              <textarea
-                id="observaciones"
-                name="observaciones"
-                rows="1"
-                cols="40"
-                maxlength="300"
-              ></textarea>
-            </fieldset>
-            <button type="submit" name="enviar_reserva" class="btn-reserva">
-              Enviar reserva
-            </button>
-          </form>
-        </section>
+            <br /><br />
 
-        <!-- HORARIOS DE ATENCIÓN -->
-        <aside>
-          <h2>Horarios de atención</h2>
+            <label for="observaciones">Observaciones adicionales: </label>
+            <textarea id="observaciones" name="observaciones" rows="1" cols="40" maxlength="300"></textarea>
+          </fieldset>
+          <button type="submit" name="enviar_reserva" class="btn-reserva">
+            Enviar reserva
+          </button>
+        </form>
+      </section>
 
-          <dl>
-            <dt>Lunes:</dt>
-            <dd>9:00 AM - 6:00 PM</dd>
+      <!-- HORARIOS DE ATENCIÓN -->
+      <aside>
+        <h2>Horarios de atención</h2>
 
-            <dt>Martes:</dt>
-            <dd>9:00 AM - 6:00 PM</dd>
+        <dl>
+          <dt>Lunes:</dt>
+          <dd>9:00 AM - 6:00 PM</dd>
 
-            <dt>Miércoles:</dt>
-            <dd>9:00 AM - 6:00 PM</dd>
+          <dt>Martes:</dt>
+          <dd>9:00 AM - 6:00 PM</dd>
 
-            <dt>Jueves:</dt>
-            <dd>9:00 AM - 6:00 PM</dd>
+          <dt>Miércoles:</dt>
+          <dd>9:00 AM - 6:00 PM</dd>
 
-            <dt>Viernes:</dt>
-            <dd>9:00 AM - 6:00 PM</dd>
+          <dt>Jueves:</dt>
+          <dd>9:00 AM - 6:00 PM</dd>
 
-            <dt>Sábado:</dt>
-            <dd>9:00 AM - 12:00 PM</dd>
+          <dt>Viernes:</dt>
+          <dd>9:00 AM - 6:00 PM</dd>
 
-            <dt>Domingo:</dt>
-            <dd>9:00 AM - 12:00 PM</dd>
-          </dl>
-        </aside>
-      </div>
-    </main>
+          <dt>Sábado:</dt>
+          <dd>9:00 AM - 12:00 PM</dd>
 
-    <!-- ENLACE FLOTANTE DE WHATSAPP -->
-    <a
-      href="https://wa.me/573000000000"
-      class="whatsapp-fijo"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      WhatsApp
-    </a>
+          <dt>Domingo:</dt>
+          <dd>9:00 AM - 12:00 PM</dd>
+        </dl>
+      </aside>
+    </div>
+  </main>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-      <div>
-        <strong>Rueda Libre</strong>
-        <p>&copy; 2026</p>
-      </div>
+  <!-- ENLACE FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/573000000000" class="whatsapp-fijo" target="_blank" rel="noopener noreferrer">
+    WhatsApp
+  </a>
 
-      <div>
-        <p>Contacto</p>
-        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
-      </div>
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div>
+      <strong>Rueda Libre</strong>
+      <p>&copy; 2026</p>
+    </div>
 
-      <div>
-        <p>Horario de atención</p>
-        <p>Lunes a viernes: 9:00 AM - 6:00 PM</p>
-      </div>
-    </footer>
-  </body>
+    <div>
+      <p>Contacto</p>
+      <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+    </div>
+
+    <div>
+      <p>Horario de atención</p>
+      <p>Lunes a viernes: 9:00 AM - 6:00 PM</p>
+    </div>
+  </footer>
+</body>
+
 </html>

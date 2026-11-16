@@ -30,6 +30,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: var(--fuente-textos);
     color: var(--color-azul);
@@ -68,16 +73,16 @@ main {
 /* Encabezado con Flexbox */
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: var(--espacio-grande);
+    gap: var(--espacio-mediano);
 }
 
 /* Menú con Flexbox */
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: var(--espacio-mediano);
     padding: 0;
@@ -93,8 +98,8 @@ nav ul {
 
 #menu a:focus {
     color: var(--color-azul);
-    outline: 2px solid var(--color-verde);
-    outline-offset: 3px;
+    outline: 0.125rem solid var(--color-verde);
+    outline-offset: 0.1875rem;
 }
 
 
@@ -111,7 +116,7 @@ nav ul {
 /* Portada en dos columnas con Grid */
 .portada-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: var(--espacio-grande);
 }
@@ -119,7 +124,7 @@ nav ul {
 /* Galería de rutas con Grid */
 #rutas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--espacio-grande);
 }
 
@@ -137,7 +142,7 @@ nav ul {
 .tarjeta-ruta img {
     display: block;
     width: 100%;
-    height: 180px;
+    height: 11.25rem; /* 180px */
     object-fit: cover;
     border-radius: var(--espacio-pequeno);
 }
@@ -171,7 +176,7 @@ article {
 /* Cuadrícula de la flota */
 #flota {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
     gap: var(--espacio-grande);
 }
 
@@ -222,8 +227,8 @@ article {
 }
 
 .btn-reserva:focus {
-    outline: 2px solid var(--color-azul);
-    outline-offset: 3px;
+    outline: 0.125rem solid var(--color-azul);
+    outline-offset: 0.1875rem;
 }
 
 /* Tablas */
@@ -234,8 +239,9 @@ table {
 
 th,
 td {
-    padding: var(--espacio-mediano);
+    padding: 0.35rem;
     border: 1px solid var(--color-gris);
+    font-size: 0.75rem;
 }
 
 th {
@@ -284,8 +290,8 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: 2px solid var(--color-verde);
-    outline-offset: 2px;
+    outline: 0.125rem solid var(--color-verde);
+    outline-offset: 0.1875rem;
 }
 
 
@@ -295,7 +301,7 @@ button:focus {
 
 footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     gap: var(--espacio-grande);
@@ -324,7 +330,7 @@ footer {
 /* Distribución del formulario y horarios de atención */
 .reservas-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--espacio-grande);
     align-items: start;
 }
@@ -332,6 +338,7 @@ footer {
 /* Campos del formulario en una misma fila */
 .campos-en-fila {
     display: flex;
+    flex-direction: column;
     gap: var(--espacio-mediano);
 }
 
@@ -339,4 +346,83 @@ footer {
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+/* =========================================
+   TABLET Y ESCRITORIO: ENCABEZADO HORIZONTAL
+   Desde 768px, el logo y el menú se organizan
+   en una misma fila.
+========================================= */
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+    }
+}
+
+/* =========================================
+   ESCRITORIO: PORTADA EN DOS COLUMNAS
+   Desde 1200px, texto e imagen se muestran
+   uno al lado del otro.
+========================================= */
+
+@media (min-width: 1200px) {
+    .portada-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================
+   ESCRITORIO: GALERÍA DE RUTAS EN TRES COLUMNAS
+   Desde 1200px, las tres tarjetas se muestran
+   en una sola fila.
+========================================= */
+
+@media (min-width: 1200px) {
+    #rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   ESCRITORIO: RESERVAS EN DOS COLUMNAS
+   El formulario ocupa más espacio que
+   los horarios de atención.
+========================================= */
+
+@media (min-width: 1200px) {
+    .reservas-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* =========================================
+   ESCRITORIO: CAMPOS DEL FORMULARIO EN FILA
+   Documento y teléfono se muestran uno
+   al lado del otro desde 1200px.
+========================================= */
+
+@media (min-width: 1200px) {
+    .campos-en-fila {
+        flex-direction: row;
+    }
+}
+
+/* =========================================
+   ESCRITORIO: PIE DE PÁGINA HORIZONTAL
+   Los tres bloques se organizan en una fila
+   desde 1200px.
+========================================= */
+
+@media (min-width: 1200px) {
+    footer {
+        flex-direction: row;
+        align-items: center;
+    }
 }

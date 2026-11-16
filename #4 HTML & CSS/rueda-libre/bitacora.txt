@@ -886,3 +886,47 @@ El equipo de diseño de Nodo Digital entregó el boceto de escritorio: en inicio
 | Pie de página            | Flexbox              | Se utilizaron justify-content, align-items y gap         |
 |                          |                      | para distribuir los tres bloques de información.         |
 +--------------------------+----------------------+----------------------------------------------------------+
+
+    MINIRETO #4 - RUEDA LIBRE V1.5: MOBILE-FIRST
+
+Reorganizar los estilos con enfoque mobile-first para que el sitio funcione en móvil, tablet y escritorio.
+
+    INSTRUCCIONES
+
+- Reorganiza styles.css para que los estilos base (sin media query) describan la versión móvil, en una sola columna.
+- Agrega media queries con ancho mínimo para tablet (768 px) y escritorio (1200 px) solo donde el contenido lo necesite: portada, galería de rutas, reservas, encabezado y pie.
+- En el celular, el nombre del negocio va arriba y el menú debajo, centrado; desde tablet se recupera la distribución del MiniReto 1.
+- Haz que ninguna imagen del sitio sea más ancha que su contenedor.
+- Ajusta las tablas de tarifas en móvil (relleno y tamaño de letra) para que se lean sin desplazamiento lateral.
+- Prueba con el modo dispositivo de DevTools a 360 px, 768 px y 1280 px. Registra en la bitácora al menos tres problemas que encontraste y cómo los resolviste.
+- Publica la v1.5 en GitHub Pages y ábrela en un celular real.
+- Realizar push: Feat: Rueda Libre v1.5: mobile-first
+
+    CONTEXTO
+
+Según las estadísticas del cliente, siete de cada diez visitas llegan desde un celular. El layout del MiniReto 3 se ve apretado en pantallas pequeñas y las tablas de tarifas obligan a desplazarse de lado.
+
+    REQUISITOS
+
+- Enfoque mobile-first; @media (min-width: ...) y breakpoints.
+- Imágenes fluidas; meta viewport (ya presente desde la semana 1).
+- DevTools (modo dispositivo); GitHub Pages.
+
+    CHECKLIST
+
+- A 360 px no hay scroll horizontal y el contenido se lee en una columna.
+- A 768 px y a 1200 px el layout cambia en los puntos definidos con min-width.
+- Ninguna imagen se sale de su contenedor y las tablas se leen completas en el celular.
+- La bitácora registra al menos tres problemas responsive y su solución.
+- La v1.5 está publicada y funciona en un celular real.
+
+    PROBLEMAS ENCONTRADOS
+
+- Problema: Al establecer los estilos base para móviles, el logo y el menú 
+Solución: Se agregó una media query desde 768px para recuperar la distribución horizontal mediante Flexbox. El logo quedó a la izquierda y el menú a la derecha.
+- Problema: El texto y la imagen de la portada aparecían uno debajo del otro incluso a 1280px.
+Solución: Se agregó una media query desde 1200px para configurar .portada-grid con dos columnas iguales mediante Grid.
+- Problema: Las tres tarjetas de «Nuestras rutas» permanecían una debajo de otra, ocupando todo el ancho disponible.
+Solución: Se establecieron tres columnas con grid-template-columns: repeat(3, 1fr) desde 1200px.
+- Problema: En la página de reservas, el formulario y los horarios aparecían uno debajo del otro incluso en pantallas de escritorio.
+Solución: Se configuró .reservas-grid con dos columnas proporcionales 2fr 1fr desde 1200px, dando más espacio al formulario.
