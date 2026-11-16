@@ -983,3 +983,43 @@ Ancho de pantalla | Columnas | Resultado       |
 ------------------------------------------------
 - Que facilito: construir rápidamente una cuadrícula adaptable utilizando clases predefinidas, sin necesidad de escribir reglas propias de CSS Grid ni administrar manualmente los puntos de ruptura.
 - Que control se pierde: Se depende de los puntos de ruptura y del sistema de cuadrícula definidos por Bootstrap. Para comportamientos muy específicos, puede ser necesario complementar sus clases con CSS personalizado.
+
+    MINIRETO #2 - SIN UNA LÍNEA DE CSS: UTILIDADES
+
+Construir una sección completa usando solo clases utilitarias de Bootstrap y consultando la documentación oficial.
+
+    INSTRUCCIONES
+
+- En la página de pruebas, debajo de la flota, construye la sección de beneficios: título centrado y los cuatro beneficios distribuidos en la grilla.
+- Aplica utilidades de espaciado, tipografía y colores para jerarquizar cada beneficio (título, descripción y un dato destacado), respetando tu mapa de uso de color.
+- Construye la franja final: texto y enlace destacado en columna en celulares y en fila desde md, alineados y separados con utilidades de flex.
+- Agrega un elemento decorativo (por ejemplo, una imagen de ciclista) que se oculte en celulares y se muestre desde md.
+- Da al enlace de la franja un aspecto destacado solo con utilidades de color y espaciado (el componente botón llega mañana).
+- Registra en la bitácora cinco clases que encontraste buscando en la documentación y qué hace cada una.
+- Realizar push: Feat: Sin una línea de CSS: Utilidades.
+
+    CONTEXTO
+
+El cliente quiere una sección "¿Por qué Rueda Libre?" con cuatro beneficios (bicicletas revisadas en cada alquiler, casco y candado incluidos, guías certificados y puntos de devolución en tres sedes) y, debajo, una franja con el texto "¿Listo para rodar?" y un enlace destacado a reservas. El líder técnico te reta: construirla sin escribir ni una línea de CSS.
+
+    REQUISITOS
+
+- Utilidades de espaciado (m*, p*, con breakpoints), tipografía (fs-*, fw-*, text-*, lead), colores (text-*, bg-*, text-bg-*), display (d-*, con breakpoints) y flex (d-flex, flex-*, justify-content-*, align-items-*, gap-*).
+- Grilla de Bootstrap; documentación oficial (buscador).
+
+    CHECKLIST
+
+- La sección y la franja no usan CSS propio: no hay style="", <style> ni clases inventadas.
+- La franja pasa de columna a fila desde md y el elemento decorativo solo aparece desde md.
+- Todas las clases existen en Bootstrap 5.3 (ninguna es de versiones anteriores, como ml-* o mr-*).
+- La bitácora registra cinco clases consultadas en la documentación.
+
+    CLASES DE BOOTSTRAP
+
+- Espaciado: Aplica relleno interno (padding) en los cuatro lados del elemento.
+- Tipografía: Tipografía
+Aplica negrita al texto para destacar títulos y contenidos importantes.
+- Colores: Aplica el color verde predeterminado de Bootstrap al texto.
+- Visualización: Oculta un elemento en pantallas pequeñas y lo muestra como bloque desde el breakpoint md (768 px).
+- Flexbox: Flexbox
+Organiza los elementos flexibles en fila a partir del breakpoint md. En pantallas menores puede mantenerse la dirección en columna mediante flex-column.
