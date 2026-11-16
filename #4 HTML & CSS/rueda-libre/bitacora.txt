@@ -930,3 +930,56 @@ Solución: Se agregó una media query desde 1200px para configurar .portada-grid
 Solución: Se establecieron tres columnas con grid-template-columns: repeat(3, 1fr) desde 1200px.
 - Problema: En la página de reservas, el formulario y los horarios aparecían uno debajo del otro incluso en pantallas de escritorio.
 Solución: Se configuró .reservas-grid con dos columnas proporcionales 2fr 1fr desde 1200px, dando más espacio al formulario.
+
+        DÍA #2 - INTRODUCCIÓN A BOOTSTRAP: GRILLAS Y UTILIDADES
+
+    MINIRETO #1 - LA FLOTA EN BOOTSTRAP: PRIMERA COMPARACIÓN
+
+Instalar Bootstrap 5 por CDN y reconstruir la flota con su sistema de grillas, comparando tiempo y código con la versión en CSS propio.
+
+    INSTRUCCIONES
+
+- Crea la página de pruebas pruebas/catalogo-bootstrap.html con la plantilla inicial de Bootstrap 5.3 tomada de la documentación oficial (CSS y bundle de JavaScript por CDN).
+- Copia el marcado de la flota (siete modelos) y ajusta las rutas de las imágenes desde la nueva carpeta.
+- Inicia el cronómetro y reconstruye la distribución solo con la grilla: una columna en celulares, dos desde sm, tres desde lg y cuatro desde xl, separadas con gutters.
+- No escribas CSS de distribución ni enlaces styles.css en esta página de pruebas: la distribución debe salir solo de las clases de la grilla.
+- Registra en la bitácora: tiempo invertido, líneas de CSS de distribución de la flota en tu versión propia frente a clases usadas ahora, qué te dio Bootstrap sin esfuerzo y qué control perdiste.
+- Realizar push: Feat: La flota en Bootstrap: primera comparación"
+
+    CONTEXTO
+
+El líder técnico propone una prueba antes de decidir: rehacer la sección de la flota con Bootstrap en una página aparte, cronometrar el trabajo y comparar la cantidad de código con la versión que construiste ayer.
+
+    REQUISITOS
+
+- Bootstrap 5.3 por CDN (<link> y <script> del bundle), documentación oficial.
+- container, row, col-*, col-sm-*, col-lg-*, col-xl-*, gutters g-*.
+- Rutas relativas desde pruebas/; DevTools (modo dispositivo).
+
+ CHECKLIST
+
+- La página de pruebas carga el CSS y el JavaScript de Bootstrap 5.3 sin errores en Network.
+- La flota muestra una, dos, tres y cuatro columnas en los breakpoints definidos (comprobado en modo dispositivo).
+- No hay CSS propio para la distribución de la flota.
+- La bitácora compara ambas versiones con datos concretos de tiempo y cantidad de código.
+
+    REGISTRO
+
+- Timpo invertido: Aproximadamente 30 minutos.
+- Comparación de distribución:
+Versión propia (CSS Grid): 6 líneas para definir la cuadrícula de #flota y 3 líneas adicionales para que el encabezado ocupe todas las columnas. Total: 9 líneas, contando selectores y llaves.
+Versión Bootstrap: se utilizaron container, row, g-4 y col-12 col-sm-6 col-lg-4 col-xl-3, sin escribir CSS propio para la distribución.
+PRUEBAS RESPONSIVAS REALIZADAS
+------------------------------------------------
+Ancho de pantalla | Columnas | Resultado       |
+------------------------------------------------
+375 px            | 1        | Correcto        |
+------------------------------------------------
+576 px            | 2        | Correcto        |
+------------------------------------------------
+992 px            | 3        | Correcto        |
+------------------------------------------------
+1200 px           | 4        | Correcto        |
+------------------------------------------------
+- Que facilito: construir rápidamente una cuadrícula adaptable utilizando clases predefinidas, sin necesidad de escribir reglas propias de CSS Grid ni administrar manualmente los puntos de ruptura.
+- Que control se pierde: Se depende de los puntos de ruptura y del sistema de cuadrícula definidos por Bootstrap. Para comportamientos muy específicos, puede ser necesario complementar sus clases con CSS personalizado.
