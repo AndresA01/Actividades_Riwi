@@ -1,5 +1,5 @@
 /* ==================================================
-   1. IDENTIDAD VISUAL
+   1. IDENTIDAD VISUAL Y VARIABLES DE BOOTSTRAP
 ================================================== */
 
 :root {
@@ -17,6 +17,33 @@
     /* Escala de espaciado para componentes de marca */
     --espacio-pequeno: 0.5rem;
     --espacio-mediano: 1rem;
+
+    /* Personalización de Bootstrap */
+    --bs-primary: var(--color-verde);
+    --bs-primary-rgb: 30, 122, 79;
+    --bs-success: var(--color-verde);
+    --bs-success-rgb: 30, 122, 79;
+    --bs-secondary: var(--color-gris);
+    --bs-secondary-rgb: 91, 100, 112;
+    --bs-secondary-color: var(--color-gris);
+    --bs-danger: #B02A37;
+    --bs-danger-rgb: 176, 42, 55;
+    --bs-form-invalid-color: #B02A37;
+    --bs-form-invalid-border-color: #B02A37;
+    --bs-form-valid-color: var(--color-verde);
+    --bs-form-valid-border-color: var(--color-verde);
+    --bs-body-font-family: var(--fuente-textos);
+    --bs-body-color: var(--color-azul);
+    --bs-body-color-rgb: 20, 33, 61;
+    --bs-body-bg: var(--color-crema);
+    --bs-body-bg-rgb: 250, 246, 239;
+    --bs-link-color: var(--color-verde);
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: var(--color-azul);
+    --bs-link-hover-color-rgb: 20, 33, 61;
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-sm: 0.5rem;
+    --bs-border-radius-lg: 1rem;
 }
 
 body {
@@ -32,7 +59,7 @@ h3 {
 }
 
 /* ==================================================
-   2. NAVEGACIÓN
+   2. NAVEGACIÓN Y TÍTULOS
 ================================================== */
 
 #menu .nav-link {
@@ -56,8 +83,19 @@ h3 {
     outline-offset: 0.1875rem;
 }
 
+.titulo-seccion {
+    color: var(--color-azul);
+    border-bottom: 0.15rem solid var(--color-naranja);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.titulo-seccion.text-center {
+    margin-inline: auto;
+}
+
 /* ==================================================
-   3. ESTILOS COMPLEMENTARIOS
+   3. COMPONENTES COMPLEMENTARIOS DE MARCA
 ================================================== */
 
 .servicios article {
@@ -76,30 +114,106 @@ h3 {
     color: var(--color-azul);
     padding: var(--espacio-pequeno);
     font-weight: 600;
+    border-radius: 0 0 0 var(--bs-border-radius-sm);
+}
+
+.promocion-marca {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+}
+
+.promocion-marca h3,
+.promocion-marca p {
+    color: var(--color-crema);
+}
+
+.portada-marca {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+    border-left: 0.4rem solid var(--color-naranja);
+    border-radius: var(--bs-border-radius);
+}
+
+.portada-marca h2,
+.portada-marca p {
+    color: var(--color-crema);
+}
+
+.pie-marca {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+    border-top: 0.3rem solid var(--color-naranja);
+}
+
+.pie-marca a {
+    color: var(--color-crema);
+}
+
+.pie-marca a:hover,
+.pie-marca a:focus-visible {
+    color: var(--color-naranja);
 }
 
 /* ==================================================
    4. BOTONES DE MARCA
 ================================================== */
 
-.btn-reserva {
-    background-color: var(--color-verde);
-    border-color: var(--color-verde);
-    color: var(--color-crema);
+.btn-primary {
+    --bs-btn-color: var(--color-crema);
+    --bs-btn-bg: var(--color-verde);
+    --bs-btn-border-color: var(--color-verde);
+    --bs-btn-hover-color: var(--color-crema);
+    --bs-btn-hover-bg: #17623F;
+    --bs-btn-hover-border-color: #17623F;
+    --bs-btn-focus-shadow-rgb: 20, 33, 61;
+    --bs-btn-active-color: var(--color-crema);
+    --bs-btn-active-bg: var(--color-azul);
+    --bs-btn-active-border-color: var(--color-azul);
+    --bs-btn-disabled-color: var(--color-crema);
+    --bs-btn-disabled-bg: var(--color-verde);
+    --bs-btn-disabled-border-color: var(--color-verde);
     font-weight: 600;
-    border-radius: var(--espacio-pequeno);
 }
 
-.btn-reserva:hover {
-    background-color: var(--color-azul);
-    border-color: var(--color-azul);
-    color: var(--color-crema);
+.btn-outline-primary {
+    --bs-btn-color: var(--color-verde);
+    --bs-btn-border-color: var(--color-verde);
+    --bs-btn-hover-color: var(--color-crema);
+    --bs-btn-hover-bg: var(--color-verde);
+    --bs-btn-hover-border-color: var(--color-verde);
+    --bs-btn-focus-shadow-rgb: 20, 33, 61;
+    --bs-btn-active-color: var(--color-crema);
+    --bs-btn-active-bg: var(--color-azul);
+    --bs-btn-active-border-color: var(--color-azul);
+    font-weight: 600;
 }
 
-.btn-reserva:focus-visible {
+.btn-naranja {
+    --bs-btn-color: var(--color-azul);
+    --bs-btn-bg: var(--color-naranja);
+    --bs-btn-border-color: var(--color-naranja);
+    --bs-btn-hover-color: var(--color-azul);
+    --bs-btn-hover-bg: #D67B12;
+    --bs-btn-hover-border-color: #D67B12;
+    --bs-btn-focus-shadow-rgb: 20, 33, 61;
+    --bs-btn-active-color: var(--color-azul);
+    --bs-btn-active-bg: #D67B12;
+    --bs-btn-active-border-color: #D67B12;
+    --bs-btn-disabled-color: var(--color-azul);
+    --bs-btn-disabled-bg: var(--color-naranja);
+    --bs-btn-disabled-border-color: var(--color-naranja);
+    font-weight: 700;
+}
+
+.btn:focus-visible {
     outline: 0.125rem solid var(--color-azul);
     outline-offset: 0.1875rem;
 }
+
+.portada-marca .btn:focus-visible {
+    outline-color: var(--color-crema);
+}
+
 /* ==================================================
    5. TABLAS
 ================================================== */
@@ -125,10 +239,9 @@ th {
    6. ESTADOS DE ENFOQUE
 ================================================== */
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
     outline: 0.125rem solid var(--color-verde);
     outline-offset: 0.1875rem;
 }

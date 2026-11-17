@@ -1136,7 +1136,7 @@ Bootstrap redujo la hoja de estilos de 428 líneas registradas para v1.5 a 147 l
 
         DÍA #3 - COMPONENTES Y PERSONALIZACIÓN DE BOOTSTRAP
 
-    MINIRETO #1 - MENÚ PARA EL CELULAR: NAVBAR Y BOTONES (MOODLE #9)
+    MINIRETO #1 - MENÚ PARA EL CELULAR: NAVBAR Y BOTONES 
 
 Implementar la navbar responsive con menú colapsable y unificar las llamadas a la acción con los botones de Bootstrap.
 
@@ -1167,7 +1167,7 @@ En el celular, el menú de la beta ocupa demasiado espacio. El cliente pidió un
 - Las tres páginas cargan el bundle de JavaScript una sola vez, antes de cerrar body.
 - Las llamadas a la acción usan botones de Bootstrap con variantes y tamaños coherentes.
 
-    MINIRETO #2 - LA FLOTA EN CARDS Y PROMOCIONES QUE ROTAN (MOODLE #10)
+    MINIRETO #2 - LA FLOTA EN CARDS Y PROMOCIONES QUE ROTAN
 
 Integrar cards de Bootstrap en la flota y las rutas, y mostrar las promociones del mes en un carrusel accesible.
 
@@ -1199,7 +1199,7 @@ El área de mercadeo quiere que las tres promociones del mes roten en la portada
 - Cada imagen tiene texto alternativo y los controles incluyen etiquetas para lectores de pantalla y admiten teclado.
 - No quedan reglas de tarjetas propias sin uso en styles.css.
 
-    MINIRETO #3 - RESERVAS CONFIABLES: VALIDACIÓN VISUAL, ALERTA Y MODAL (MOODLE #11)
+    MINIRETO #3 - RESERVAS CONFIABLES: VALIDACIÓN VISUAL, ALERTA Y MODAL
 
 Aplicar la validación visual de Bootstrap al formulario de reservas e integrar un aviso y las políticas de alquiler en un modal.
 
@@ -1230,3 +1230,48 @@ Los usuarios no entienden por qué no se envía el formulario y casi nadie lee l
 - Se conservan las reglas nativas pattern, min, max y minlength.
 - La alerta se cierra con su botón.
 - El modal muestra las cinco políticas, se abre desde el botón junto a la casilla y se cierra con su botón y con Escape.
+
+    MINIRETO #4 - RUEDA LIBRE V2.0: CON IDENTIDAD PROPIA (MOODLE #12) 
+
+Personalizar Bootstrap con la identidad visual de Rueda Libre y dejar el sitio preparado para publicar la versión 2.0.
+
+    INSTRUCCIONES
+
+- Se sobrescribieron las variables raíz de Bootstrap para el color primario y su RGB, la tipografía, los enlaces, los colores de feedback y los radios de borde.
+- Los botones primarios usan el verde de marca con estados hover y active; se creó la variante .btn-naranja con texto azul oscuro y sus propios estados. Los iconos usan text-primary y los distintivos de beneficios bg-primary.
+- Se añadieron las clases complementarias .titulo-seccion, .portada-marca, .promocion-marca y .pie-marca sin alterar la hoja del framework.
+- Se incorporó Bootstrap Icons por CDN en Inicio, Tarifas y Reservas; los iconos decorativos llevan aria-hidden="true".
+- Se conservaron las tres páginas con Bootstrap antes de styles.css, una sola carga del bundle por página y columnas Bootstrap como hijas directas de cada row.
+- Se ajustaron los colores de feedback para conservar el contraste mínimo de 4.5:1.
+- Se unieron verticalmente las cuatro capturas del «antes» y las cinco del «después» en img/capturas/rueda-libre-antes.png y img/capturas/rueda-libre-despues.png. Se conservaron los originales y algunos tramos se repiten por el solapamiento.
+- Realizar push: Release: Rueda Libre v2.0
+
+    CONTEXTO
+
+El cliente quiere una versión 2.0 con la identidad propia de Rueda Libre aplicada a los componentes de Bootstrap, con controles accesibles y contraste legible.
+
+    REQUISITOS
+
+- Sobrescribir variables raíz de Bootstrap para color primario, tipografía, enlaces y radios.
+- Personalizar los estados de los botones primarios y crear una variante propia para el naranja.
+- Crear al menos tres clases complementarias, integrar Bootstrap Icons y ocultar los iconos decorativos a lectores de pantalla.
+- Mantener Bootstrap intacto, sin !important, con la hoja propia después del framework y una carga del bundle por página.
+- Revisar los grids, la navegación con teclado, el contraste y los anchos de 360 px, 768 px y 1280 px.
+- Guardar las capturas comparativas en img/capturas/.
+
+    CHECKLIST
+
+- Inicio, Tarifas y Reservas cargan Bootstrap Icons y styles.css en el orden esperado.
+- Los botones, enlaces y utilidades text-primary y bg-primary usan los colores de marca.
+- Los estados de los botones verde y naranja conservan contraste suficiente.
+- Hay cuatro o más iconos decorativos accesibles y se usan en la navegación, el contacto, los beneficios y el enlace de WhatsApp.
+- No hay !important ni clases antiguas de botones; los grids conservan la estructura container > row > col.
+- El formulario mantiene sus once campos obligatorios, sus mensajes y las reglas nativas.
+- La revisión estática final pasó 31 de 31 comprobaciones.
+- Las dos composiciones comparativas están guardadas en img/capturas/ como PNG verticales.
+
+    RESUMEN SEMANAL #2
+
+Durante la semana 2 se migraron las tres páginas a la grilla y a los componentes de Bootstrap, se conservaron las tablas y las reglas nativas del formulario, y se integraron la navbar responsive, las cards, el carrusel, la validación visual, la alerta y el modal. El MiniReto #4 completa la personalización de marca y prepara la publicación de Rueda Libre v2.0.
+
+La bitácora incluye las composiciones comparativas de Inicio: img/capturas/rueda-libre-antes.png y img/capturas/rueda-libre-despues.png.
