@@ -1270,11 +1270,9 @@ El cliente quiere una versión 2.0 con la identidad propia de Rueda Libre aplica
 - La revisión estática final pasó 31 de 31 comprobaciones.
 - Las dos composiciones comparativas están guardadas en img/capturas/ como PNG verticales.
 
-    RESUMEN SEMANAL #2
+        SEMANA #3 - INTRODUCCIÓN A TAILWIND CSS
 
-Durante la semana 2 se migraron las tres páginas a la grilla y a los componentes de Bootstrap, se conservaron las tablas y las reglas nativas del formulario, y se integraron la navbar responsive, las cards, el carrusel, la validación visual, la alerta y el modal. El MiniReto #4 completa la personalización de marca y prepara la publicación de Rueda Libre v2.0.
-
-La bitácora incluye las composiciones comparativas de Inicio: img/capturas/rueda-libre-antes.png y img/capturas/rueda-libre-despues.png.
+        DÍA #1 - INTRODUCCIÓN
 
     MINIRETO #1 - PROTOTIPO NOCTURNO CON PLAY CDN
 
@@ -1345,7 +1343,7 @@ El prototipo fue aprobado, pero el Play CDN no sirve para producción. El líder
 - .bg-slate-950 aparece en src/output.css porque se usa en el body; .bg-pink-500 no aparece porque no se usa en los archivos fuente. Tailwind escanea las clases completas de los archivos y genera las utilidades detectadas.
 - Con Tab, Inscríbete, Explorar rutas y Consultar horarios recibieron foco visible mediante ring.
 
-    MINIRETO #3 - CARDS DE RUTAS NOCTURNAS (MOODLE #13)
+    MINIRETO #3 - CARDS DE RUTAS NOCTURNAS
 
 Se amplió la landing de Rueda Nocturna con una sección de tres rutas, preparada para mostrar sus datos y reutilizar el botón principal del kit.
 
@@ -1379,7 +1377,7 @@ La campaña ofrece tres recorridos nocturnos desde la sede de Rueda Libre. Cada 
 - Las cards reutilizan el botón principal del MiniReto 2 y comparten clases base.
 - Todo el estilo está compuesto por utilidades Tailwind, sin CSS propio.
 
-    MINIRETO #4 - KIT DE COMPONENTES RUEDA NOCTURNA V0.1 (MOODLE #14)
+    MINIRETO #4 - KIT DE COMPONENTES RUEDA NOCTURNA V0.1 
 
 Se reunió el kit reutilizable de Rueda Nocturna en una página de referencia para preparar la siguiente landing.
 
@@ -1412,7 +1410,9 @@ El equipo de diseño quiere revisar todos los componentes en una sola página an
 - Los campos tienen etiquetas asociadas y foco visible; todo el kit se puede recorrer con teclado.
 - La página publicada carga src/output.css sin errores 404.
 
-    MINIRETO #5 - MAQUETACIÓN DE LA LANDING (MOODLE #15)
+        DÍA #2 - LAYOUTS Y RESPONSIVE CON TAILWIND
+
+    MINIRETO #1 - MAQUETACIÓN DE LA LANDING
 
 Se convirtió el prototipo de Rueda Nocturna en una landing completa, organizada alrededor de rutas, pasos de uso e inscripción.
 
@@ -1446,7 +1446,7 @@ Con el kit aprobado, diseño entregó la estructura de la landing: encabezado co
 - Los enlaces del encabezado llevan a sus secciones.
 - Las cards mantienen las mismas clases y estructura del kit de componentes.
 
-    MINIRETO #6 - LA NOCHE CABE EN TU CELULAR: RESPONSIVE (MOODLE #16)
+    MINIRETO #2 - LA NOCHE CABE EN TU CELULAR: RESPONSIVE
 
 Se adaptó la landing a celular, tablet y escritorio con un flujo mobile-first y breakpoints de Tailwind.
 
@@ -1487,3 +1487,52 @@ La campaña se promocionará en redes sociales y casi todo el tráfico llegará 
 | 768 px | En fila; enlaces y botón visibles | 2 columnas | 2 columnas | No |
 | 1024 px | En fila; enlaces y botón visibles | 3 columnas | 4 columnas | No |
 | 1280 px | En fila; enlaces y botón visibles | 3 columnas | 4 columnas | No |
+
+    MINIRETO #3 - MARCA NOCTURNA: TEMA PROPIO Y MODO OSCURO
+
+Se personalizó la landing y el kit con la identidad de Rueda Libre y se adaptaron sus superficies al modo claro y a la preferencia de modo oscuro del sistema.
+
+    INSTRUCCIONES
+
+- Se definieron en nocturna/src/input.css los seis colores de marca y las familias Montserrat y Open Sans dentro de @theme para generar sus utilidades Tailwind.
+- Se cargaron Montserrat y Open Sans desde Google Fonts en la landing y en componentes.html; los encabezados usan Montserrat y el texto general Open Sans.
+- Se reemplazaron los colores genéricos de Tailwind en ambas páginas por Verde Ruta, Naranja Ruta, Azul Noche, Crema Rueda, Gris Urbano y Amarillo Farol; solo se conserva blanco o negro donde mejora el contraste.
+- Se añadieron variantes dark: a fondos, textos, cards, alertas, bordes y campos. Tailwind conserva la estrategia predeterminada basada en prefers-color-scheme.
+- Se evitó usar Verde Ruta como texto sobre Azul Noche porque no alcanza el contraste mínimo; en modo oscuro los acentos de texto usan Amarillo Farol.
+- Realizar push: Feat: Tema de marca y modo oscuro Rueda Nocturna
+
+    CONTEXTO
+
+La landing todavía usaba colores genéricos de Tailwind. El cliente pidió los cinco colores de Rueda Libre, las fuentes Montserrat y Open Sans, el nuevo Amarillo Farol (#FFD166) y una vista coherente para quienes usan el modo oscuro.
+
+    REQUISITOS
+
+- Definir en @theme seis colores con variables --color-* y las familias Montserrat y Open Sans con variables --font-*.
+- Cargar las fuentes de marca desde Google Fonts y usar las utilidades generadas por el tema.
+- Reemplazar los colores genéricos de Tailwind en la landing y en componentes.html; permitir blanco o negro cuando haga falta.
+- Implementar dark: en fondos, textos, cards, bordes y campos, respetando la preferencia del sistema.
+- Validar el contraste WCAG y probar la interfaz emulando prefers-color-scheme: dark.
+
+    CHECKLIST
+
+- La landing y el kit usan solo los colores de marca, blanco o negro.
+- Los encabezados usan Montserrat y el texto general Open Sans.
+- El modo oscuro cambia de forma coherente las secciones, cards, alertas y campos.
+- El modo claro conserva un contraste legible y el tema sigue los colores de Rueda Libre.
+- La preferencia del sistema activa dark: sin agregar un selector manual.
+
+    VALIDACIONES
+
+| Combinación | Contraste | Resultado |
+| --- | ---: | --- |
+| Verde Ruta sobre Crema Rueda | 4.93:1 | Cumple AA para texto normal |
+| Verde Ruta sobre Azul Noche | 3.01:1 | No cumple; se evita en texto oscuro |
+| Amarillo Farol sobre Azul Noche | 11.08:1 | Cumple AA |
+| Azul Noche sobre Crema Rueda | 14.83:1 | Cumple AA |
+| Naranja Ruta sobre Crema Rueda | 2.06:1 | No se usa como texto claro |
+| Naranja Ruta sobre Azul Noche | 7.20:1 | Cumple AA |
+
+| Preferencia emulada | Fondo de página | Cards/campos | Texto |
+| --- | --- | --- | --- |
+| Claro | Crema Rueda | Blanco | Azul Noche y Gris Urbano |
+| Oscuro | Azul Noche | Negro | Crema Rueda y Amarillo Farol |

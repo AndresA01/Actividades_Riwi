@@ -5,55 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Kit de componentes reutilizables de Rueda Nocturna.">
   <title>Rueda Nocturna | Componentes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light dark">
   <link href="./src/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+<body class="min-h-screen bg-crema-rueda dark:bg-azul-noche text-azul-noche dark:text-crema-rueda antialiased font-open-sans">
   <header class="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-8 lg:px-12">
-    <a href="./index.html" class="inline-flex items-center gap-2 rounded-xl text-sm font-semibold text-lime-300 underline-offset-4 hover:text-lime-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+    <a href="./index.html" class="inline-flex items-center gap-2 rounded-xl text-sm font-semibold text-verde-ruta dark:text-amarillo-farol underline-offset-4 hover:text-azul-noche dark:hover:text-amarillo-farol hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
       Volver a Rueda Nocturna
     </a>
   </header>
 
   <main class="mx-auto w-full max-w-7xl space-y-8 px-4 py-10 sm:px-8 lg:px-12">
     <section aria-labelledby="page-title" class="space-y-3">
-      <p class="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Kit de componentes · v0.1</p>
-      <h1 id="page-title" class="text-4xl font-black tracking-tight text-white sm:text-5xl">Componentes Rueda Nocturna</h1>
-      <p class="max-w-3xl text-lg leading-relaxed text-slate-300">Piezas consistentes y accesibles para preparar la landing de la campaña.</p>
+      <p class="text-sm font-bold uppercase tracking-[0.18em] text-verde-ruta dark:text-amarillo-farol">Kit de componentes · v0.1</p>
+      <h1 id="page-title" class="text-4xl font-black tracking-tight text-azul-noche dark:text-crema-rueda sm:text-5xl font-montserrat">Componentes Rueda Nocturna</h1>
+      <p class="max-w-3xl text-lg leading-relaxed text-gris-urbano dark:text-crema-rueda">Piezas consistentes y accesibles para preparar la landing de la campaña.</p>
     </section>
 
     <section aria-labelledby="buttons-title" class="space-y-4">
-      <h2 id="buttons-title" class="text-2xl font-bold text-white">Botones</h2>
+      <h2 id="buttons-title" class="text-2xl font-bold text-azul-noche dark:text-crema-rueda font-montserrat">Botones</h2>
       <div class="flex flex-wrap gap-4">
-        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-amarillo-farol px-6 py-3 font-bold text-azul-noche shadow-lg transition-colors hover:bg-naranja-ruta dark:hover:bg-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
           Inscríbete
         </button>
-        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-slate-700 px-6 py-3 font-bold text-white shadow-md transition-colors hover:bg-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-azul-noche dark:bg-crema-rueda px-6 py-3 font-bold text-crema-rueda dark:text-azul-noche shadow-md transition-colors hover:bg-gris-urbano dark:hover:bg-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
           Explorar rutas
         </button>
-        <button type="button" class="inline-flex items-center justify-center rounded-xl border border-lime-300/70 px-6 py-3 font-bold text-lime-200 transition-colors hover:bg-lime-300/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+        <button type="button" class="inline-flex items-center justify-center rounded-xl border border-verde-ruta dark:border-amarillo-farol px-6 py-3 font-bold text-verde-ruta dark:text-amarillo-farol transition-colors hover:bg-verde-ruta/10 dark:hover:bg-amarillo-farol/10 hover:text-azul-noche dark:hover:text-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
           Consultar horarios
         </button>
       </div>
     </section>
 
     <section aria-labelledby="card-title" class="space-y-4">
-      <h2 id="card-title" class="text-2xl font-bold text-white">Card de ruta</h2>
+      <h2 id="card-title" class="text-2xl font-bold text-azul-noche dark:text-crema-rueda font-montserrat">Card de ruta</h2>
       <div class="flex flex-col items-center">
-        <article class="w-full max-w-2xl overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl">
+        <article class="w-full max-w-2xl overflow-hidden rounded-xl border border-azul-noche/15 dark:border-crema-rueda/20 bg-white dark:bg-black shadow-lg transition-shadow hover:shadow-2xl">
           <img src="../img/ruta-sabores-barrio.png" alt="Ciclistas recorren una calle colorida de Medellín" class="h-52 w-full object-cover" loading="lazy">
           <div class="space-y-5 p-6">
             <div class="flex items-center justify-between gap-4">
-              <h3 class="text-xl font-bold text-white xl:text-2xl">Luces del Centro</h3>
-              <p class="shrink-0 rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-300">Nivel fácil</p>
+              <h3 class="text-xl font-bold text-azul-noche dark:text-crema-rueda xl:text-2xl font-montserrat">Luces del Centro</h3>
+              <p class="shrink-0 rounded-full bg-verde-ruta/10 dark:bg-azul-noche px-3 py-1 text-xs font-bold uppercase tracking-wide text-verde-ruta dark:text-amarillo-farol">Nivel fácil</p>
             </div>
             <dl class="grid grid-cols-1 gap-4 xl:grid-cols-3">
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-slate-400">Distancia</dt><dd class="mt-1 text-sm font-bold text-slate-100">10 km</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-slate-400">Duración</dt><dd class="mt-1 text-sm font-bold text-slate-100">2 h</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-slate-400">Punto de encuentro</dt><dd class="mt-1 text-sm font-bold text-slate-100">Sede Rueda Libre</dd></div>
+              <div><dt class="text-xs font-semibold uppercase tracking-wide text-gris-urbano dark:text-crema-rueda">Distancia</dt><dd class="mt-1 text-sm font-bold text-azul-noche dark:text-crema-rueda">10 km</dd></div>
+              <div><dt class="text-xs font-semibold uppercase tracking-wide text-gris-urbano dark:text-crema-rueda">Duración</dt><dd class="mt-1 text-sm font-bold text-azul-noche dark:text-crema-rueda">2 h</dd></div>
+              <div><dt class="text-xs font-semibold uppercase tracking-wide text-gris-urbano dark:text-crema-rueda">Punto de encuentro</dt><dd class="mt-1 text-sm font-bold text-azul-noche dark:text-crema-rueda">Sede Rueda Libre</dd></div>
             </dl>
-            <div class="flex flex-col gap-4 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
-              <p class="text-sm font-semibold text-slate-300">Precio<strong class="mt-1 block text-2xl font-black text-lime-300">$55.000</strong></p>
-              <button type="button" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">Inscríbete</button>
+            <div class="flex flex-col gap-4 border-t border-azul-noche/15 dark:border-crema-rueda/20 pt-4 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-sm font-semibold text-gris-urbano dark:text-crema-rueda">Precio<strong class="mt-1 block text-2xl font-black text-verde-ruta dark:text-amarillo-farol">$55.000</strong></p>
+              <button type="button" class="inline-flex items-center justify-center rounded-xl bg-amarillo-farol px-6 py-3 font-bold text-azul-noche shadow-lg transition-colors hover:bg-naranja-ruta dark:hover:bg-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">Inscríbete</button>
             </div>
           </div>
         </article>
@@ -61,35 +65,35 @@
     </section>
 
     <section aria-labelledby="alerts-title" class="space-y-4">
-      <h2 id="alerts-title" class="text-2xl font-bold text-white">Alertas</h2>
+      <h2 id="alerts-title" class="text-2xl font-bold text-azul-noche dark:text-crema-rueda font-montserrat">Alertas</h2>
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <section aria-labelledby="info-title" class="space-y-2 rounded-xl border-l-4 border-sky-300 bg-sky-400/10 p-4 shadow-md">
-          <h3 id="info-title" class="text-lg font-bold text-sky-200">Información</h3>
-          <p class="text-sm leading-relaxed text-slate-200">Todos los recorridos parten de la sede Rueda Libre.</p>
+        <section aria-labelledby="info-title" class="space-y-2 rounded-xl border-l-4 border-azul-noche dark:border-amarillo-farol bg-white dark:bg-black p-4 shadow-md">
+          <h3 id="info-title" class="text-lg font-bold text-azul-noche dark:text-amarillo-farol font-montserrat">Información</h3>
+          <p class="text-sm leading-relaxed text-azul-noche dark:text-crema-rueda">Todos los recorridos parten de la sede Rueda Libre.</p>
         </section>
-        <section role="status" aria-atomic="true" aria-labelledby="success-title" class="space-y-2 rounded-xl border-l-4 border-lime-300 bg-lime-300/10 p-4 shadow-md">
-          <h3 id="success-title" class="text-lg font-bold text-lime-200">Inscripción lista</h3>
-          <p class="text-sm leading-relaxed text-slate-200">Tu cupo para el próximo recorrido quedó reservado.</p>
+        <section role="status" aria-atomic="true" aria-labelledby="success-title" class="space-y-2 rounded-xl border-l-4 border-verde-ruta dark:border-amarillo-farol bg-verde-ruta/10 dark:bg-amarillo-farol/10 p-4 shadow-md">
+          <h3 id="success-title" class="text-lg font-bold text-verde-ruta dark:text-amarillo-farol font-montserrat">Inscripción lista</h3>
+          <p class="text-sm leading-relaxed text-azul-noche dark:text-crema-rueda">Tu cupo para el próximo recorrido quedó reservado.</p>
         </section>
-        <section aria-labelledby="warning-title" class="space-y-2 rounded-xl border-l-4 border-amber-300 bg-amber-400/10 p-4 shadow-md">
-          <h3 id="warning-title" class="text-lg font-bold text-amber-200">Recuerda</h3>
-          <p class="text-sm leading-relaxed text-slate-200">Llega 15 minutos antes de la hora de salida.</p>
+        <section aria-labelledby="warning-title" class="space-y-2 rounded-xl border-l-4 border-naranja-ruta dark:border-amarillo-farol bg-naranja-ruta/10 dark:bg-azul-noche p-4 shadow-md">
+          <h3 id="warning-title" class="text-lg font-bold text-azul-noche dark:text-amarillo-farol font-montserrat">Recuerda</h3>
+          <p class="text-sm leading-relaxed text-azul-noche dark:text-crema-rueda">Llega 15 minutos antes de la hora de salida.</p>
         </section>
       </div>
     </section>
 
     <section aria-labelledby="inputs-title" class="space-y-4">
-      <h2 id="inputs-title" class="text-2xl font-bold text-white">Campos de formulario</h2>
+      <h2 id="inputs-title" class="text-2xl font-bold text-azul-noche dark:text-crema-rueda font-montserrat">Campos de formulario</h2>
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div class="space-y-2">
-          <label for="correo" class="block text-sm font-semibold text-slate-100">Correo electrónico</label>
-          <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" aria-describedby="correo-ayuda" class="block w-full rounded-xl border border-slate-600 bg-slate-950 px-4 py-3 text-slate-100 placeholder:text-slate-500 transition-colors focus:border-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-          <p id="correo-ayuda" class="text-sm leading-relaxed text-slate-400">Usaremos este correo para confirmar tu reserva.</p>
+          <label for="correo" class="block text-sm font-semibold text-azul-noche dark:text-crema-rueda">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" aria-describedby="correo-ayuda" class="block w-full rounded-xl border border-gris-urbano/60 dark:border-crema-rueda/50 bg-white dark:bg-black px-4 py-3 text-azul-noche dark:text-crema-rueda placeholder:text-gris-urbano dark:placeholder:text-crema-rueda/80 transition-colors focus:border-verde-ruta dark:focus:border-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
+          <p id="correo-ayuda" class="text-sm leading-relaxed text-gris-urbano dark:text-crema-rueda">Usaremos este correo para confirmar tu reserva.</p>
         </div>
         <div class="space-y-2">
-          <label for="celular" class="block text-sm font-semibold text-slate-100">Celular</label>
-          <input id="celular" name="celular" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" aria-describedby="celular-ayuda" class="block w-full rounded-xl border border-slate-600 bg-slate-950 px-4 py-3 text-slate-100 placeholder:text-slate-500 transition-colors focus:border-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-          <p id="celular-ayuda" class="text-sm leading-relaxed text-slate-400">Incluye el indicativo de tu país para contactarte.</p>
+          <label for="celular" class="block text-sm font-semibold text-azul-noche dark:text-crema-rueda">Celular</label>
+          <input id="celular" name="celular" type="tel" autocomplete="tel" placeholder="+57 300 123 4567" aria-describedby="celular-ayuda" class="block w-full rounded-xl border border-gris-urbano/60 dark:border-crema-rueda/50 bg-white dark:bg-black px-4 py-3 text-azul-noche dark:text-crema-rueda placeholder:text-gris-urbano dark:placeholder:text-crema-rueda/80 transition-colors focus:border-verde-ruta dark:focus:border-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche">
+          <p id="celular-ayuda" class="text-sm leading-relaxed text-gris-urbano dark:text-crema-rueda">Incluye el indicativo de tu país para contactarte.</p>
         </div>
       </div>
     </section>
