@@ -1378,3 +1378,36 @@ La campaña ofrece tres recorridos nocturnos desde la sede de Rueda Libre. Cada 
 - El hover cambia la sombra sin desplazar el contenido.
 - Las cards reutilizan el botón principal del MiniReto 2 y comparten clases base.
 - Todo el estilo está compuesto por utilidades Tailwind, sin CSS propio.
+
+    MINIRETO #4 - KIT DE COMPONENTES RUEDA NOCTURNA V0.1 (MOODLE #14)
+
+Se reunió el kit reutilizable de Rueda Nocturna en una página de referencia para preparar la siguiente landing.
+
+    INSTRUCCIONES
+
+- Se creó nocturna/componentes.html con las tres variantes de botón del MiniReto 2 y una card de ruta del MiniReto 3.
+- Se construyeron alertas de información, éxito y advertencia con fondos suaves, borde lateral, título y mensaje; la alerta de éxito usa role="status" para anunciar su estado a lectores de pantalla.
+- Se añadieron campos de correo y celular con etiquetas asociadas, ejemplos, ayuda vinculada y foco visible.
+- Se registraron las reglas del kit: radio rounded-xl; espaciado de la escala base Tailwind de 0.25 rem (p-4/p-6, gap-4, px-4/px-6 y py-3); superficies y texto en tonos slate; lima para acciones, precios y foco; sky para información y ámbar para advertencia. El éxito usa lima.
+- Se ajustó el radio de las cards de Rutas en nocturna/index.html a rounded-xl para que coincida con los botones, alertas, campos y la card del kit.
+- La página carga nocturna/src/output.css y usa únicamente utilidades Tailwind.
+- Realizar push: Feat: Kit de componentes Rueda Nocturna v0.1
+
+    CONTEXTO
+
+El equipo de diseño quiere revisar todos los componentes en una sola página antes de construir la landing. Faltaban las alertas de información, éxito y advertencia, además de los campos de formulario.
+
+    REQUISITOS
+
+- Mostrar los tres botones y una card de ruta de los miniretos anteriores.
+- Construir tres alertas con fondo suave, borde lateral de color, título destacado y texto; marcar la alerta de éxito con un role accesible.
+- Crear campos de correo y celular con etiquetas visibles asociadas, borde, relleno, texto de ejemplo, ayuda debajo y foco visible.
+- Aplicar radios, escala de espaciado y colores comunes al kit, y registrar las reglas en esta bitácora.
+- Usar utilidades Tailwind de espaciado, tamaños, colores, tipografía, bordes y sombras, con variantes hover y focus.
+
+    CHECKLIST
+
+- componentes.html presenta botones, card, alertas y campos con sus variantes.
+- Los componentes siguen las reglas del kit registradas en esta bitácora.
+- Los campos tienen etiquetas asociadas y foco visible; todo el kit se puede recorrer con teclado.
+- La página publicada carga src/output.css sin errores 404.
