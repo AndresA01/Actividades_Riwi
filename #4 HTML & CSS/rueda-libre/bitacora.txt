@@ -1411,3 +1411,37 @@ El equipo de diseño quiere revisar todos los componentes en una sola página an
 - Los componentes siguen las reglas del kit registradas en esta bitácora.
 - Los campos tienen etiquetas asociadas y foco visible; todo el kit se puede recorrer con teclado.
 - La página publicada carga src/output.css sin errores 404.
+
+    MINIRETO #5 - MAQUETACIÓN DE LA LANDING (MOODLE #15)
+
+Se convirtió el prototipo de Rueda Nocturna en una landing completa, organizada alrededor de rutas, pasos de uso e inscripción.
+
+    INSTRUCCIONES
+
+- Se estructuró nocturna/index.html con encabezado, contenido principal por secciones semánticas con id y pie de página.
+- El encabezado usa flex para alinear el logo, los enlaces de navegación y el botón «Inscríbete» en escritorio; cada enlace lleva a su sección.
+- Se aplicó el mismo contenedor centrado max-w-7xl con relleno horizontal a todas las secciones, al encabezado y al pie.
+- Se organizaron las tres rutas en una cuadrícula de tres columnas en escritorio, copiando las mismas clases y estructura de card de nocturna/componentes.html.
+- Se distribuyeron los cuatro pasos con CSS Grid en cuatro columnas en escritorio, porque los pasos numerados tienen el mismo peso y Grid mantiene sus celdas y espacios alineados.
+- La franja de inscripción usa el botón principal del kit y el pie organiza contacto, marca y horarios con flex.
+- Realizar push: Feat: Maquetación landing Rueda Nocturna
+
+    CONTEXTO
+
+Con el kit aprobado, diseño entregó la estructura de la landing: encabezado con logo, enlaces y botón de inscripción; sección principal; rutas; cuatro pasos de uso; franja de inscripción y pie de página.
+
+    REQUISITOS
+
+- Usar etiquetas semánticas para el encabezado, el contenido principal con una sección por bloque y el pie.
+- Envolver las secciones con el mismo contenedor centrado, ancho máximo y relleno lateral.
+- Alinear logo, enlaces y botón del encabezado con flex; distribuir las tres cards en tres columnas de escritorio.
+- Distribuir los cuatro pasos con grid o flex y justificar la decisión en la bitácora.
+- Organizar el pie en tres bloques con flex y enlazar las secciones desde el encabezado mediante anclas.
+- Copiar los componentes desde componentes.html sin crear variantes nuevas.
+
+    CHECKLIST
+
+- En escritorio, el encabezado queda en una fila, las tres rutas en columnas y los cuatro pasos distribuidos.
+- Todas las secciones usan el mismo contenedor de ancho máximo y relleno horizontal.
+- Los enlaces del encabezado llevan a sus secciones.
+- Las cards mantienen las mismas clases y estructura del kit de componentes.

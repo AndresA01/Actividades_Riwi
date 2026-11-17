@@ -3,20 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rueda Nocturna: recorridos guiados en bicicleta por Medellín.">
-  <title>Rueda Nocturna | Rutas</title>
+  <meta name="description" content="Recorridos nocturnos en bicicleta por Medellín con Rueda Libre.">
+  <title>Rueda Nocturna | Medellín en bicicleta</title>
   <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-  <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center gap-8 px-4 py-10 sm:px-8 lg:px-12">
-    <section aria-labelledby="hero-title" class="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-black px-6 py-12 shadow-2xl sm:px-10 sm:py-16 lg:px-16">
+  <header class="border-b border-white/10 bg-slate-950/90">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+      <a href="#inicio" aria-label="Rueda Libre, inicio" class="inline-flex w-fit items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+        <img src="../img/logo.png" alt="Rueda Libre" class="h-12 w-auto rounded-xl bg-white p-1 object-contain">
+      </a>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <nav aria-label="Navegación principal">
+          <ul class="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-300">
+            <li><a href="#rutas" class="transition-colors hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">Rutas</a></li>
+            <li><a href="#como-funciona" class="transition-colors hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">¿Cómo funciona?</a></li>
+            <li><a href="#contacto" class="transition-colors hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="#inscripcion" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+          Inscríbete
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-7xl space-y-16 px-4 py-10 sm:px-8 lg:px-12">
+    <section id="inicio" aria-labelledby="hero-title" class="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-black px-6 py-12 shadow-2xl sm:px-10 sm:py-16 lg:px-16">
       <div aria-hidden="true" class="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-lime-300/10 blur-3xl"></div>
       <div class="relative max-w-3xl space-y-8">
         <p class="inline-flex rounded-full border border-lime-300/30 bg-lime-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-lime-300">
           Nuevo · Jueves a sábado
         </p>
         <div class="space-y-4">
-          <h1 id="hero-title" class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">Rueda Nocturna</h1>
+          <h1 id="hero-title" class="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">Rueda Nocturna</h1>
           <p class="max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
             Descubre Medellín en bici cuando se encienden las luces.
           </p>
@@ -25,21 +45,22 @@
           <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-200 sm:text-base">3 rutas</li>
           <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-200 sm:text-base">Desde $55.000</li>
         </ul>
-        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-          Inscríbete
-        </button>
+        <div class="flex flex-wrap gap-4">
+          <a href="#inscripcion" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">Inscríbete</a>
+          <a href="#rutas" class="inline-flex items-center justify-center rounded-xl bg-slate-700 px-6 py-3 font-bold text-white shadow-md transition-colors hover:bg-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">Explorar rutas</a>
+        </div>
         <p class="text-sm leading-relaxed text-slate-400">Salidas nocturnas en Medellín · 7:30 p. m.</p>
       </div>
     </section>
 
-    <section aria-labelledby="routes-title" class="space-y-6">
-      <div class="space-y-2 text-center">
+    <section id="rutas" aria-labelledby="routes-title" class="space-y-6">
+      <div class="space-y-2">
         <h2 id="routes-title" class="text-3xl font-black tracking-tight text-white sm:text-4xl">Rutas nocturnas</h2>
         <p class="text-slate-300">Elige el recorrido que se adapta a tu ritmo.</p>
-        <p class="mx-auto max-w-2xl text-sm leading-relaxed text-slate-400">Todas incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+        <p class="text-sm leading-relaxed text-slate-400">Todas incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
       </div>
 
-      <div class="flex flex-col items-center gap-6">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <article class="w-full max-w-2xl overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl">
           <img src="../img/ruta-sabores-barrio.png" alt="Ciclistas recorren una calle colorida de Medellín" class="h-52 w-full object-cover" loading="lazy">
           <div class="space-y-5 p-6">
@@ -99,17 +120,70 @@
       </div>
     </section>
 
-    <section aria-labelledby="button-kit-title" class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 sm:p-8">
-      <h2 id="button-kit-title" class="mb-5 text-xl font-bold text-white sm:text-2xl">Variantes de botón</h2>
-      <div class="flex flex-wrap gap-4">
-        <button type="button" class="inline-flex items-center justify-center rounded-xl bg-slate-700 px-6 py-3 font-bold text-white shadow-md transition-colors hover:bg-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-          Explorar rutas
-        </button>
-        <button type="button" class="inline-flex items-center justify-center rounded-xl border border-lime-300/70 px-6 py-3 font-bold text-lime-200 transition-colors hover:bg-lime-300/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
-          Consultar horarios
-        </button>
+    <section id="como-funciona" aria-labelledby="steps-title" class="space-y-6">
+      <div class="space-y-2">
+        <h2 id="steps-title" class="text-3xl font-black tracking-tight text-white sm:text-4xl">¿Cómo funciona?</h2>
+        <p class="text-slate-300">Cuatro pasos para disfrutar el recorrido.</p>
       </div>
+      <ol class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="flex gap-4 rounded-xl border border-white/10 bg-slate-900 p-4 shadow-md">
+          <span aria-hidden="true" class="text-2xl font-black text-lime-300">01</span>
+          <div class="space-y-2">
+            <h3 class="font-bold text-white">Elige tu ruta</h3>
+            <p class="text-sm leading-relaxed text-slate-300">Revisa las distancias y el nivel de cada recorrido.</p>
+          </div>
+        </li>
+        <li class="flex gap-4 rounded-xl border border-white/10 bg-slate-900 p-4 shadow-md">
+          <span aria-hidden="true" class="text-2xl font-black text-lime-300">02</span>
+          <div class="space-y-2">
+            <h3 class="font-bold text-white">Inscríbete</h3>
+            <p class="text-sm leading-relaxed text-slate-300">Elige una salida y reserva tu lugar.</p>
+          </div>
+        </li>
+        <li class="flex gap-4 rounded-xl border border-white/10 bg-slate-900 p-4 shadow-md">
+          <span aria-hidden="true" class="text-2xl font-black text-lime-300">03</span>
+          <div class="space-y-2">
+            <h3 class="font-bold text-white">Recoge tu equipo</h3>
+            <p class="text-sm leading-relaxed text-slate-300">Recibe bicicleta, casco y elementos reflectivos.</p>
+          </div>
+        </li>
+        <li class="flex gap-4 rounded-xl border border-white/10 bg-slate-900 p-4 shadow-md">
+          <span aria-hidden="true" class="text-2xl font-black text-lime-300">04</span>
+          <div class="space-y-2">
+            <h3 class="font-bold text-white">Rueda</h3>
+            <p class="text-sm leading-relaxed text-slate-300">Sigue al guía y disfruta Medellín de noche.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="inscripcion" aria-labelledby="signup-title" class="flex flex-col gap-6 rounded-xl border-l-4 border-lime-300 bg-slate-900 px-6 py-8 shadow-xl sm:flex-row sm:items-center sm:justify-between">
+      <div class="space-y-2">
+        <h2 id="signup-title" class="text-2xl font-black text-white sm:text-3xl">¿Listo para pedalear?</h2>
+        <p class="text-slate-300">Reserva tu lugar y vive Medellín bajo las estrellas.</p>
+      </div>
+      <a href="#rutas" class="inline-flex items-center justify-center rounded-xl bg-lime-300 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+        Inscríbete
+      </a>
     </section>
   </main>
+
+  <footer id="contacto" class="border-t border-white/10 bg-slate-900/50">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10 sm:px-8 md:flex-row md:items-start md:justify-between lg:px-12">
+      <section aria-labelledby="footer-brand-title" class="max-w-sm space-y-2">
+        <h2 id="footer-brand-title" class="text-lg font-bold text-white">Rueda Libre</h2>
+        <p class="text-sm leading-relaxed text-slate-300">Recorridos guiados para descubrir Medellín sobre dos ruedas.</p>
+      </section>
+      <section aria-labelledby="footer-contact-title" class="space-y-2">
+        <h2 id="footer-contact-title" class="font-bold text-white">Contacto</h2>
+        <a href="mailto:hola@ruedalibre.example" class="text-sm text-slate-300 underline underline-offset-4 transition-colors hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">hola@ruedalibre.example</a>
+      </section>
+      <section aria-labelledby="footer-schedule-title" class="space-y-2">
+        <h2 id="footer-schedule-title" class="font-bold text-white">Salidas</h2>
+        <p class="text-sm text-slate-300">Jueves a sábado · 7:30 p. m.</p>
+        <p class="text-sm text-slate-300">Medellín, Colombia</p>
+      </section>
+    </div>
+  </footer>
 </body>
 </html>
