@@ -24,18 +24,34 @@
 
 <body>
   <!-- ENCABEZADO Y NAVEGACIÓN -->
-  <header class="d-flex flex-column flex-md-row align-items-center justify-content-md-between gap-3">
+  <header>
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="img-fluid" src="img/logo.png" alt="Logotipo de Rueda Libre con una bicicleta en tonos verdes" width="220" />
+        </a>
 
-    <img class="img-fluid" src="img/logo.png" alt="Logotipo de Rueda Libre con una bicicleta en tonos verdes" width="500" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+          aria-label="Alternar menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav>
-      <ul id="menu" class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 list-unstyled p-0 m-0">
-        <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="paginas/tarifas.html">Tarifas y Rutas</a></li>
-        <li><a href="paginas/reservas.html">Reservas</a></li>
-      </ul>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul id="menu" class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html" aria-current="page">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="paginas/tarifas.html">Tarifas y Rutas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="paginas/reservas.html">Reservas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -100,10 +116,9 @@
         <h3>Rutas guiadas</h3>
 
         <p>
-          Realizamos
-          <a href="paginas/tarifas.html#t-tarifas">recorridos guiados</a>
-          para conocer Medellín y sus lugares turísticos.
+          Realizamos recorridos guiados para conocer Medellín y sus lugares turísticos.
         </p>
+        <a href="paginas/tarifas.html#t-tarifas" class="btn btn-outline-success btn-sm">Ver recorridos</a>
       </article>
     </section>
 
@@ -139,7 +154,7 @@
         <h3>Urbana Clásica</h3>
         <p>Cómoda y liviana para las ciclorutas.</p>
         <p>Precio por hora: $10.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -147,7 +162,7 @@
         <h3>Urbana Plegable</h3>
         <p>Se dobla en segundos; ideal para combinar con el metro.</p>
         <p>Precio por hora: $12.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -155,7 +170,7 @@
         <h3>Montaña Trail</h3>
         <p>Suspensión delantera y 21 cambios para las subidas.</p>
         <p>Precio por hora: $15.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -163,7 +178,7 @@
         <h3>Gravel Aventura</h3>
         <p>Para rutas mixtas de asfalto y destapado.</p>
         <p>Precio por hora: $18.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -171,7 +186,7 @@
         <h3>Eléctrica Urbana</h3>
         <p>Asistencia eléctrica con 45 km de autonomía.</p>
         <p>Precio por hora: $25.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -179,7 +194,7 @@
         <h3>Infantil</h3>
         <p>Para niños de 6 a 10 años.</p>
         <p>Precio por hora: $8.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
 
       <article class="tarjeta-bicicleta d-flex flex-column justify-content-between col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -187,7 +202,7 @@
         <h3>Tándem</h3>
         <p>Para dos personas; perfecta para pasear en pareja.</p>
         <p>Precio por hora: $20.000</p>
-        <a href="paginas/reservas.html" class="btn-reserva d-inline-block">Reservar</a>
+        <a href="paginas/reservas.html" class="btn btn-success btn-reserva btn-sm">Reservar</a>
       </article>
     </section>
 
@@ -238,7 +253,7 @@
         </div>
 
         <a href="paginas/reservas.html"
-          class="bg-success text-white p-3 rounded fw-bold text-decoration-none d-inline-block">
+          class="btn btn-success btn-reserva btn-lg">
           Reserva ahora
         </a>
 
@@ -292,10 +307,10 @@
   </main>
 
   <!-- ENLACE FLOTANTE DE WHATSAPP -->
-  <a href="https://wa.me/573000000000" class="whatsapp-fijo d-inline-block d-sm-none m-3" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="btn btn-success d-inline-block d-sm-none m-3" target="_blank" rel="noopener noreferrer">
     WhatsApp
   </a>
-  <a href="https://wa.me/573000000000" class="whatsapp-fijo d-none d-sm-inline-block position-fixed bottom-0 end-0 m-3 z-3" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="btn btn-success d-none d-sm-inline-block position-fixed bottom-0 end-0 m-3 z-3" target="_blank" rel="noopener noreferrer">
     WhatsApp
   </a>
 

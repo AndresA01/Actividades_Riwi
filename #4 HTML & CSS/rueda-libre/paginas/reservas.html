@@ -24,19 +24,34 @@
 
 <body>
   <!-- ENCABEZADO Y NAVEGACIÓN -->
-  <header class="d-flex flex-column flex-md-row align-items-center justify-content-md-between gap-3">
+  <header>
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img class="img-fluid" src="../img/logo.png" alt="Logo de Rueda Libre con el diseño de una bicicleta en color verde claro y oscuro" width="220" />
+        </a>
 
-    <img class="img-fluid" src="../img/logo.png" alt="Logo de Rueda Libre con el diseño de una bicicleta en color verde claro y oscuro"
-      width="500" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+          aria-label="Alternar menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav>
-      <ul id="menu" class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 list-unstyled p-0 m-0">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="tarifas.html">Tarifas y Rutas</a></li>
-        <li><a href="reservas.html" class="activo">Reservas</a></li>
-      </ul>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul id="menu" class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tarifas.html">Tarifas y Rutas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="reservas.html" aria-current="page">Reservas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -170,7 +185,7 @@
                 maxlength="300"></textarea>
             </div>
           </fieldset>
-          <button type="submit" name="enviar_reserva" class="btn-reserva d-inline-block border-0">
+          <button type="submit" name="enviar_reserva" class="btn btn-success btn-reserva">
             Enviar reserva
           </button>
         </form>
@@ -207,10 +222,10 @@
   </main>
 
   <!-- ENLACE FLOTANTE DE WHATSAPP -->
-  <a href="https://wa.me/573000000000" class="whatsapp-fijo d-inline-block d-sm-none m-3" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="btn btn-success d-inline-block d-sm-none m-3" target="_blank" rel="noopener noreferrer">
     WhatsApp
   </a>
-  <a href="https://wa.me/573000000000" class="whatsapp-fijo d-none d-sm-inline-block position-fixed bottom-0 end-0 m-3 z-3" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="btn btn-success d-none d-sm-inline-block position-fixed bottom-0 end-0 m-3 z-3" target="_blank" rel="noopener noreferrer">
     WhatsApp
   </a>
 

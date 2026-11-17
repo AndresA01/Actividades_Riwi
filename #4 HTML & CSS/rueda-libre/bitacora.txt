@@ -1128,6 +1128,41 @@ Bootstrap redujo la hoja de estilos de 428 líneas registradas para v1.5 a 147 l
 - También se comprobó que las etiquetas estructurales principales están balanceadas en las cuatro páginas HTML.
 - Se revisó estáticamente que las tres páginas cargan Bootstrap antes de styles.css, que tarifas y reservas usan la grilla requerida y que el formulario conserva sus atributos de validación nativa.
 - Se migraron los campos del formulario a componentes de Bootstrap y se mantuvieron sus reglas required, min, max, minlength, maxlength y pattern.
-- Según las clases declaradas, la flota debe mostrarse en 1, 2 y 4 columnas a 360, 768 y 1280 px; las rutas en 1, 2 y 3; y los beneficios en 1, 2 y 4. Falta confirmar visualmente estos anchos.
-- La prueba visual del sitio a 360 px, 768 px y 1280 px queda pendiente.
-- La publicación de v2.0-beta en GitHub Pages queda pendiente.
+- En Inicio, la flota mostró 1, 2 y 4 columnas; las rutas, 1, 2 y 3; y los beneficios, 1, 2 y 4 a 360, 768 y 1280 px, respectivamente.
+- Se revisaron Inicio, Tarifas y Reservas en GitHub Pages a 360 px, 768 px y 1280 px. En las nueve combinaciones, el ancho del documento coincidió con el área disponible y no hubo desbordamiento horizontal.
+- En Tarifas, las dos secciones se apilaron a 360 y 768 px y quedaron en dos columnas a 1280 px; las tablas permanecieron en contenedores con desplazamiento horizontal interno. En Reservas, formulario e información de contacto se apilaron a 360 px y ocuparon columnas 8/4 desde 768 px; los campos cortos pasaron de una a dos columnas.
+- La v2.0-beta está publicada en GitHub Pages: https://andresa01.github.io/Actividades_Riwi/rueda-libre/.
+- También se validó el catálogo publicado en pruebas/catalogo-bootstrap.html: incluye siete bicicletas, cuatro beneficios y ocho imágenes cargadas, con Bootstrap 5.3.9 por CDN y sin desbordamiento horizontal.
+
+    DÍA #3 - COMPONENTES Y PERSONALIZACIÓN DE BOOTSTRAP
+
+MINIRETO #1 - MENÚ PARA EL CELULAR: NAVBAR Y BOTONES (MOODLE #9)
+
+Implementar la navbar responsive con menú colapsable y unificar las llamadas a la acción con los botones de Bootstrap.
+
+    INSTRUCCIONES
+
+- Se reemplazó el encabezado de Inicio, Tarifas y Reservas por una navbar-expand-lg con navbar-brand, navbar-toggler y navbar-collapse.
+- El botón del menú apunta a menuPrincipal en las tres páginas, con data-bs-toggle, aria-controls, aria-expanded y aria-label.
+- Cada página marca su enlace actual con nav-link active y aria-current="page".
+- Las acciones de reserva usan btn btn-success; la consulta de recorridos usa btn-outline-success. Las reservas de la flota usan btn-sm y la llamada principal usa btn-lg.
+- Los enlaces de WhatsApp y el envío del formulario también usan el componente btn.
+- Se adaptaron los estados activo y focus-visible de la navegación en styles.css. btn-reserva conserva los colores de marca y deja que Bootstrap aplique los tamaños.
+- Se conserva una carga del bundle de Bootstrap por página antes del cierre de body.
+- Realizar push: Feat: Menú para el celular: navbar y botones
+
+    CONTEXTO
+
+En el celular, el menú de la beta ocupa demasiado espacio. El cliente pidió un menú hamburguesa y que las llamadas a la acción para reservar y consultar se vean coherentes.
+
+    REQUISITOS
+
+- navbar, navbar-expand-lg, navbar-brand, navbar-toggler, collapse, navbar-collapse y nav-link.
+- data-bs-toggle, data-bs-target, id, aria-current y el bundle de JavaScript de Bootstrap.
+- btn, variantes btn-* y tamaños btn-lg / btn-sm.
+
+    CHECKLIST
+
+- Las tres páginas tienen un toggler vinculado al contenedor colapsable y una sola página actual marcada con aria-current="page".
+- Las tres páginas cargan el bundle de JavaScript una sola vez, antes de cerrar body.
+- Las llamadas a la acción usan botones de Bootstrap con variantes y tamaños coherentes.

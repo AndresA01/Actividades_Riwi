@@ -35,22 +35,22 @@ h3 {
    2. NAVEGACIÓN
 ================================================== */
 
-#menu a {
+#menu .nav-link {
     color: var(--color-gris);
     text-decoration: none;
     font-weight: 600;
 }
 
-#menu a.activo {
+#menu .nav-link.active {
     color: var(--color-verde);
 }
 
-#menu a:hover {
+#menu .nav-link:hover {
     color: var(--color-azul);
     text-decoration: underline;
 }
 
-#menu a:focus {
+#menu .nav-link:focus-visible {
     color: var(--color-azul);
     outline: 0.125rem solid var(--color-verde);
     outline-offset: 0.1875rem;
@@ -87,32 +87,22 @@ h3 {
 
 .btn-reserva {
     background-color: var(--color-verde);
+    border-color: var(--color-verde);
     color: var(--color-crema);
-    padding: var(--espacio-pequeno) var(--espacio-mediano);
-    text-decoration: none;
     font-weight: 600;
     border-radius: var(--espacio-pequeno);
 }
 
 .btn-reserva:hover {
     background-color: var(--color-azul);
+    border-color: var(--color-azul);
     color: var(--color-crema);
 }
 
-.btn-reserva:focus {
+.btn-reserva:focus-visible {
     outline: 0.125rem solid var(--color-azul);
     outline-offset: 0.1875rem;
 }
-
-.whatsapp-fijo {
-    background-color: var(--color-verde);
-    color: var(--color-crema);
-    padding: var(--espacio-mediano);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: var(--espacio-pequeno);
-}
-
 /* ==================================================
    5. TABLAS
 ================================================== */
