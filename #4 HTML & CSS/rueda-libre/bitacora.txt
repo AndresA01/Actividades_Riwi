@@ -1536,3 +1536,66 @@ La landing todavía usaba colores genéricos de Tailwind. El cliente pidió los 
 | --- | --- | --- | --- |
 | Claro | Crema Rueda | Blanco | Azul Noche y Gris Urbano |
 | Oscuro | Azul Noche | Negro | Crema Rueda y Amarillo Farol |
+
+        MINIRETO #4 - CÓDIGO LEGIBLE Y VEREDICTO: BOOTSTRAP VS TAILWIND
+
+Se redujo la repetición de botones de Rueda Nocturna con tres clases reutilizables y se comparó el peso de la hoja Tailwind generada con los recursos Bootstrap de la v2.0.
+
+    INSTRUCCIONES
+
+- En nocturna/index.html se contaron 6 usos de las utilidades del botón principal, 1 del botón secundario, 2 etiquetas de nivel medio y difícil con la misma lista de clases y 3 cards con la misma lista base.
+- La landing aún no contiene campos de formulario. En nocturna/componentes.html, los campos de correo y celular comparten la misma lista de utilidades (2 usos).
+- Se definieron exactamente 3 clases reutilizables en @layer components de nocturna/src/input.css: button-primary, button-secondary y button-outline. Las utilidades de cada variante se agruparon en orden de layout, espaciado, tipografía, color/superficie y estados.
+- Se reemplazaron las listas duplicadas de los botones por esas clases: el principal se usa 6 veces en la landing y 2 en el kit; el secundario, 1 vez en cada página; y el contorno, 1 vez en el kit. Las cards conservan sus clases y estructura del kit.
+- Se agregó --minify al script build:css y se generó nocturna/src/output.css con Tailwind CLI 4.3.5.
+- Se midieron las respuestas de las URL CDN enlazadas por el sitio v2.0 y se compararon el tamaño transferido y el tamaño descomprimido en VALIDACIONES.
+- Realizar push: Feat: Código legible y veredicto Bootstrap vs Tailwind
+
+    CONTEXTO
+
+En la landing había listas extensas de clases repetidas en los botones. La versión Bootstrap 2.0 y la landing Tailwind ya están disponibles; se pidió elegir qué framework conviene usar en la siguiente página y sustentar la recomendación con cuatro criterios y medidas de tamaño.
+
+    REQUISITOS
+
+- Identificar y contar las listas repetidas de botones, etiquetas y campos.
+- Crear en @layer components un máximo de 3 clases para botones mediante @apply; reutilizarlas y mantener el marcado de las cards coherente con el kit.
+- Ordenar las utilidades por layout, espaciado, tipografía, color y estados.
+- Generar el CSS minificado con Tailwind CLI --minify y medir CSS y JavaScript Bootstrap cargados por el sitio v2.0.
+- Comparar curva de aprendizaje, personalización, tamaño final y casos de uso; recomendar una opción con evidencia.
+- Comprobar que la página conserva el diseño responsive y los temas claro y oscuro.
+
+    CHECKLIST
+
+- La landing usa las clases compartidas para todos sus botones; el kit presenta las tres variantes y se limita a 3 clases personalizadas.
+- Las cards mantienen el marcado y las clases compartidas con el kit.
+- El CSS se generó con --minify y mide 34.107 bytes.
+- La comparación registra los cuatro criterios, incluye una recomendación y separa los recursos de Bootstrap Icons y los estilos propios del sitio.
+- En los anchos revisados no hay desbordamiento horizontal; el modo oscuro mantiene el tema de marca.
+
+    VALIDACIONES
+
+Tamaños de los recursos consultados desde las URL CDN publicadas por la v2.0. “Transferido” corresponde al Content-Length con compresión reportada por el servidor; “recurso” es el tamaño del cuerpo descomprimido. El navegador integrado no expone el panel DevTools Network, por lo que se midieron las mismas respuestas CDN directamente.
+
+| Recurso | Transferido | Tamaño del recurso |
+| --- | ---: | ---: |
+| Tailwind output.css generado con --minify | No publicado todavía | 34.107 bytes |
+| Bootstrap 5.3.9 bootstrap.min.css | 22.775 bytes (br) | 232.360 bytes |
+| Bootstrap 5.3.9 bootstrap.bundle.min.js | 21.202 bytes (br) | 80.669 bytes |
+| Bootstrap Icons 1.13.2 CSS | 10.511 bytes (br) | 87.008 bytes |
+| CSS propio del sitio v2.0 | 1.410 bytes (gzip) | 6.448 bytes |
+
+| Criterio | Bootstrap | Tailwind | Recomendación |
+| --- | --- | --- | --- |
+| Curva de aprendizaje | Sus componentes y clases listas agilizan interfaces estándar. | Al inicio hay que aprender las utilidades y compilar el CSS; el tema y los breakpoints quedan explícitos en el HTML. | Bootstrap es más directo para empezar; Tailwind resultó manejable en esta landing al reutilizar los tres patrones de botón. |
+| Personalización | Se ajustó con utilidades y CSS propio, además de los componentes predefinidos. | El tema @theme concentra colores y fuentes; las utilidades permitieron diseñar una marca nocturna sin depender de componentes con apariencia predeterminada. | Tailwind encaja mejor con las páginas de campaña de Rueda Libre. |
+| Tamaño final | 232.360 bytes de CSS y 80.669 de JavaScript de Bootstrap descomprimidos; el sitio además descarga Bootstrap Icons y CSS propio. | La hoja de esta landing, generada minificada, mide 34.107 bytes y no requiere JavaScript de Tailwind en el navegador. | Tailwind entrega menos CSS para esta landing; las cifras comparan páginas de distinto alcance y el CSS de Tailwind aún no está publicado. |
+| Casos de uso | Adecuado para formularios, páginas administrativas y componentes estándar del sitio existente. | Adecuado para páginas de marca con estilos a medida y control detallado de breakpoints y colores. | Usar Tailwind en la siguiente página de campaña y conservar Bootstrap en v2.0 hasta planear una migración gradual. |
+
+| Ancho | Navegación | Rutas | Pasos | Desbordamiento |
+| --- | --- | ---: | ---: | --- |
+| 360 px | Oculta; botón visible | 1 columna | 1 columna | No |
+| 768 px | Visible | 2 columnas | 2 columnas | No |
+| 1024 px | Visible | 3 columnas | 4 columnas | No |
+| 1280 px | Visible | 3 columnas | 4 columnas | No |
+
+El navegador estaba usando prefers-color-scheme: dark: fondo Azul Noche, texto Crema Rueda y botón principal Amarillo Farol. El CSS generado incluye las variantes dark; la consola no reportó errores.

@@ -11,3 +11,44 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-open-sans: "Open Sans", sans-serif;
 }
+
+@layer components {
+  .button-primary {
+    /* Layout */
+    @apply inline-flex items-center justify-center;
+    /* Spacing */
+    @apply px-6 py-3;
+    /* Typography */
+    @apply font-bold;
+    /* Color and surface */
+    @apply rounded-xl bg-amarillo-farol text-azul-noche shadow-lg;
+    /* States */
+    @apply transition-colors hover:bg-naranja-ruta dark:hover:bg-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche;
+  }
+
+  .button-secondary {
+    /* Layout */
+    @apply inline-flex items-center justify-center;
+    /* Spacing */
+    @apply px-6 py-3;
+    /* Typography */
+    @apply font-bold;
+    /* Color and surface */
+    @apply rounded-xl bg-azul-noche text-crema-rueda dark:bg-crema-rueda dark:text-azul-noche shadow-md;
+    /* States */
+    @apply transition-colors hover:bg-gris-urbano dark:hover:bg-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche;
+  }
+
+  .button-outline {
+    /* Layout */
+    @apply inline-flex items-center justify-center;
+    /* Spacing */
+    @apply px-6 py-3;
+    /* Typography */
+    @apply font-bold;
+    /* Color and surface */
+    @apply rounded-xl border border-verde-ruta text-verde-ruta dark:border-amarillo-farol dark:text-amarillo-farol;
+    /* States */
+    @apply transition-colors hover:bg-verde-ruta/10 dark:hover:bg-amarillo-farol/10 hover:text-azul-noche dark:hover:text-crema-rueda focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol focus-visible:ring-offset-2 focus-visible:ring-offset-crema-rueda dark:focus-visible:ring-offset-azul-noche;
+  }
+}
