@@ -1198,3 +1198,35 @@ El área de mercadeo quiere que las tres promociones del mes roten en la portada
 - El carrusel muestra las tres promociones, avanza automáticamente y sus controles anterior y siguiente funcionan.
 - Cada imagen tiene texto alternativo y los controles incluyen etiquetas para lectores de pantalla y admiten teclado.
 - No quedan reglas de tarjetas propias sin uso en styles.css.
+
+    MINIRETO #3 - RESERVAS CONFIABLES: VALIDACIÓN VISUAL, ALERTA Y MODAL (MOODLE #11)
+
+Aplicar la validación visual de Bootstrap al formulario de reservas e integrar un aviso y las políticas de alquiler en un modal.
+
+    INSTRUCCIONES
+
+- Se añadieron los estilos de formulario de Bootstrap y se conservaron las reglas nativas required, pattern, min, max, minlength, maxlength y las fechas permitidas.
+- Se activó la validación visual con el script oficial de Bootstrap 5.3, copiado sin cambios.
+- Cada campo obligatorio tiene un mensaje específico para corregir el dato y una relación aria-describedby.
+- Se agregó una alerta informativa que se puede cerrar con su botón.
+- Se añadió el modal «Políticas de alquiler» con las cinco reglas y un botón junto a la casilla de aceptación.
+- El modal incluye botón de cierre y cierre por teclado con Escape.
+- Realizar push: Feat: Reservas confiables: validación visual, alerta y modal
+
+    CONTEXTO
+
+Los usuarios no entienden por qué no se envía el formulario y casi nadie lee las políticas de alquiler. El cliente pide mensajes claros junto a los campos, un aviso visible y las políticas en una ventana emergente.
+
+    REQUISITOS
+
+- form-label, form-control, form-select, form-check, form-check-input y form-check-label.
+- needs-validation, novalidate, invalid-feedback y el script oficial de validación.
+- alert, alert-dismissible, btn-close y data-bs-dismiss.
+- modal, modal-dialog, modal-content, modal-header, modal-body, modal-footer y data-bs-toggle="modal".
+
+    CHECKLIST
+
+- Al enviar el formulario vacío, cada campo obligatorio muestra su mensaje específico y el formulario no se envía.
+- Se conservan las reglas nativas pattern, min, max y minlength.
+- La alerta se cierra con su botón.
+- El modal muestra las cinco políticas, se abre desde el botón junto a la casilla y se cierra con su botón y con Escape.

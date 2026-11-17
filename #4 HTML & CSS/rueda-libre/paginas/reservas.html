@@ -71,24 +71,33 @@
       <section class="col-12 col-md-8">
         <h2>Formulario de reserva</h2>
 
-        <form action="#" method="post">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <strong>Recuerda:</strong> presenta tu documento de identidad original al recoger la bicicleta.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar aviso"></button>
+        </div>
+
+        <form class="needs-validation" action="#" method="post" novalidate>
           <fieldset class="mb-4">
             <legend>Tus datos</legend>
 
             <div class="mb-3">
               <label class="form-label" for="nombre">Nombre y apellido:</label>
-              <input class="form-control" type="text" id="nombre" name="nombre" required minlength="3" />
+              <input class="form-control" type="text" id="nombre" name="nombre" required minlength="3"
+                aria-describedby="nombre-feedback" />
+              <div id="nombre-feedback" class="invalid-feedback">Escribe tu nombre y apellido con al menos 3 caracteres.</div>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="tipo_documento">Tipo de documento:</label>
-              <select class="form-select" id="tipo_documento" name="tipo_documento" required>
+              <select class="form-select" id="tipo_documento" name="tipo_documento" required
+                aria-describedby="tipo-documento-feedback">
                 <option value="">Selecciona tu documento</option>
                 <option value="CC">Cédula de ciudadanía</option>
                 <option value="CE">Cédula de extranjería</option>
                 <option value="TI">Tarjeta de identidad</option>
                 <option value="PP">Pasaporte</option>
               </select>
+              <div id="tipo-documento-feedback" class="invalid-feedback">Selecciona el tipo de documento que presentarás.</div>
             </div>
 
             <div class="row g-3 mb-3">
@@ -96,19 +105,25 @@
                 <label class="form-label" for="numero_documento">Número de documento:</label>
                 <input class="form-control" type="text" id="numero_documento" name="numero_documento" required
                   minlength="6" maxlength="10" pattern="[0-9]{6,10}"
-                  title="Ingresa un número de documento con 6 a 10 dígitos" />
+                  title="Ingresa un número de documento con 6 a 10 dígitos"
+                  aria-describedby="numero-documento-feedback" />
+                <div id="numero-documento-feedback" class="invalid-feedback">Escribe entre 6 y 10 dígitos, sin espacios ni puntos.</div>
               </div>
 
               <div class="col-12 col-md-6">
                 <label class="form-label" for="telefono">Número de teléfono:</label>
                 <input class="form-control" type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}"
-                  title="Ingresa un celular de 10 dígitos que comience por 3." />
+                  title="Ingresa un celular de 10 dígitos que comience por 3."
+                  aria-describedby="telefono-feedback" />
+                <div id="telefono-feedback" class="invalid-feedback">Escribe un celular de 10 dígitos que empiece por 3.</div>
               </div>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="correo">Correo electrónico:</label>
-              <input class="form-control" type="email" id="correo" name="correo" required />
+              <input class="form-control" type="email" id="correo" name="correo" required
+                aria-describedby="correo-feedback" />
+              <div id="correo-feedback" class="invalid-feedback">Escribe un correo válido, por ejemplo nombre@dominio.com.</div>
             </div>
 
             <div class="mb-3">
@@ -123,40 +138,47 @@
             <div class="mb-3">
               <label class="form-label" for="cantidad_bicicletas">Cantidad de bicicletas:</label>
               <input class="form-control" type="number" id="cantidad_bicicletas" name="cantidad_bicicletas"
-                min="1" max="6" required />
+                min="1" max="6" required aria-describedby="cantidad-feedback" />
+              <div id="cantidad-feedback" class="invalid-feedback">Elige un número entero entre 1 y 6.</div>
             </div>
 
-            <div class="mb-3">
-              <span class="d-block fw-semibold mb-2">Tipo de bicicleta:</span>
-              <div class="form-check form-check-inline">
+            <fieldset class="mb-3">
+              <legend class="form-label fs-6">Tipo de bicicleta:</legend>
+              <div class="form-check">
                 <input class="form-check-input" type="radio" id="urbana" name="tipo_bicicleta" value="urbana"
-                  required />
+                  required aria-describedby="tipo-bicicleta-feedback" />
                 <label class="form-check-label" for="urbana">Urbana</label>
+                <div id="tipo-bicicleta-feedback" class="invalid-feedback">Selecciona una opción: urbana, montaña o eléctrica.</div>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="montaña" name="tipo_bicicleta" value="montaña" />
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="montaña" name="tipo_bicicleta" value="montaña"
+                  aria-describedby="tipo-bicicleta-feedback" />
                 <label class="form-check-label" for="montaña">Montaña</label>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="electrica" name="tipo_bicicleta" value="eléctrica" />
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="electrica" name="tipo_bicicleta" value="eléctrica"
+                  aria-describedby="tipo-bicicleta-feedback" />
                 <label class="form-check-label" for="electrica">Eléctrica</label>
               </div>
-            </div>
+            </fieldset>
 
             <div class="mb-3">
               <label class="form-label" for="tiempo_alquiler">Plan de alquiler:</label>
-              <select class="form-select" id="tiempo_alquiler" name="tiempo_alquiler" required>
+              <select class="form-select" id="tiempo_alquiler" name="tiempo_alquiler" required
+                aria-describedby="tiempo-feedback">
                 <option value="">Selecciona un plan de alquiler</option>
                 <option value="1h">1 hora</option>
                 <option value="4h">Medio día (4 horas)</option>
                 <option value="1d">Día completo</option>
               </select>
+              <div id="tiempo-feedback" class="invalid-feedback">Selecciona el tiempo de alquiler que prefieres.</div>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="fecha_alquiler">Fecha del alquiler:</label>
               <input class="form-control" type="date" id="fecha_alquiler" name="fecha_alquiler" required
-                min="2026-11-01" max="2026-12-31" />
+                min="2026-11-01" max="2026-12-31" aria-describedby="fecha-feedback" />
+              <div id="fecha-feedback" class="invalid-feedback">Selecciona una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.</div>
             </div>
           </fieldset>
 
@@ -165,18 +187,27 @@
 
             <div class="mb-3">
               <label class="form-label" for="tipo_pago">Tipo de pago:</label>
-              <select class="form-select" id="tipo_pago" name="tipo_pago" required>
+              <select class="form-select" id="tipo_pago" name="tipo_pago" required
+                aria-describedby="pago-feedback">
                 <option value="">Selecciona un método de pago</option>
                 <option value="efectivo">Efectivo</option>
                 <option value="transferencia">Transferencia bancaria</option>
                 <option value="tarjeta">Tarjeta de crédito/débito</option>
               </select>
+              <div id="pago-feedback" class="invalid-feedback">Selecciona el método de pago que usarás.</div>
             </div>
 
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="condiciones" name="condiciones"
-                value="aceptadas" required />
-              <label class="form-check-label" for="condiciones">Acepto las condiciones del servicio</label>
+            <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="condiciones" name="condiciones"
+                  value="aceptadas" required aria-describedby="condiciones-feedback" />
+                <label class="form-check-label" for="condiciones">Acepto las condiciones del servicio</label>
+                <div id="condiciones-feedback" class="invalid-feedback">Marca esta casilla para aceptar las condiciones del servicio.</div>
+              </div>
+              <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal"
+                data-bs-target="#politicasModal">
+                Leer políticas de alquiler
+              </button>
             </div>
 
             <div class="mb-3">
@@ -185,6 +216,7 @@
                 maxlength="300"></textarea>
             </div>
           </fieldset>
+
           <button type="submit" name="enviar_reserva" class="btn btn-success btn-reserva">
             Enviar reserva
           </button>
@@ -221,6 +253,32 @@
     </div>
   </main>
 
+  <!-- MODAL: POLÍTICAS DE ALQUILER -->
+  <div class="modal fade" id="politicasModal" tabindex="-1" aria-labelledby="politicasModalLabel"
+    aria-hidden="true" data-bs-keyboard="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="politicasModalLabel">Políticas de alquiler</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar políticas de alquiler"></button>
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Presenta tu documento de identidad original al recoger la bicicleta.</li>
+            <li>Revisa la bicicleta con el asesor antes de salir.</li>
+            <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+            <li>Los daños por mal uso se cobran según el costo de la reparación.</li>
+            <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success btn-reserva" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ENLACE FLOTANTE DE WHATSAPP -->
   <a href="https://wa.me/573000000000" class="btn btn-success d-inline-block d-sm-none m-3" target="_blank" rel="noopener noreferrer">
     WhatsApp
@@ -250,6 +308,27 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
     crossorigin="anonymous"></script>
+  <!-- Validación visual de Bootstrap 5.3 -->
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
 </body>
 
 </html>
