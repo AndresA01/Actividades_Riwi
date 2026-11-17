@@ -1344,3 +1344,37 @@ El prototipo fue aprobado, pero el Play CDN no sirve para producción. El líder
 
 - .bg-slate-950 aparece en src/output.css porque se usa en el body; .bg-pink-500 no aparece porque no se usa en los archivos fuente. Tailwind escanea las clases completas de los archivos y genera las utilidades detectadas.
 - Con Tab, Inscríbete, Explorar rutas y Consultar horarios recibieron foco visible mediante ring.
+
+    MINIRETO #3 - CARDS DE RUTAS NOCTURNAS (MOODLE #13)
+
+Se amplió la landing de Rueda Nocturna con una sección de tres rutas, preparada para mostrar sus datos y reutilizar el botón principal del kit.
+
+    INSTRUCCIONES
+
+- Se creó en nocturna/index.html la sección «Rutas» con tres cards apiladas, una debajo de otra.
+- Cada card incluye imagen de alto uniforme y ancho completo, nivel, nombre de la ruta, distancia, duración, punto de encuentro, precio destacado y el botón principal del MiniReto 2.
+- Se indicó que las rutas salen de la sede Rueda Libre e incluyen bicicleta, casco, luces LED, chaleco reflectivo y guía.
+- Las cards comparten estructura y clases base; solo cambian los datos y el color de la etiqueta de nivel. El texto también indica el nivel.
+- El hover aumenta la sombra sin mover el contenido. Todo el estilo usa utilidades Tailwind, sin CSS propio.
+- Realizar push: Feat: Cards de rutas nocturnas
+
+    CONTEXTO
+
+La campaña ofrece tres recorridos nocturnos desde la sede de Rueda Libre. Cada ruta incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.
+
+    REQUISITOS
+
+- Utilizar utilidades de bordes, radios, sombras, espaciado, tamaños, tipografía y colores.
+- Incluir imagen uniforme, etiqueta de nivel, nombre, distancia, duración, punto de encuentro, precio destacado y botón principal del MiniReto 2.
+- Diferenciar cada nivel con color y texto, jerarquizar las etiquetas y los valores de los datos, y añadir un hover que no desplace el contenido.
+- Construir las tres cards con la misma estructura y clases base; cambiar solo los datos y el color de la etiqueta.
+- No agregar CSS propio.
+
+    CHECKLIST
+
+- La sección Rutas muestra las tres cards apiladas con los datos solicitados.
+- Las imágenes tienen el mismo alto y ocupan todo el ancho de cada card.
+- Los niveles se distinguen por color y texto; los nombres y valores de los datos tienen jerarquía tipográfica.
+- El hover cambia la sombra sin desplazar el contenido.
+- Las cards reutilizan el botón principal del MiniReto 2 y comparten clases base.
+- Todo el estilo está compuesto por utilidades Tailwind, sin CSS propio.
