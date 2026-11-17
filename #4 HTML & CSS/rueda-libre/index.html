@@ -12,6 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet" />
 
+  <!-- BOOTSTRAP 5.3.9 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous" />
+
   <!-- HOJA DE ESTILOS -->
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -23,7 +27,7 @@
   <header>
 
     <img src="img/logo.png" alt="Logotipo de Rueda Libre con una bicicleta en tonos verdes" width="500" />
-    
+
     <nav>
       <ul id="menu">
         <li><a href="index.html" class="activo">Inicio</a></li>
@@ -44,8 +48,8 @@
     </p>
 
     <!-- SECCIÓN: PORTADA -->
-    <section class="portada-grid">
-      <div class="portada-texto">
+    <section class="row align-items-center g-4 my-4">
+      <div class="col-12 col-lg-6">
         <h2>¿Quiénes somos?</h2>
 
         <p>
@@ -54,13 +58,15 @@
         </p>
       </div>
 
-      <img class="portada" src="img/portada.png"
-        alt="Imagen de una bicicleta negra con verde, el nombre de la empresa y el paisaje de Medellín al frente"
-        width="500" />
+      <div class="col-12 col-lg-6">
+        <img class="img-fluid w-100" src="img/portada.png"
+          alt="Imagen de una bicicleta negra con verde, el nombre de la empresa y el paisaje de Medellín al frente"
+          width="500" />
+      </div>
     </section>
 
     <!-- SECCIÓN: NUESTROS SERVICIOS -->
-    <section>
+    <section class="servicios">
       <h2>Nuestros servicios</h2>
 
       <article>
@@ -102,22 +108,22 @@
     </section>
 
     <!-- SECCIÓN: NUESTRAS RUTAS -->
-    <section id="rutas">
+    <section id="rutas" class="row g-4 my-4">
       <h2>Nuestras rutas</h2>
 
-      <article class="tarjeta-ruta">
+      <article class="tarjeta-ruta col-12 col-md-6 col-lg-4">
         <img src="img/ruta-rio-parques.png" alt="Ciclistas recorriendo una ruta junto al río y zonas verdes" />
         <h3>Río y Parques</h3>
         <p>Nivel: Fácil</p>
       </article>
 
-      <article class="tarjeta-ruta">
+      <article class="tarjeta-ruta col-12 col-md-6 col-lg-4">
         <img src="img/ruta-sabores-barrio.png" alt="Ciclistas recorriendo un barrio colorido de Medellín" />
         <h3>Sabores de Barrio</h3>
         <p>Nivel: Medio</p>
       </article>
 
-      <article class="tarjeta-ruta">
+      <article class="tarjeta-ruta col-12 col-md-6 col-lg-4">
         <img src="img/ruta-reto-las-palmas.png" alt="Ciclistas ascendiendo por la carretera de Las Palmas" />
         <h3>Reto Las Palmas</h3>
         <p>Nivel: Difícil</p>
@@ -125,10 +131,10 @@
     </section>
 
     <!-- SECCIÓN: NUESTRA FLOTA -->
-    <section id="flota">
-      <h2>Nuestra flota</h2>
+    <section id="flota" class="row g-4 my-4">
+      <h2 class="col-12">Nuestra flota</h2>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/urbana-clasica.png" alt="Bicicleta Urbana Clásica" />
         <h3>Urbana Clásica</h3>
         <p>Cómoda y liviana para las ciclorutas.</p>
@@ -136,7 +142,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/urbana-plegable.png" alt="Bicicleta Urbana Plegable" />
         <h3>Urbana Plegable</h3>
         <p>Se dobla en segundos; ideal para combinar con el metro.</p>
@@ -144,7 +150,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/montana-trail.png" alt="Bicicleta Montaña Trail" />
         <h3>Montaña Trail</h3>
         <p>Suspensión delantera y 21 cambios para las subidas.</p>
@@ -152,7 +158,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/gravel-aventura.png" alt="Bicicleta Gravel Aventura" />
         <h3>Gravel Aventura</h3>
         <p>Para rutas mixtas de asfalto y destapado.</p>
@@ -160,7 +166,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/electrica-urbana.png" alt="Bicicleta Eléctrica Urbana" />
         <h3>Eléctrica Urbana</h3>
         <p>Asistencia eléctrica con 45 km de autonomía.</p>
@@ -168,7 +174,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/infantil.png" alt="Bicicleta Infantil" />
         <h3>Infantil</h3>
         <p>Para niños de 6 a 10 años.</p>
@@ -176,7 +182,7 @@
         <a href="paginas/reservas.html" class="btn-reserva">Reservar</a>
       </article>
 
-      <article class="tarjeta-bicicleta">
+      <article class="tarjeta-bicicleta col-12 col-sm-6 col-lg-4 col-xl-3">
         <img src="img/tandem.png" alt="Bicicleta Tándem para dos personas" />
         <h3>Tándem</h3>
         <p>Para dos personas; perfecta para pasear en pareja.</p>
@@ -209,29 +215,35 @@
         </li>
       </ol>
 
-      <section>
-        <h3>Beneficios</h3>
+      <section class="my-4">
+        <h3 class="text-center mb-4">Beneficios</h3>
 
-        <ul>
-          <li>
-            <em>
-              Nuestras bicicletas incluyen
-              <strong>casco y candado.</strong>
-            </em>
+        <ul class="row row-cols-1 row-cols-md-3 g-4 list-unstyled">
+          <li class="col">
+            <div class="p-3 border rounded h-100">
+              <em>
+                Nuestras bicicletas incluyen
+                <strong>casco y candado.</strong>
+              </em>
+            </div>
           </li>
 
-          <li>
-            <em>
-              Tenemos gran variedad de
-              <strong>modelos y tamaños.</strong>
-            </em>
+          <li class="col">
+            <div class="p-3 border rounded h-100">
+              <em>
+                Tenemos gran variedad de
+                <strong>modelos y tamaños.</strong>
+              </em>
+            </div>
           </li>
 
-          <li>
-            <em>
-              Asesoramiento sobre
-              <strong>rutas y lugares turísticos.</strong>
-            </em>
+          <li class="col">
+            <div class="p-3 border rounded h-100">
+              <em>
+                Asesoramiento sobre
+                <strong>rutas y lugares turísticos.</strong>
+              </em>
+            </div>
           </li>
         </ul>
       </section>
@@ -279,6 +291,11 @@
       <p>Lunes a viernes: 9:00 AM - 6:00 PM</p>
     </div>
   </footer>
+
+  <!-- Bootstrap 5.3.9 JavaScript Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

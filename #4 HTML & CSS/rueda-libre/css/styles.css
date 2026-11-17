@@ -107,27 +107,6 @@ nav ul {
    4. COMPONENTES Y CONTENIDO
 ================================================== */
 
-/* Imagen de portada */
-.portada {
-    width: 100%;
-    min-height: 50vh;
-}
-
-/* Portada en dos columnas con Grid */
-.portada-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: var(--espacio-grande);
-}
-
-/* Galería de rutas con Grid */
-#rutas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-grande);
-}
-
 /* Estilos de las tarjetas de rutas */
 .tarjeta-ruta {
     display: flex;
@@ -147,13 +126,9 @@ nav ul {
     border-radius: var(--espacio-pequeno);
 }
 
-/* Encabezado de la galería */
-#rutas h2 {
-    grid-column: 1 / -1;
-}
 
 /* Tarjetas de servicios */
-article {
+.servicios article {
     padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris);
     border-radius: var(--espacio-pequeno);
@@ -172,19 +147,6 @@ article {
     margin-bottom: 0;
 }
 
-
-/* Cuadrícula de la flota */
-#flota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
-    gap: var(--espacio-grande);
-}
-
-
-/* Encabezado de la cuadrícula */
-#flota h2 {
-    grid-column: 1 / -1;
-}
 
 /* Imágenes de las bicicletas */
 .tarjeta-bicicleta img {
@@ -363,30 +325,6 @@ footer {
 
     nav ul {
         justify-content: flex-start;
-    }
-}
-
-/* =========================================
-   ESCRITORIO: PORTADA EN DOS COLUMNAS
-   Desde 1200px, texto e imagen se muestran
-   uno al lado del otro.
-========================================= */
-
-@media (min-width: 1200px) {
-    .portada-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* =========================================
-   ESCRITORIO: GALERÍA DE RUTAS EN TRES COLUMNAS
-   Desde 1200px, las tres tarjetas se muestran
-   en una sola fila.
-========================================= */
-
-@media (min-width: 1200px) {
-    #rutas {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 

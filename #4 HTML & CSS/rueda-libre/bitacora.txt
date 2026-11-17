@@ -1023,3 +1023,45 @@ Aplica negrita al texto para destacar títulos y contenidos importantes.
 - Visualización: Oculta un elemento en pantallas pequeñas y lo muestra como bloque desde el breakpoint md (768 px).
 - Flexbox: Flexbox
 Organiza los elementos flexibles en fila a partir del breakpoint md. En pantallas menores puede mantenerse la dirección en columna mediante flex-column.
+
+    MINIRETO #3 - INICIO MIGRA A BOOTSTRAP
+
+Integrar Bootstrap en la página de inicio, reemplazando la distribución en CSS propio por la grilla y las utilidades, sin perder la identidad ni romper el sitio.
+
+    INSTRUCCIONES
+
+- Agrega Bootstrap (CSS y bundle) a index.html, con tu hoja propia cargada después de la de Bootstrap.
+- Reemplaza la distribución de la portada, la flota (trae el marcado del MiniReto 5), la galería de rutas y los beneficios (MiniReto 6) por la grilla y utilidades.
+- Elimina de styles.css las reglas de distribución que inicio ya no necesita. Marca con un comentario las que todavía usan tarifas y reservas.
+- Identifica con DevTools los conflictos entre tus estilos y los de Bootstrap (declaraciones tachadas, márgenes, colores de enlaces, tamaños de letra) y resuélvelos. Documenta tres conflictos y su solución en la bitácora.
+- Prueba inicio a 360 px, 768 px y 1280 px.
+- Realizar push: Feat: Inicio migra a Bootstrap.
+
+    CONTEXTO
+
+La prueba convenció al líder técnico: Rueda Libre v2 se construirá con Bootstrap. Empiezas por la página más compleja, inicio. El riesgo es que tus estilos propios y los de Bootstrap choquen.
+
+    REQUISITOS
+
+- Grilla y utilidades de Bootstrap.
+- Orden de carga de hojas de estilo y cascada.
+- DevTools (Styles y modo dispositivo).
+
+    CHECKLIST
+
+- Inicio usa la grilla de Bootstrap en portada, flota, rutas y beneficios, y se ve correctamente en los tres anchos.
+- styles.css se carga después de Bootstrap y ya no contiene reglas de distribución para inicio.
+- Los conflictos se resolvieron sin !important y la bitácora documenta tres.
+- Las fuentes y los colores de marca se mantienen.
+
+    CONFLICTOS
++-----+-----------------------------------------------+--------------------------------------------------+
+| N.º | CONFLICTO                                    | SOLUCIÓN APLICADA                                 |
++-----+-----------------------------------------------+--------------------------------------------------+
+|  1  | Las reglas Grid interferían con la portada.  | Se reemplazaron por row y col-lg-6.               |
++-----+-----------------------------------------------+--------------------------------------------------+
+|  2  | El Grid propio interfería con las tarjetas.  | Se utilizaron las clases de columnas Bootstrap.   |
++-----+-----------------------------------------------+--------------------------------------------------+
+|  3  | Bootstrap definía colores para los enlaces.  | Se conservaron los selectores propios del menú.   |
++-----+-----------------------------------------------+--------------------------------------------------+
+
