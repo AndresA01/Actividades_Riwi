@@ -1016,13 +1016,11 @@ El cliente quiere una sección "¿Por qué Rueda Libre?" con cuatro beneficios (
 
     CLASES DE BOOTSTRAP
 
-- Espaciado: Aplica relleno interno (padding) en los cuatro lados del elemento.
-- Tipografía: Tipografía
-Aplica negrita al texto para destacar títulos y contenidos importantes.
-- Colores: Aplica el color verde predeterminado de Bootstrap al texto.
-- Visualización: Oculta un elemento en pantallas pequeñas y lo muestra como bloque desde el breakpoint md (768 px).
-- Flexbox: Flexbox
-Organiza los elementos flexibles en fila a partir del breakpoint md. En pantallas menores puede mantenerse la dirección en columna mediante flex-column.
+- p-3: agrega padding de 1rem en los cuatro lados del elemento.
+- fw-bold: aplica negrita al texto.
+- text-success: aplica el color de texto de éxito de Bootstrap.
+- d-none: oculta el elemento.
+- d-md-block: muestra el elemento como bloque desde el breakpoint md (768 px).
 
     MINIRETO #3 - INICIO MIGRA A BOOTSTRAP
 
@@ -1065,3 +1063,71 @@ La prueba convenció al líder técnico: Rueda Libre v2 se construirá con Boots
 |  3  | Bootstrap definía colores para los enlaces.  | Se conservaron los selectores propios del menú.   |
 +-----+-----------------------------------------------+--------------------------------------------------+
 
+    INTEGRACIÓN EN INICIO
+
+- Se incorporó la sección de cuatro beneficios de MiniReto 6, con utilidades de grilla, espaciado, tipografía y color.
+- Se agregó la franja «¿Listo para rodar?» con el enlace a reservas y la imagen decorativa, oculta en móvil y visible desde md.
+- Se mantuvieron los colores y las fuentes de marca.
+
+    MINIRETO #4 - RUEDA LIBRE V2.0-BETA: MIGRACIÓN COMPLETA
+
+Completar la migración de tarifas y reservas a Bootstrap y documentar una comparativa final con datos reales.
+
+    INSTRUCCIONES
+
+- Migra tarifas: organiza sus secciones con la grilla y ubica las tablas y la información complementaria en dos columnas desde lg. Conserva los estilos de tabla que creaste en la semana 1.
+- Migra reservas: formulario e información de contacto en columnas 8/4 desde md, y las filas de campos cortos con la grilla. Conserva todas las reglas de validación nativa.
+- Limpia styles.css: elimina la distribución que ya resuelve Bootstrap y conserva solo la identidad visual (variables, tipografía, colores, tarjetas, tablas y estados).
+- Completa la comparativa en la bitácora: líneas de styles.css en la v1.5 (consúltalas en el historial de commits de GitHub) frente a las actuales, tiempo invertido en cada versión, ventajas y desventajas observadas y una conclusión.
+- Revisa las tres páginas a 360 px, 768 px y 1280 px, y publica la v2.0-beta.
+- Realizar push: Feat: Rueda Libre v2.0-beta: migración completa. 
+
+    CONTEXTO
+
+El cliente quiere todo el sitio en la nueva base antes de sumar componentes, y el director de Nodo Digital pide un informe con datos: ¿Bootstrap realmente redujo el trabajo?
+
+    REQUISITOS
+
+- Grilla y utilidades de Bootstrap; cascada.
+- Historial de commits de GitHub; GitHub Pages.
+
+    CHECKLIST
+
+- Las tres páginas usan Bootstrap y se ven correctamente en los tres anchos.
+- styles.css solo contiene identidad visual y la reducción de líneas está medida en la bitácora.
+- El formulario conserva todas sus reglas de validación nativa.
+- La comparativa incluye datos reales de líneas y tiempo, y termina con una conclusión.
+- La v2.0-beta está publicada en GitHub Pages.
+
+    COMPARATIVA
++-----+------------------------------+------------------------------+
+| N.º | CRITERIO                    | V1.5          | V2.0-BETA    |
++-----+------------------------------+---------------+--------------+
+|  1  | Líneas de CSS               | 428           | 147          |
++-----+------------------------------+---------------+--------------+
+|  2  | Tiempo invertido            | 3 horas       | 3 horas      |
++-----+------------------------------+---------------+--------------+
+|  3  | Sistema de distribución     | Flexbox / Grid| Bootstrap    |
++-----+------------------------------+---------------+--------------+
+|  4  | Diseño responsive           | CSS propio    | Bootstrap    |
++-----+------------------------------+---------------+--------------+
+|  5  | Reducción de CSS            | —             | 281 líneas   |
++-----+------------------------------+---------------+--------------+
+|  6  | Reducción porcentual        | —             | 65,7 %       |
++-----+------------------------------+---------------+--------------+
+- Ventajas: Menos código CSS, mejor organización y mantenimiento más sencillo.
+- Desventajas: Dependencia de Bootstrap y necesidad de conservar estilos personalizados.
+
+    CONCLUSIÓN
+
+Bootstrap redujo la hoja de estilos de 428 líneas registradas para v1.5 a 147 líneas en la versión actual: 281 líneas menos (65,7 %). El tiempo registrado para ambas versiones fue de 3 horas, así que en este proyecto el ahorro observado fue de código y mantenimiento, no de tiempo. Se conservan reglas propias para la identidad visual, las tarjetas, las tablas y los estados de interacción.
+
+    CIERRE DE VERIFICACIÓN
+
+- Se ejecutaron 36 comprobaciones estáticas: 36 correctas y 0 fallidas. Se revisaron la carga de Bootstrap, el orden de las hojas, la grilla, las clases utilitarias, las reglas de validación, las rutas locales de imágenes y los enlaces internos.
+- También se comprobó que las etiquetas estructurales principales están balanceadas en las cuatro páginas HTML.
+- Se revisó estáticamente que las tres páginas cargan Bootstrap antes de styles.css, que tarifas y reservas usan la grilla requerida y que el formulario conserva sus atributos de validación nativa.
+- Se migraron los campos del formulario a componentes de Bootstrap y se mantuvieron sus reglas required, min, max, minlength, maxlength y pattern.
+- Según las clases declaradas, la flota debe mostrarse en 1, 2 y 4 columnas a 360, 768 y 1280 px; las rutas en 1, 2 y 3; y los beneficios en 1, 2 y 4. Falta confirmar visualmente estos anchos.
+- La prueba visual del sitio a 360 px, 768 px y 1280 px queda pendiente.
+- La publicación de v2.0-beta en GitHub Pages queda pendiente.

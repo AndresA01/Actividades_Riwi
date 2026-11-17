@@ -1,6 +1,5 @@
-
 /* ==================================================
-   1. VARIABLES GLOBALES
+   1. IDENTIDAD VISUAL
 ================================================== */
 
 :root {
@@ -15,24 +14,9 @@
     --fuente-titulos: "Montserrat", sans-serif;
     --fuente-textos: "Open Sans", sans-serif;
 
-    /* Escala de espaciado */
+    /* Escala de espaciado para componentes de marca */
     --espacio-pequeno: 0.5rem;
     --espacio-mediano: 1rem;
-    --espacio-grande: 2rem;
-}
-
-
-/* ==================================================
-   2. ESTILOS GENERALES
-================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 body {
@@ -47,15 +31,8 @@ h3 {
     font-family: var(--fuente-titulos);
 }
 
-main {
-    width: 100%;
-    max-width: 70rem;
-    margin: 0 auto;
-}
-
-
 /* ==================================================
-   3. NAVEGACIÓN
+   2. NAVEGACIÓN
 ================================================== */
 
 #menu a {
@@ -64,33 +41,10 @@ main {
     font-weight: 600;
 }
 
-/* Página actual */
 #menu a.activo {
     color: var(--color-verde);
-    font-weight: 600;
 }
 
-/* Encabezado con Flexbox */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espacio-mediano);
-}
-
-/* Menú con Flexbox */
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--espacio-mediano);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-/* Estados de interacción */
 #menu a:hover {
     color: var(--color-azul);
     text-decoration: underline;
@@ -102,79 +56,36 @@ nav ul {
     outline-offset: 0.1875rem;
 }
 
-
 /* ==================================================
-   4. COMPONENTES Y CONTENIDO
+   3. TARJETAS E IMÁGENES DE COMPONENTE
 ================================================== */
 
-/* Estilos de las tarjetas de rutas */
-.tarjeta-ruta {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-pequeno);
+.tarjeta-ruta,
+.servicios article,
+.tarjeta-bicicleta {
     padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris);
     border-radius: var(--espacio-pequeno);
 }
 
-/* Imágenes de las rutas */
 .tarjeta-ruta img {
-    display: block;
-    width: 100%;
-    height: 11.25rem; /* 180px */
+    height: 11.25rem;
     object-fit: cover;
     border-radius: var(--espacio-pequeno);
 }
 
-
-/* Tarjetas de servicios */
-.servicios article {
-    padding: var(--espacio-mediano);
-    border: 1px solid var(--color-gris);
-    border-radius: var(--espacio-pequeno);
-    margin-bottom: var(--espacio-mediano);
-}
-
-
-/* Tarjetas de bicicletas */
-.tarjeta-bicicleta {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--espacio-mediano);
-    border: 1px solid var(--color-gris);
-    border-radius: var(--espacio-pequeno);
-    margin-bottom: 0;
-}
-
-
-/* Imágenes de las bicicletas */
-.tarjeta-bicicleta img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
-/* Posicionamiento de la tarjeta eléctrica */
-.tarjeta-electrica {
-    position: relative;
-}
-
-/* Etiqueta de novedad */
 .etiqueta-nuevo {
-    position: absolute;
-    top: 0;
-    right: 0;
     background-color: var(--color-naranja);
     color: var(--color-azul);
     padding: var(--espacio-pequeno);
     font-weight: 600;
 }
 
-/* Botones de reserva */
+/* ==================================================
+   4. BOTONES DE MARCA
+================================================== */
+
 .btn-reserva {
-    display: inline-block;
     background-color: var(--color-verde);
     color: var(--color-crema);
     padding: var(--espacio-pequeno) var(--espacio-mediano);
@@ -193,7 +104,19 @@ nav ul {
     outline-offset: 0.1875rem;
 }
 
-/* Tablas */
+.whatsapp-fijo {
+    background-color: var(--color-verde);
+    color: var(--color-crema);
+    padding: var(--espacio-mediano);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--espacio-pequeno);
+}
+
+/* ==================================================
+   5. TABLAS
+================================================== */
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -211,156 +134,14 @@ th {
     color: var(--color-crema);
 }
 
-
 /* ==================================================
-   5. FORMULARIOS
+   6. ESTADOS DE ENFOQUE
 ================================================== */
 
-label {
-    display: block;
-    margin-bottom: var(--espacio-pequeno);
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: var(--espacio-pequeno);
-}
-
-/* Opciones de selección */
-input[type="radio"],
-input[type="checkbox"] {
-    display: inline;
-    width: auto;
-    vertical-align: middle;
-}
-
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-    display: inline;
-    width: auto;
-}
-
-/* Organización del formulario */
-fieldset {
-    margin-bottom: var(--espacio-mediano);
-}
-
-/* Estados de enfoque de los campos */
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: 0.125rem solid var(--color-verde);
     outline-offset: 0.1875rem;
-}
-
-
-/* ==================================================
-   6. PIE DE PÁGINA
-================================================== */
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: var(--espacio-grande);
-    padding: var(--espacio-grande);
-    padding-bottom: 5rem;
-}
-
-
-/* ==================================================
-   7. ENLACE FIJO DE WHATSAPP
-================================================== */
-
-.whatsapp-fijo {
-    position: fixed;
-    right: var(--espacio-mediano);
-    bottom: var(--espacio-mediano);
-    background-color: var(--color-verde);
-    color: var(--color-crema);
-    padding: var(--espacio-mediano);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: var(--espacio-pequeno);
-    z-index: 1000;
-}
-
-/* Distribución del formulario y horarios de atención */
-.reservas-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-grande);
-    align-items: start;
-}
-
-/* Campos del formulario en una misma fila */
-.campos-en-fila {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-mediano);
-}
-
-.campos-en-fila div {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-/* =========================================
-   TABLET Y ESCRITORIO: ENCABEZADO HORIZONTAL
-   Desde 768px, el logo y el menú se organizan
-   en una misma fila.
-========================================= */
-
-@media (min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav ul {
-        justify-content: flex-start;
-    }
-}
-
-/* =========================================
-   ESCRITORIO: RESERVAS EN DOS COLUMNAS
-   El formulario ocupa más espacio que
-   los horarios de atención.
-========================================= */
-
-@media (min-width: 1200px) {
-    .reservas-grid {
-        grid-template-columns: 2fr 1fr;
-    }
-}
-
-/* =========================================
-   ESCRITORIO: CAMPOS DEL FORMULARIO EN FILA
-   Documento y teléfono se muestran uno
-   al lado del otro desde 1200px.
-========================================= */
-
-@media (min-width: 1200px) {
-    .campos-en-fila {
-        flex-direction: row;
-    }
-}
-
-/* =========================================
-   ESCRITORIO: PIE DE PÁGINA HORIZONTAL
-   Los tres bloques se organizan en una fila
-   desde 1200px.
-========================================= */
-
-@media (min-width: 1200px) {
-    footer {
-        flex-direction: row;
-        align-items: center;
-    }
 }
