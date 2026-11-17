@@ -1275,3 +1275,35 @@ El cliente quiere una versión 2.0 con la identidad propia de Rueda Libre aplica
 Durante la semana 2 se migraron las tres páginas a la grilla y a los componentes de Bootstrap, se conservaron las tablas y las reglas nativas del formulario, y se integraron la navbar responsive, las cards, el carrusel, la validación visual, la alerta y el modal. El MiniReto #4 completa la personalización de marca y prepara la publicación de Rueda Libre v2.0.
 
 La bitácora incluye las composiciones comparativas de Inicio: img/capturas/rueda-libre-antes.png y img/capturas/rueda-libre-despues.png.
+
+    MINIRETO #1 - PROTOTIPO NOCTURNO CON PLAY CDN
+
+Construir la sección principal de la campaña Rueda Nocturna con Tailwind CSS y comparar el botón con la implementación de Bootstrap.
+
+    INSTRUCCIONES
+
+- Se creó nocturna/prototipo.html con la estructura semántica del hero y el Play CDN de Tailwind.
+- Se incluyeron la etiqueta «Nuevo · Jueves a sábado», el título «Rueda Nocturna», el subtítulo solicitado, los datos «3 rutas» y «Desde $55.000», y el enlace «Inscríbete». La sección tiene un único h1.
+- El enlace de inscripción se presenta como botón con utilidades Tailwind de distribución, espaciado, color, tipografía, bordes y estados hover y focus-visible; no se usó CSS propio, style="" ni Bootstrap.
+- En la semana 2, el botón de reserva usó el componente Bootstrap con clases como btn btn-primary btn-sm; btn-primary recibió el color de marca desde styles.css. Aquí, el enlace compone su apariencia en el HTML con utilidades como inline-flex, rounded-xl, bg-lime-300, px-6, py-3, font-bold, hover:bg-lime-200 y focus-visible:*.
+- Bootstrap ofrece un componente de botón listo para personalizar; Tailwind es utility-first y permite componer el estilo combinando utilidades de propósito único.
+- Realizar push: Feat: Prototipo nocturno con Play CDN
+
+    CONTEXTO
+
+El equipo de diseño pidió aprobar rápidamente el estilo de la sección principal antes de configurar el proyecto de Tailwind. La campaña invita a recorrer Medellín en bicicleta de jueves a sábado por la noche.
+
+    REQUISITOS
+
+- Cargar el Play CDN de Tailwind CSS.
+- Usar utilidades de espaciado, tamaños, colores y tipografía.
+- Incluir todos los textos y datos solicitados y un único h1.
+- Crear el enlace «Inscríbete» con apariencia de botón y estados de interacción.
+- No usar <style>, atributos style ni clases de Bootstrap.
+
+    CHECKLIST
+
+- nocturna/prototipo.html carga el Play CDN y no contiene CSS propio ni clases de Bootstrap.
+- La sección muestra la etiqueta, el título, el subtítulo, los dos datos y el enlace solicitados; hay un solo h1.
+- Se usan utilidades Tailwind de espaciado, tamaño, color y tipografía.
+- La bitácora compara el botón de Bootstrap de la semana 2 con el enlace estilizado mediante utilidades Tailwind y explica la diferencia entre ambos enfoques.
