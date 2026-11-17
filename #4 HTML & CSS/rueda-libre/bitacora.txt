@@ -1134,9 +1134,9 @@ Bootstrap redujo la hoja de estilos de 428 líneas registradas para v1.5 a 147 l
 - La v2.0-beta está publicada en GitHub Pages: https://andresa01.github.io/Actividades_Riwi/rueda-libre/.
 - También se validó el catálogo publicado en pruebas/catalogo-bootstrap.html: incluye siete bicicletas, cuatro beneficios y ocho imágenes cargadas, con Bootstrap 5.3.9 por CDN y sin desbordamiento horizontal.
 
-    DÍA #3 - COMPONENTES Y PERSONALIZACIÓN DE BOOTSTRAP
+        DÍA #3 - COMPONENTES Y PERSONALIZACIÓN DE BOOTSTRAP
 
-MINIRETO #1 - MENÚ PARA EL CELULAR: NAVBAR Y BOTONES (MOODLE #9)
+    MINIRETO #1 - MENÚ PARA EL CELULAR: NAVBAR Y BOTONES (MOODLE #9)
 
 Implementar la navbar responsive con menú colapsable y unificar las llamadas a la acción con los botones de Bootstrap.
 
@@ -1166,3 +1166,35 @@ En el celular, el menú de la beta ocupa demasiado espacio. El cliente pidió un
 - Las tres páginas tienen un toggler vinculado al contenedor colapsable y una sola página actual marcada con aria-current="page".
 - Las tres páginas cargan el bundle de JavaScript una sola vez, antes de cerrar body.
 - Las llamadas a la acción usan botones de Bootstrap con variantes y tamaños coherentes.
+
+    MINIRETO #2 - LA FLOTA EN CARDS Y PROMOCIONES QUE ROTAN (MOODLE #10)
+
+Integrar cards de Bootstrap en la flota y las rutas, y mostrar las promociones del mes en un carrusel accesible.
+
+    INSTRUCCIONES
+
+- Se convirtió cada modelo de la flota en una card con imagen superior, título, descripción, precio y botón de reserva.
+- Se convirtió cada ruta de la galería en una card dentro de la grilla existente.
+- Las cards usan h-100; el cuerpo flexible mantiene los botones de reserva alineados al final.
+- Se agregó en Inicio un carrusel automático con las tres promociones, sus imágenes y textos alternativos.
+- Los controles anterior y siguiente del carrusel tienen etiquetas para lectores de pantalla.
+- Se eliminaron las reglas CSS de las antiguas tarjetas de flota y rutas; se conservó el estilo de servicios y se normalizó la altura de las imágenes de cards.
+- Realizar push: Feat: La flota en cards y promociones que rotan
+
+    CONTEXTO
+
+El área de mercadeo quiere que las tres promociones del mes roten en la portada y que la flota se vea más profesional.
+
+    REQUISITOS
+
+- card, card-img-top, card-body, card-title, card-text y h-100.
+- carousel, carousel-inner, carousel-item, active, carousel-control-prev/next, data-bs-slide y data-bs-ride.
+- visually-hidden, alt y la grilla de Bootstrap.
+- Probar el sitio en los tres anchos y con teclado.
+
+    CHECKLIST
+
+- La flota y las rutas usan cards dentro de la grilla; las cards de cada fila tienen la misma altura.
+- El carrusel muestra las tres promociones, avanza automáticamente y sus controles anterior y siguiente funcionan.
+- Cada imagen tiene texto alternativo y los controles incluyen etiquetas para lectores de pantalla y admiten teclado.
+- No quedan reglas de tarjetas propias sin uso en styles.css.
