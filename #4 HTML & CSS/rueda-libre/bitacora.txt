@@ -1307,3 +1307,40 @@ El equipo de diseño pidió aprobar rápidamente el estilo de la sección princi
 - La sección muestra la etiqueta, el título, el subtítulo, los dos datos y el enlace solicitados; hay un solo h1.
 - Se usan utilidades Tailwind de espaciado, tamaño, color y tipografía.
 - La bitácora compara el botón de Bootstrap de la semana 2 con el enlace estilizado mediante utilidades Tailwind y explica la diferencia entre ambos enfoques.
+
+    MINIRETO #2 - DEL PROTOTIPO AL PROYECTO REAL: CLI Y BOTONES
+
+Configurar Tailwind CSS con la CLI, conservar el hero de la campaña y crear tres variantes de botón reutilizables.
+
+    INSTRUCCIONES
+
+- Se instalaron tailwindcss y @tailwindcss/cli como dependencias de desarrollo en nocturna/package.json; package-lock.json registra la instalación.
+- Se creó src/input.css con @import "tailwindcss"; y se añadieron los comandos build:css y watch:css.
+- Se creó nocturna/index.html con el hero del prototipo enlazado a src/output.css, sin Play CDN.
+- Se construyeron los botones principal, secundario y de contorno con utilidades Tailwind, estados hover y un anillo focus-visible.
+- La ruta local del repositorio incluye # y &, y Tailwind CLI 4.3.5 falló al resolver paquetes desde esa ubicación en Windows. Se ejecutó la CLI desde una copia temporal con una ruta simple y se copió la compilación limpia a nocturna/src/output.css.
+- .gitignore excluye node_modules/; src/output.css debe incluirse en el push.
+- Realizar push: Feat: Del prototipo al proyecto real: CLI y botones
+
+    CONTEXTO
+
+El prototipo fue aprobado, pero el Play CDN no sirve para producción. El líder técnico pidió montar el proyecto con la CLI y comenzar la librería de componentes con un botón principal, uno secundario y uno de contorno.
+
+    REQUISITOS
+
+- Node.js, npm, tailwindcss y @tailwindcss/cli.
+- @import "tailwindcss" en src/input.css y ejecución de la CLI con --watch.
+- .gitignore con node_modules/ excluido; incluir src/output.css en la publicación.
+- Variantes hover: y focus:; indicador visible con ring-*; utilidades rounded-*, shadow-*, espaciado y colores.
+
+    CHECKLIST
+
+- nocturna/index.html conserva el hero y carga src/output.css en lugar del Play CDN.
+- package.json y package-lock.json incluyen Tailwind CLI; .gitignore excluye node_modules/.
+- Los tres botones tienen estados hover y un anillo de foco visible al navegar con Tab.
+- El hero y el kit de botones no desbordan a 360, 768 ni 1280 px.
+
+    VALIDACIÓN DEL CSS GENERADO
+
+- .bg-slate-950 aparece en src/output.css porque se usa en el body; .bg-pink-500 no aparece porque no se usa en los archivos fuente. Tailwind escanea las clases completas de los archivos y genera las utilidades detectadas.
+- Con Tab, Inscríbete, Explorar rutas y Consultar horarios recibieron foco visible mediante ring.
