@@ -1445,3 +1445,45 @@ Con el kit aprobado, diseño entregó la estructura de la landing: encabezado co
 - Todas las secciones usan el mismo contenedor de ancho máximo y relleno horizontal.
 - Los enlaces del encabezado llevan a sus secciones.
 - Las cards mantienen las mismas clases y estructura del kit de componentes.
+
+    MINIRETO #6 - LA NOCHE CABE EN TU CELULAR: RESPONSIVE (MOODLE #16)
+
+Se adaptó la landing a celular, tablet y escritorio con un flujo mobile-first y breakpoints de Tailwind.
+
+    INSTRUCCIONES
+
+- En la revisión inicial a 360 px no había scroll horizontal y las rutas y los pasos estaban en una columna; los enlaces del encabezado seguían visibles y añadían una fila innecesaria junto al botón.
+- Se ocultaron los enlaces de sección en celular y se dejó visible «Inscríbete». El encabezado queda apilado hasta 767 px y pasa a una fila desde md.
+- Las rutas usan una columna por defecto, dos desde sm (640 px) y tres desde lg (1024 px). Los pasos usan una, dos y cuatro columnas en los mismos breakpoints.
+- Se redujeron los títulos y el espacio vertical en móvil, y se amplían desde sm y lg. Se mantuvo el contenedor compartido.
+- Para que los datos de las cards respiren en anchos intermedios, se apilaron hasta xl; la misma clase y el mismo tamaño de título se actualizaron en componentes.html y en index.html.
+- Realizar push: Feat: Responsive landing Rueda Nocturna
+
+    CONTEXTO
+
+La campaña se promocionará en redes sociales y casi todo el tráfico llegará desde celulares. La landing ya tenía una columna en móvil, pero sus enlaces de navegación seguían visibles en el encabezado.
+
+    REQUISITOS
+
+- Usar clases mobile-first sin prefijo en celular y prefijos sm, md y lg para tamaños mayores.
+- Mostrar las rutas en una, dos y tres columnas; los pasos en una, dos y cuatro columnas.
+- Apilar el encabezado en celular, alinearlo en una fila desde md, ocultar sus enlaces en celular y mantener visible el botón «Inscríbete».
+- Ajustar tamaños de texto y espaciados por breakpoint.
+- Probar en modo dispositivo a 360, 768, 1024 y 1280 px y registrar el comportamiento en una tabla.
+
+    CHECKLIST
+
+- A 360 px no hay scroll horizontal y el contenido principal queda en una columna.
+- Las rutas pasan a dos columnas desde 640 px y a tres desde 1024 px.
+- Los estilos base corresponden al celular; las rutas, los pasos y el encabezado cambian de layout en los breakpoints pedidos.
+- El menú de secciones se oculta en celular y el botón «Inscríbete» permanece visible.
+- La bitácora contiene la tabla de pruebas de los cuatro anchos.
+
+    VALIDACIONES
+
+| Ancho | Encabezado | Rutas | Pasos | Scroll horizontal |
+| --- | --- | ---: | ---: | --- |
+| 360 px | Apilado; enlaces ocultos; botón visible | 1 columna | 1 columna | No |
+| 768 px | En fila; enlaces y botón visibles | 2 columnas | 2 columnas | No |
+| 1024 px | En fila; enlaces y botón visibles | 3 columnas | 4 columnas | No |
+| 1280 px | En fila; enlaces y botón visibles | 3 columnas | 4 columnas | No |
