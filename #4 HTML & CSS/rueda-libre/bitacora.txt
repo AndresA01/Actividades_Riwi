@@ -1592,10 +1592,198 @@ Tamaños de los recursos consultados desde las URL CDN publicadas por la v2.0. �
 | Casos de uso | Adecuado para formularios, páginas administrativas y componentes estándar del sitio existente. | Adecuado para páginas de marca con estilos a medida y control detallado de breakpoints y colores. | Usar Tailwind en la siguiente página de campaña y conservar Bootstrap en v2.0 hasta planear una migración gradual. |
 
 | Ancho | Navegación | Rutas | Pasos | Desbordamiento |
-| --- | --- | ---: | ---: | --- |
-| 360 px | Oculta; botón visible | 1 columna | 1 columna | No |
-| 768 px | Visible | 2 columnas | 2 columnas | No |
+| ---     | --- | ---: | ---: | --- |
+| 360 px  | Oculta; botón visible | 1 columna | 1 columna | No |
+| 768 px  | Visible | 2 columnas | 2 columnas | No |
 | 1024 px | Visible | 3 columnas | 4 columnas | No |
 | 1280 px | Visible | 3 columnas | 4 columnas | No |
 
 El navegador estaba usando prefers-color-scheme: dark: fondo Azul Noche, texto Crema Rueda y botón principal Amarillo Farol. El CSS generado incluye las variantes dark; la consola no reportó errores.
+        
+        DÍA #3 - INSCRIPCIÓN, INTEGRACIÓN Y LANZAMIENTO
+
+    MINIRETO #1 - INSCRIPCIÓN VALIDADA A RUEDA NOCTURNA
+
+Se agregó a la landing un formulario accesible de inscripción que valida en el navegador los datos personales y las condiciones de cada salida. La demostración no transmite ni almacena datos.
+
+    INSTRUCCIONES
+
+- Se creó el formulario con nombre completo, correo, celular, ruta, día de salida, acompañantes, experiencia, bicicleta propia y aceptación de condiciones.
+- Se asociaron etiquetas visibles a cada campo y se agruparon los datos con fieldset y legend; los selectores usan las rutas y los días disponibles.
+- La validación nativa exige nombre de al menos 3 caracteres, correo válido, celular de 10 dígitos que comience por 3 y de 0 a 3 acompañantes.
+- Se usaron las clases de campos del kit, una y dos columnas en el breakpoint md y variantes dark: para fondos, texto, bordes y foco.
+- Se probó el envío vacío, el celular con formato incorrecto y una inscripción completa con datos sintéticos; se recorrió y envió con teclado.
+- Realizar push: Feat: Inscripción validada a Rueda Nocturna
+
+    CONTEXTO
+
+La campaña necesita un formulario rápido para registrar una solicitud de cupo. No hay backend disponible, así que la página debe validar la información sin aparentar que la reserva se envió o quedó almacenada.
+
+    REQUISITOS
+
+- Usar etiquetas label asociadas, fieldset, legend, required, minlength, pattern, min y max.
+- Incluir nombre, email, celular, ruta, fecha de salida, acompañantes, experiencia, bicicleta propia y aceptación.
+- Mantener el formulario accesible por teclado, con ayuda relacionada a los campos y diseños responsive y oscuro.
+- Probar casos vacío, inválido y válido, y registrar el tiempo medido.
+- No enviar datos a un servidor inexistente.
+
+    CHECKLIST
+
+- Todos los campos solicitados tienen etiqueta y validación correspondiente.
+- El nombre requiere 3 caracteres; el celular requiere 10 dígitos y empieza por 3; acompañantes admite de 0 a 3.
+- Las rutas disponibles son Luces del Centro, Miradores de la Ciudad y Luna en Las Palmas; las salidas son jueves, viernes y sábado.
+- La inscripción exige elegir nivel, indicar si se tiene bicicleta y aceptar las condiciones.
+- El formulario se completa con teclado y conserva el estilo del kit en ambas preferencias de color.
+- La confirmación explica que los datos solo se validan localmente.
+
+    VALIDACIONES
+
+- Formulario vacío: el navegador bloqueó el envío y enfocó el primer campo requerido.
+- Celular de 9 dígitos: el navegador rechazó el envío e indicó el formato de 10 dígitos que comienza por 3.
+- Datos sintéticos válidos: se mostró la confirmación de validación local y se aclaró que no se transmite información.
+- Teclado: Tab, flechas, espacio y Enter permitieron completar y enviar la prueba.
+- Tiempo registrado desde el marcador de inicio técnico hasta la prueba completa: 12 min 58 s (16:40:33–16:53:31 UTC). El intervalo incluye preparación e implementación; no se registraron tiempos separados para cada uno de los cuatro miniretos.
+
+    MINIRETO #2 - UN SOLO ECOSISTEMA
+
+Se conectaron la campaña Rueda Nocturna y el sitio principal para que las páginas de Bootstrap y la landing de Tailwind formen una navegación común.
+
+    INSTRUCCIONES
+
+- Se añadió el enlace «Rueda Nocturna» al menú de index.html, paginas/tarifas.html y paginas/reservas.html.
+- Se agregó al carrusel de inicio una cuarta diapositiva que enlaza con nocturna/index.html.
+- En la landing, el logo vuelve al inicio del sitio Bootstrap y «Reserva tu bici» abre paginas/reservas.html.
+- Se igualaron los seis colores de marca, las fuentes Montserrat y Open Sans, el correo de contacto y el horario de atención.
+- Se mantuvieron rutas relativas para que los enlaces funcionen desde las carpetas raíz, paginas/ y nocturna/.
+- Realizar push: Feat: Integración Rueda Libre y Rueda Nocturna
+
+    CONTEXTO
+
+El lanzamiento debe sentirse como parte del sitio Rueda Libre. Las páginas existentes se construyeron con Bootstrap y la campaña con Tailwind, pero comparten marca, navegación y datos de contacto.
+
+    REQUISITOS
+
+- Añadir «Rueda Nocturna» a los tres menús de Bootstrap y enlazar la cuarta diapositiva del carrusel a la landing.
+- Enlazar el logo de la landing al inicio y ofrecer «Reserva tu bici» hacia la página de reservas.
+- Conservar rutas relativas válidas para publicación local y GitHub Pages.
+- Sincronizar variables de color, tipografía, email y horario.
+- Verificar los enlaces y registrar el tiempo de comprobación.
+
+    CHECKLIST
+
+- Inicio, tarifas y reservas ofrecen un enlace a la landing.
+- El carrusel de inicio tiene cuatro diapositivas y la cuarta enlaza con Rueda Nocturna.
+- El logo de la campaña vuelve al inicio y su CTA de reserva lleva a reservas.html.
+- Tailwind y Bootstrap declaran los mismos seis colores de marca y usan Montserrat y Open Sans.
+- La landing y el sitio Bootstrap muestran hola@ruedalibre.example y el mismo horario de atención.
+- Los enlaces locales no dependen de rutas absolutas del equipo.
+
+    VALIDACIONES
+
+| Destino | Local | GitHub Pages consultado |
+| --- | ---: | ---: |
+| Inicio | HTTP 200 | HTTP 200 |
+| Tarifas | HTTP 200 | HTTP 200 |
+| Reservas | HTTP 200 | HTTP 200 |
+| Rueda Nocturna | HTTP 200 | HTTP 200 |
+| Kit de componentes | HTTP 200 | HTTP 200 |
+| Prototipo | HTTP 200 | HTTP 200 |
+
+La publicación consultada corresponde al push anterior. La integración de este día está preparada localmente y aparecerá en Pages después del push final; todavía no se ha verificado esa versión publicada. El intervalo de validación de este minireto no se cronometró de forma independiente.
+
+    MINIRETO #3 - PLANES RUEDA NOCTURNA
+
+Se añadió a la landing una sección con tres planes, beneficios, precios y una tarjeta Pareja destacada, manteniendo las tarjetas alineadas en escritorio y apiladas en móvil.
+
+    INSTRUCCIONES
+
+- Se creó «Planes Rueda Nocturna» con Individual ($55.000 por persona), Pareja ($99.000 para dos personas) y Grupo (4 a 8, $45.000 por persona).
+- Se listaron los beneficios de cada plan y se marcó Pareja como «Más elegido».
+- Las tres tarjetas comparten estructura flex, ancho, altura, relleno de 24 px y altura mínima de la fila de insignia.
+- Pareja destaca con fondo propio y un anillo amarillo inset de 4 px; el anillo conserva el mismo borde y relleno medidos en las otras tarjetas.
+- Los CTA usan flex y mt-auto para alinearse al final de cada tarjeta, y enlazan al formulario de inscripción.
+- Se corrigieron los colores del hero: el fondo es oscuro en los dos temas, por lo que el texto usa Crema Rueda y Amarillo Farol en ambos.
+- Realizar push: Feat: Planes Rueda Nocturna
+
+    CONTEXTO
+
+La última solicitud del cliente pide ofrecer tres modalidades de salida nocturna y destacar el plan más elegido, con una presentación coherente con la marca y legible en temas claro y oscuro.
+
+    REQUISITOS
+
+- Crear las tarjetas Individual, Pareja y Grupo con los precios y beneficios del cliente.
+- Usar una columna en móvil y tres desde lg; mantener iguales ancho y relleno.
+- Dar a Pareja un fondo y borde de marca distintivos, y ubicar su insignia al inicio sin mover las otras tarjetas.
+- Organizar cada tarjeta como columna flex y dejar el botón al fondo.
+- Validar medidas, temas claro y oscuro y contraste.
+
+    CHECKLIST
+
+- Las tres tarjetas muestran nombre, precio, beneficios y enlace al formulario.
+- Pareja incluye «Más elegido» y un anillo amarillo de 4 px que resalta su borde sin alterar el espacio interior.
+- Las tarjetas tienen la misma anchura, altura y relleno; los CTA comparten línea inferior.
+- En 360 px las tarjetas quedan en una columna; desde 1024 px aparecen en tres.
+- Los colores del texto del hero tienen contraste adecuado en modo claro y oscuro.
+
+    VALIDACIONES
+
+| Ancho | Planes | Ancho de tarjeta | Alto | Relleno | CTA alineados |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 360 px | 1 columna | — | — | 24 px | En columna |
+| 768 px | 1 columna | — | — | 24 px | En columna |
+| 1024 px | 3 columnas | 288 px aprox. | 374 px | 24 px | Sí |
+| 1280 px | 3 columnas | 374 px | 374 px | 24 px | Sí |
+
+En 1280 px, las tres tarjetas midieron 374 × 374 px, con border-width 1 px y padding 24 px. Los tres CTA terminaron en la misma coordenada vertical. En el tema claro y oscuro, el hero conserva texto claro sobre fondo oscuro; Amarillo Farol se usa para el acento.
+
+    MINIRETO #4 - LANZAMIENTO RUEDA NOCTURNA: ENTREGA Y DEMO
+
+Se preparó la entrega del proyecto con documentación de inicio, capturas responsive, enlaces de publicación, validación HTML y un guion de demostración de tres minutos.
+
+    INSTRUCCIONES
+
+- Se creó README.md con descripción, páginas y tecnologías del proyecto, enlaces publicados, recomendación de framework, capturas, aprendizajes, autor y guion de demo.
+- Se generaron capturas de Rueda Nocturna para escritorio en tema claro, móvil a 600 px y escritorio en tema oscuro.
+- Se validaron nocturna/index.html y paginas/reservas.html con Nu HTML Checker; se corrigió el rol del modal de políticas en reservas.html.
+- Se revisaron los enlaces locales, los fragmentos, las imágenes, los encabezados h1 y los atributos style en todas las páginas del proyecto.
+- Se preparó una secuencia de demo: navegación del sitio, rutas y planes, validación local del formulario, vista móvil, modo oscuro y dos decisiones técnicas.
+- Realizar push: Docs: Lanzamiento Rueda Nocturna
+
+    CONTEXTO
+
+La entrega final debe explicar el propósito del sitio, cómo navegarlo, sus decisiones técnicas y lo aprendido. La demo debe durar tres minutos y mostrar la experiencia completa, incluida la landing en móvil y modo oscuro.
+
+    REQUISITOS
+
+- README con descripción, enlaces publicados, páginas, tecnologías, recomendación de Bootstrap o Tailwind, capturas desktop, móvil y modo oscuro, aprendizajes y autor.
+- Validar la landing y reservas con el validador W3C.
+- Comprobar rutas, enlaces, navegación por teclado, formularios, responsive, temas claro y oscuro, accesibilidad y recursos.
+- Preparar una demo de 3 minutos y explicar al menos dos decisiones técnicas.
+- Registrar comentarios reales de una persona después de la demo.
+- Comprobar GitHub Pages después del push final.
+
+    CHECKLIST
+
+- README.md contiene todos los apartados requeridos y las tres capturas de la landing.
+- El guion asigna tiempos y cubre navegación Bootstrap/Tailwind, rutas, planes, inscripción, móvil, tema oscuro y decisiones técnicas.
+- La landing y reservas pasan el validador sin errores ni advertencias.
+- La auditoría estática no encuentra rutas locales o fragmentos rotos, imágenes sin alt, páginas sin un único h1 ni estilos inline.
+- Las siete páginas HTML responden HTTP 200 en el servidor local.
+- Las URLs públicas consultadas responden HTTP 200, pero reflejan el push anterior.
+- El registro de retroalimentación de un compañero queda pendiente hasta realizar la demo; no se atribuyen comentarios que nadie haya dado.
+- El push final y la verificación de los cambios en GitHub Pages se harán después de que la persona autora los publique.
+
+    VALIDACIONES
+
+| Revisión | Resultado |
+| --- | --- |
+| Nu HTML Checker: nocturna/index.html | 0 errores, 0 advertencias |
+| Nu HTML Checker: paginas/reservas.html | 0 errores, 0 advertencias |
+| Auditoría estática de 7 páginas | Cero rutas o fragmentos rotos; imágenes con alt; un h1 por página; sin style inline |
+| Servidor local | Las siete páginas responden HTTP 200 |
+| GitHub Pages | Las seis URLs consultadas responden HTTP 200; cambios del Día 3 pendientes de publicación |
+| CSS de Tailwind | Compilado con Tailwind CLI 4.3.5 --minify; 35.717 bytes |
+| Demo de 3 minutos | Guion y tiempos preparados; ensayo con compañero y comentarios pendientes |
+
+No se ejecutaron comandos de Git. No se hizo push ni se verificó en Pages la versión modificada. La retroalimentación de una persona requiere realizar la demo con un compañero y registrar sus comentarios reales.
+

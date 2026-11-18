@@ -9,6 +9,7 @@
     --color-azul: #14213D;
     --color-crema: #FAF6EF;
     --color-gris: #5B6470;
+    --color-amarillo-farol: #FFD166;
 
     /* Familias tipográficas */
     --fuente-titulos: "Montserrat", sans-serif;
@@ -28,6 +29,8 @@
     --bs-secondary-color: var(--color-gris);
     --bs-danger: #B02A37;
     --bs-danger-rgb: 176, 42, 55;
+    --bs-warning: var(--color-amarillo-farol);
+    --bs-warning-rgb: 255, 209, 102;
     --bs-form-invalid-color: #B02A37;
     --bs-form-invalid-border-color: #B02A37;
     --bs-form-valid-color: var(--color-verde);
