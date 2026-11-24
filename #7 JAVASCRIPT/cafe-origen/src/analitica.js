@@ -13,7 +13,7 @@
  * @returns {number} Valor monetario de la venta.
  */
 function valorVenta(venta) {
-  // Tu código aquí
+  return venta.cantidad * venta.precio;
 }
 
 // ============================================================================
@@ -29,7 +29,15 @@ function valorVenta(venta) {
  * @returns {number} Dinero total vendido.
  */
 function totalVendido(ventas) {
-  // Tu código aquí
+  let total = 0;
+
+  for (const venta of ventas) {
+    if (venta.cantidad > 0) {
+      total += valorVenta(venta);
+    }
+  }
+
+  return total;
 }
 
 /**
@@ -39,7 +47,15 @@ function totalVendido(ventas) {
  * @returns {number} Total de unidades vendidas.
  */
 function totalUnidades(ventas) {
-  // Tu código aquí
+  let unidades = 0;
+
+  for (const venta of ventas) {
+    if (venta.cantidad > 0) {
+      unidades += venta.cantidad;
+    }
+  }
+
+  return unidades;
 }
 
 /**
@@ -49,7 +65,15 @@ function totalUnidades(ventas) {
  * @returns {Object|null} El objeto de la venta más alta.
  */
 function ventaMayorValor(ventas) {
-  // Tu código aquí
+  let mayorVenta = null;
+
+  for (const venta of ventas) {
+    if (venta.cantidad > 0 && (mayorVenta === null || valorVenta(venta) > valorVenta(mayorVenta))) {
+      mayorVenta = venta;
+    }
+  }
+
+  return mayorVenta;
 }
 
 /**
@@ -61,7 +85,19 @@ function ventaMayorValor(ventas) {
  * @returns {Array} Nuevo arreglo con las ventas de esa ciudad.
  */
 function ventasDeCiudad(ventas, ciudad) {
-  // Tu código aquí
+  const ciudadBuscada = ciudad.trim().toLowerCase();
+  const ventasEncontradas = [];
+
+  for (const venta of ventas) {
+    if (
+      venta.cantidad > 0 &&
+      venta.ciudad.trim().toLowerCase() === ciudadBuscada
+    ) {
+      ventasEncontradas.push(venta);
+    }
+  }
+
+  return ventasEncontradas;
 }
 
 /**
@@ -72,7 +108,17 @@ function ventasDeCiudad(ventas, ciudad) {
  * @returns {number} Promedio por venta válida.
  */
 function promedioPorVenta(ventas) {
-  // Tu código aquí
+  let total = 0;
+  let cantidadVentasValidas = 0;
+
+  for (const venta of ventas) {
+    if (venta.cantidad > 0) {
+      total += valorVenta(venta);
+      cantidadVentasValidas += 1;
+    }
+  }
+
+  return cantidadVentasValidas === 0 ? 0 : total / cantidadVentasValidas;
 }
 
 // ============================================================================
@@ -89,7 +135,7 @@ function promedioPorVenta(ventas) {
  * @returns {Array} Ventas con cantidad > 0.
  */
 function ventasValidas(ventas) {
-  // Tu código aquí
+  return ventas.filter((venta) => venta.cantidad > 0);
 }
 
 /**
@@ -100,7 +146,12 @@ function ventasValidas(ventas) {
  * @returns {Array} Arreglo de objetos resumidos.
  */
 function resumenVentas(ventas) {
-  // Tu código aquí
+  return ventasValidas(ventas).map((venta) => ({
+    id: venta.id,
+    producto: venta.producto,
+    ciudad: venta.ciudad.trim().toLowerCase(),
+    total: valorVenta(venta),
+  }));
 }
 
 /**
@@ -111,7 +162,11 @@ function resumenVentas(ventas) {
  * @returns {Object} Diccionario { [ciudadNormalizada]: totalVendido }.
  */
 function totalPorCiudad(ventas) {
-  // Tu código aquí
+  return ventasValidas(ventas).reduce((totales, venta) => {
+    const ciudad = venta.ciudad.trim().toLowerCase();
+    totales[ciudad] = (totales[ciudad] || 0) + valorVenta(venta);
+    return totales;
+  }, {});
 }
 
 /**
@@ -122,7 +177,10 @@ function totalPorCiudad(ventas) {
  * @returns {Object} Diccionario { [producto]: totalUnidades }.
  */
 function unidadesPorProducto(ventas) {
-  // Tu código aquí
+  return ventasValidas(ventas).reduce((unidades, venta) => {
+    unidades[venta.producto] = (unidades[venta.producto] || 0) + venta.cantidad;
+    return unidades;
+  }, {});
 }
 
 /**
@@ -135,8 +193,17 @@ function unidadesPorProducto(ventas) {
  * @returns {Array<string>} Nombres de los k productos con mayor valor vendido.
  */
 function topProductosPorValor(ventas, k) {
+  const totalesPorProducto = ventasValidas(ventas).reduce((totales, venta) => {
+    totales[venta.producto] = (totales[venta.producto] || 0) + valorVenta(venta);
+    return totales;
+  }, {});
 
-  // Tu código aquí
+  const cantidadResultados = Math.max(0, Math.floor(k));
+
+  return Object.entries(totalesPorProducto)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, cantidadResultados)
+    .map(([producto]) => producto);
 }
 
 module.exports = {
