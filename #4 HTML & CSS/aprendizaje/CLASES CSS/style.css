@@ -1,8 +1,48 @@
-ul {
-	color: red;
-
+h1{
+	text-align: center;
 }
 
-.faltante {
+li{
+	color: red;
+}
+
+.faltante{
 	color: blue;
+}
+
+p {
+	font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+}
+
+div {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+}
+
+.box {
+	
+	background-color: blue;
+}
+
+.parrafo2{
+	padding: 20px 20px;
+	background-color: yellowgreen
+}
+
+.formulario {
+	background-color: red;
+	padding: 30px;
+}
+
+.formulario_input {
+	padding: 6px 10px;
+	width: 100%;
+	background: black;
+	color:red;
+}
+
+.formulario_submit {
+	letter-spacing: 10px;
 }
